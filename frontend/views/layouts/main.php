@@ -128,13 +128,13 @@ AppAsset::register($this);
     <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
+                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i></h3>
                 </a>
                 <div class="navbar-nav w-100">
                     <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
                         
-                        <?= Html::img('@web/img/user.jpg', [ 'class' => 'rounded-circle me-lg-2', 'alt' => '', 'style' => 'width: 40px; height: 40px;', ]) ?>
+                        
                         <div class="ms-3">
                         <h6 class="mb-0">Nome</h6>
                         <span>Roll</span>
@@ -151,7 +151,7 @@ AppAsset::register($this);
                         </div>
                     </div>
                 </div>
-                    <?= Html::a('<i class="fa fa-tachometer-alt me-2"></i>Inicio', ['/site/index'], ['class' => 'nav-item nav-link active']) ?>
+                    <a href="index.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Inicio</a>
 
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Elements</a>
@@ -185,13 +185,9 @@ AppAsset::register($this);
 
 <header>
     <?php
-     NavBar::begin([
-        'brandUrl' => Yii::$app->homeUrl,
-    ]);
 
-     $menuItems = [
-        ['label' => '<i class="fa fa-tachometer-alt me-2"></i>Inicio', 'url' => Yii::$app->homeUrl, 'encode' => false],
-    ];
+
+
     ?>
 
 </header>
