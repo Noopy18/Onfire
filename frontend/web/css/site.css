@@ -19,6 +19,21 @@ main > .container, main > .container-fluid
     font-style: italic;
 }
 
+/* Botao login */
+.btn-orange {
+    background-color: #ff7f32; /* laranja vibrante */
+    color: white;
+    border-radius: 8px; /* bordas levemente arredondadas */
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-orange:hover {
+    background-color: #e56f1f; /* laranja mais escuro ao passar o mouse */
+  }
+/*Fim do botao login*/
+
+
 /* add sorting icons to gridview sort links */
 a.asc:after, a.desc:after {
     content: '';

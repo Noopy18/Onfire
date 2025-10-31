@@ -11,25 +11,73 @@ $this->title = 'Signup';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-signup">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to signup:</p>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
-
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-
-                <?= $form->field($model, 'email') ?>
-
-                <?= $form->field($model, 'password')->passwordInput() ?>
-
-                <div class="form-group">
-                    <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+    <div class="container-fluid">
+    <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+            <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h3>Criar conta</h3>
                 </div>
 
-            <?php ActiveForm::end(); ?>
+                <?php $form = ActiveForm::begin([
+                    'id' => 'form-signup',
+                    'options' => ['novalidate' => true],
+                    'enableClientValidation' => true,
+                ]); ?>
+
+                    <?= $form->field($model, 'username', [
+                        'template' => '{input}{label}{error}',
+                        'options' => ['class' => 'form-floating mb-3'],
+                        'errorOptions' => ['class' => 'invalid-feedback d-block'],
+                    ])->textInput([
+                        'id' => 'floatingText',
+                        'placeholder' => 'jhondoe',
+                        'class' => 'form-control',
+                    ])->label('Nome do utilizador') ?>
+
+                    <?= $form->field($model, 'email', [
+                        'template' => '{input}{label}{error}',
+                        'options' => ['class' => 'form-floating mb-3'],
+                        'errorOptions' => ['class' => 'invalid-feedback d-block'],
+                    ])->textInput([
+                        'id' => 'floatingInput',
+                        'placeholder' => 'name@example.com',
+                        'class' => 'form-control',
+                    ])->label('Email') ?>
+
+                    <?= $form->field($model, 'password', [
+                        'template' => '{input}{label}{error}',
+                        'options' => ['class' => 'form-floating mb-3'],
+                        'errorOptions' => ['class' => 'invalid-feedback d-block'],
+                    ])->passwordInput([
+                        'id' => 'floatingPassword',
+                        'placeholder' => 'Password',
+                        'class' => 'form-control',
+                    ])->label('Password') ?>
+
+                    <?= $form->field($model, 'confirmPassword', [
+                        'template' => '{input}{label}{error}',
+                        'options' => ['class' => 'form-floating mb-4'],
+                        'errorOptions' => ['class' => 'invalid-feedback d-block'],
+                    ])->passwordInput([
+                        'id' => 'floatingConfirmPassword',
+                        'placeholder' => 'Confirm Password',
+                        'class' => 'form-control',
+                    ])->label('Confirmar a Password') ?>
+
+
+                    <div class="form-group">
+                        <?= Html::submitButton('Sign Up', ['class' => 'btn btn-primary py-3 w-100 mb-4', 'name' => 'signup-button']) ?>
+                    </div>
+
+                    <p class="text-center mb-0">
+                        Já tem conta? <?= Html::a('Entrar', ['site/login']) ?>
+                    </p>
+
+                <?php ActiveForm::end(); ?>
+            </div>
         </div>
     </div>
 </div>
