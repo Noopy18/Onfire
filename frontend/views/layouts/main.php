@@ -13,7 +13,7 @@ AppAsset::register($this);
 $action = Yii::$app->controller->action->id;
 $controller = Yii::$app->controller->id;
 //paginas sem sidebar e navbar
-$hideSidebar = in_array($action, ['login', 'signup', 'request-password-reset']); 
+$hideSidebar = in_array($action, ['login', 'signup', 'request-password-reset', 'error']); 
 ?>
 
 <?php $this->beginPage() ?>
@@ -117,7 +117,7 @@ $hideSidebar = in_array($action, ['login', 'signup', 'request-password-reset']);
                 <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i></h3>
             </a>
             <div class="navbar-nav w-100">
-                <a href="index.php" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Inicio</a>
+                <a href="index.php" class="nav-item nav-link active"><i class="fa fa-home"></i>Inicio</a>
                 <a href="#" class="nav-item nav-link"><i class="bi bi-calendar"></i>Desafios Semanais</a>
                 <a href="#" class="nav-item nav-link"><i class="bi bi-trophy"></i>Conquistas</a>
                 <a href="#" class="nav-item nav-link"><i class="bi bi-person"></i>Amigos</a>

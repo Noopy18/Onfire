@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
 
                 <p class="text-muted mb-4">
-                    Inser o teu email para fazer o pedido da tua password.
+                    Insere o teu email para fazer o pedido da tua password.
                 </p>
 
                 <?php $form = ActiveForm::begin(['id' => 'request-password-reset-form']); ?>
