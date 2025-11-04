@@ -26,9 +26,9 @@ $hideSidebar = in_array($action, ['login', 'signup', 'request-password-reset', '
     <title><?= Html::encode($this->title) ?></title>
 
     <!-- CSS principal -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/site.css" rel="stylesheet">
-    <link href="img/favicon.ico" rel="icon">
+    <link href="<?= Yii::getAlias('@web') ?>/css/style.css" rel="stylesheet">
+    <link href="<?= Yii::getAlias('@web') ?>/css/site.css" rel="stylesheet">
+    <link href="<?= Yii::getAlias('@web') ?>/img/favicon.ico" rel="icon">   
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,8 +40,8 @@ $hideSidebar = in_array($action, ['login', 'signup', 'request-password-reset', '
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="<?= Yii::getAlias('@web') ?>/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="<?= Yii::getAlias('@web') ?>/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet">
     
     <?php $this->head() ?>
 </head>
@@ -113,12 +113,12 @@ $hideSidebar = in_array($action, ['login', 'signup', 'request-password-reset', '
     <!-- Sidebar Start -->
     <div class="sidebar pe-4 pb-3">
         <nav class="navbar bg-light navbar-light">
-            <a href="" class="navbar-brand mx-4 mb-3">
+            <a href="#" class="navbar-brand mx-4 mb-3">
                 <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i></h3>
             </a>
             <div class="navbar-nav w-100">
-                <a href="index.php" class="nav-item nav-link active"><i class="fa fa-home"></i>Inicio</a>
-                <a href="#" class="nav-item nav-link"><i class="bi bi-calendar"></i>Desafios Semanais</a>
+                <a href="<?= \yii\helpers\Url::to(['site/index']) ?>" class="nav-item nav-link active"><i class="fa fa-home"></i>Inicio</a>
+                <a href="<?= \yii\helpers\Url::to(['site/weekly']) ?>" class="nav-item nav-link"><i class="bi bi-calendar"></i>Desafios Semanais</a>
                 <a href="#" class="nav-item nav-link"><i class="bi bi-trophy"></i>Conquistas</a>
                 <a href="#" class="nav-item nav-link"><i class="bi bi-person"></i>Amigos</a>
                 <a href="#" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
@@ -151,16 +151,17 @@ $hideSidebar = in_array($action, ['login', 'signup', 'request-password-reset', '
 <?php $this->endBody() ?>
 
 <!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/chart/chart.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/tempusdominus/js/moment.min.js"></script>
-<script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-<script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-<script src="js/main.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/lib/chart/chart.min.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/lib/easing/easing.min.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/lib/waypoints/waypoints.min.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/lib/tempusdominus/js/moment.min.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/lib/tempusdominus/js/moment-timezone.min.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="<?= Yii::getAlias('@web') ?>/js/main.js"></script>
+
 
 </body>
 </html>

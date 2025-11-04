@@ -256,4 +256,10 @@ class SiteController extends Controller
             'model' => $model
         ]);
     }
+
+    public function actionWeekly()
+    {
+        $this->layout = 'main'; 
+        return $this->render('weekly');
+    }
 }
