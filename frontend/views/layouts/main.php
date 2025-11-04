@@ -14,6 +14,7 @@ $action = Yii::$app->controller->action->id;
 $controller = Yii::$app->controller->id;
 //paginas sem sidebar e navbar
 $hideSidebar = in_array($action, ['login', 'signup', 'request-password-reset', 'error']); 
+$currentRoute = Yii::$app->controller->route;
 ?>
 
 <?php $this->beginPage() ?>
@@ -117,12 +118,24 @@ $hideSidebar = in_array($action, ['login', 'signup', 'request-password-reset', '
                 <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i></h3>
             </a>
             <div class="navbar-nav w-100">
-                <a href="<?= \yii\helpers\Url::to(['site/index']) ?>" class="nav-item nav-link active"><i class="fa fa-home"></i>Inicio</a>
-                <a href="<?= \yii\helpers\Url::to(['site/weekly']) ?>" class="nav-item nav-link"><i class="bi bi-calendar"></i>Desafios Semanais</a>
+                <a href="<?= \yii\helpers\Url::to(['site/index']) ?>"
+                    class="nav-item nav-link <?= $currentRoute == 'site/index' ? 'active' : '' ?>">
+                    <i class="fa fa-home"></i> Inicio
+                </a>
+                
+                <a href="<?= \yii\helpers\Url::to(['site/weekly']) ?>" 
+                    class="nav-item nav-link <?= $currentRoute == 'site/weekly' ? 'active' : '' ?>">
+                    <i class="bi bi-calendar"></i>Desafios Semanais
+                </a>
+                
                 <a href="#" class="nav-item nav-link"><i class="bi bi-trophy"></i>Conquistas</a>
+                
                 <a href="#" class="nav-item nav-link"><i class="bi bi-person"></i>Amigos</a>
+                
                 <a href="#" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
+                
                 <a href="<?= \yii\helpers\Url::to(['site/signup']) ?>" class="nav-item nav-link"><i class="fa fa-user-plus me-2"></i>Sign up</a>
+                
                 <a href="<?= \yii\helpers\Url::to(['site/login']) ?>" class="nav-item nav-link"><i class="fa fa-sign-in-alt me-2"></i>Login</a>
             </div>
         </nav>
