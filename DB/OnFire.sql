@@ -23,10 +23,16 @@ CREATE TABLE `habit` (
   `frequency` VARCHAR(255) NOT NULL,
   `final_date` DATE,
   `type` ENUM('boolean', 'int') NOT NULL,
-  `completion_array` JSON NOT NULL,
   `created_at` DATE NOT NULL,
   `fk_utilizador` INT NOT NULL REFERENCES `utilizador`(utilizador_id),
   `fk_category` INT NOT NULL REFERENCES `category`(category_id)
+) ENGINE=InnoDB;
+
+CREATE TABLE `habit_completion` (
+  `habit_completion_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `date` DATE NOT NULL,
+  `completed` BOOLEAN NOT NULL,
+  `fk_habit` INT NOT NULL REFERENCES `habit`(habit_id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE `settings` (
@@ -60,10 +66,16 @@ CREATE TABLE `badge` (
 ) ENGINE=InnoDB;
 
 CREATE TABLE `weekly_challenge_utilizador` (
-  PRIMARY KEY (`fk_utilizador`, `fk_weekly_challenge`),
+  `weekly_challenge_utilizador_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `fk_utilizador` INT NOT NULL  REFERENCES `utilizador`(utilizador_id),
-  `fk_weekly_challenge` INT NOT NULL  REFERENCES `weekly_challenge`(weekly_challenge_id),
-  `completion_array` JSON NOT NULL
+  `fk_weekly_challenge` INT NOT NULL  REFERENCES `weekly_challenge`(weekly_challenge_id)
+) ENGINE=InnoDB;
+
+CREATE TABLE `weekly_challenge_completion` (
+  `weekly_challenge_completion_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `date` DATE NOT NULL,
+  `completed` BOOLEAN NOT NULL,
+  `fk_weekly_challenge_utilizador` INT NOT NULL REFERENCES `weekly_challenge_utilizador`(weekly_challenge_utilizador_id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE `badge_utilizador` (
