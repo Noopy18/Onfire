@@ -31,38 +31,35 @@ $this->title = 'Weekly Challenges';
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="createHabitModalLabel">Criar novo hábito</h5>
+        <h5 class="modal-title" id="createHabitModalLabel">Criar novo hábito semanal</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="HabitForm">
-          <div class="mb-3">
-            <label for="habit-title" class="form-label">Título do Hábito</label>
-            <input type="text" class="form-control" id="habit-title" required>
-          </div>
+        <form id="habitForm">
+            <div class="mb-3">
+                <label for="habitTitle" class="form-label">Título do Hábito</label>
+                <input type="text" class="form-control" id="habitTitle" required>
+            </div>
 
-          <div class="mb-3">
-            <label for="habit-category" class="form-label">Categoria</label>
-            <select id="habit-category" class="form-select" required>
-              <option value="">Selecione uma categoria</option>
-              <option value="Saúde">Saúde</option>
-              <option value="Produtividade">Produtividade</option>
-              <option value="Bem-estar">Bem-estar</option>
-              <option value="Estudo">Estudo</option>
-            </select>
-          </div>
+            <div class="mb-3">
+                <label for="habitCategory" class="form-label">Categoria</label>
+                <select id="habitCategory" class="form-select" required>
+                <option value="">Selecione uma categoria</option>
+                <option value="">Categoria</option>
+                </select>
+            </div>
 
-          <div class="mb-3">
-            <label for="habit-description" class="form-label">Descrição</label>
-            <textarea id="habitDescription" class="form-control" rows="3" required></textarea>
-          </div>
+            <div class="mb-3">
+                <label for="habitDescription" class="form-label">Descrição</label>
+                <textarea id="habitDescription" class="form-control" rows="3" required></textarea>
+            </div>
 
-          <div class="mb-3">
-            <label for="habit-time" class="form-label">Tempo (em minutos)</label>
-            <input type="number" class="form-control" id="habitTime" min="1" required>
-          </div>
+            <div class="mb-3">
+                <label for="habitTime" class="form-label">Tempo (em minutos)</label>
+                <input type="number" class="form-control" id="habitTime" min="1" required>
+            </div>
 
-          <button type="submit" class="btn btn-primary w-100">Guardar</button>
+            <button type="submit" class="btn btn-primary w-100">Guardar</button>
         </form>
       </div>
     </div>

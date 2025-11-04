@@ -14,6 +14,7 @@ $action = Yii::$app->controller->action->id;
 $controller = Yii::$app->controller->id;
 //paginas sem sidebar e navbar
 $hideSidebar = in_array($action, ['login', 'signup', 'request-password-reset', 'error']); 
+//função para mostar a pagina ativa na sidebar
 $currentRoute = Yii::$app->controller->route;
 ?>
 
@@ -172,7 +173,7 @@ $currentRoute = Yii::$app->controller->route;
 <script src="<?= Yii::getAlias('@web') ?>/lib/tempusdominus/js/moment-timezone.min.js"></script>
 <script src="<?= Yii::getAlias('@web') ?>/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 <script src="<?= Yii::getAlias('@web') ?>/https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="<?= Yii::getAlias('@web') ?>/https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?= Yii::getAlias('@web') ?>/js/main.js"></script>
 
 

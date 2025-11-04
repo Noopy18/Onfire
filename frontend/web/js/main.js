@@ -203,27 +203,29 @@
         });
 
         // botao criar habito semanal
-         $(document).ready(function () {
-        const form = $('#habitForm');
-        if (form.length) {
-            form.on('submit', function (e) {
-                e.preventDefault();
+        $(document).ready(function () {
+            const form = $('#habitForm');
+            if (form.length) {
+                form.on('submit', function (e) {
+                    e.preventDefault();
 
-                const title = $('#habitTitle').val();
-                const category = $('#habitCategory').val();
-                const description = $('#habitDescription').val();
-                const time = $('#habitTime').val();
+                    const title = $('#habitTitle').val();
+                    const category = $('#habitCategory').val();
+                    const description = $('#habitDescription').val();
+                    const time = $('#habitTime').val();
 
-                if (title && category && description && time) {
-                    alert(`✅ Hábito "${title}" criado com sucesso!`);
-                    form[0].reset();
-                    const modal = bootstrap.Modal.getInstance($('#createHabitModal')[0]);
-                    modal.hide();
-                } else {
-                    alert('⚠️ Preenche todos os campos antes de guardar.');
-                }
-            });
-        }
-    });
+                    if (title && category && description && time) {
+                        alert(` Hábito "${title}" criado com sucesso!`);
+                        form[0].reset();
+
+                        const modalEl = document.getElementById('createHabitModal');
+                        const modal = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+                        modal.hide();
+                    } else {
+                        alert('Preenche todos os campos antes de guardar.');
+                    }
+                });
+            }
+        });
     })(jQuery);
 
