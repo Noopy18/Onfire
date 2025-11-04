@@ -4,6 +4,7 @@ USE ONFIRE_DB;
 
 CREATE TABLE `utilizador` (
   `utilizador_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `profile_picture` VARCHAR(255),
   `name` VARCHAR(150) NOT NULL /* , */
   /* `fk_user` INT REFERENCES `user`(id) */
 ) ENGINE=InnoDB;
@@ -11,60 +12,62 @@ CREATE TABLE `utilizador` (
 CREATE TABLE `category` (
   `category_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
-  `color` VARCHAR(255) NOT NULL,
-  `fk_utilizador` INT NOT NULL REFERENCES `utilizador`(utilizador_id)
-) ENGINE=InnoDB;
-
-CREATE TABLE `settings` (
-  `settings_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `time_format` VARCHAR(255) NOT NULL,
-  `dark_theme` BOOLEAN NOT NULL,
-  `fk_utilizador_id` INT NOT NULL REFERENCES `utilizador`(utilizador_id)
-) ENGINE=InnoDB;
-
-CREATE TABLE `friend_invite` (
-  `friend_invite_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `sender` INT NOT NULL  REFERENCES `utilizador`(utilizador_id),
-  `receiver` INT NOT NULL REFERENCES `utilizador`(utilizador_id),
-  `rejected` BOOLEAN NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE `friends` (
-  `friends_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `user1` INT NOT NULL REFERENCES `utilizador`(utilizador_id),
-  `user2` INT NOT NULL REFERENCES `utilizador`(utilizador_id)
-) ENGINE=InnoDB;
-
-CREATE TABLE `weekly_challenge` (
-  `weekly_challenge_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `name` VARCHAR(255) NOT NULL,
-  `duration` INT NOT NULL,
-  `status` BOOLEAN NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE `weekly_challenge_utilizador` (
-  `weekly_challenge_utilizador_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `fk_utilizador` INT NOT NULL  REFERENCES `utilizador`(utilizador_id),
-  `fk_weekly_challenge` INT NOT NULL  REFERENCES `weekly_challenge`(weekly_challenge_id)
-) ENGINE=InnoDB;
-
-CREATE TABLE `badge` (
-  `badge_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `name` VARCHAR(255) NOT NULL,
-  `image` VARCHAR(255) NOT NULL
-) ENGINE=InnoDB;
-
-CREATE TABLE `badge_utilizador` (
-  `badge_utilizador_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `fk_utilizador` INT NOT NULL  REFERENCES `utilizador`(utilizador_id),
-  `fk_badge` INT NOT NULL  REFERENCES `badge`(badge_id)
+  `description` VARCHAR(255),
+  `color` VARCHAR(7) NOT NULL DEFAULT '#000000'
 ) ENGINE=InnoDB;
 
 CREATE TABLE `habit` (
   `habit_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
+  `description` VARCHAR(255),
   `frequency` VARCHAR(255) NOT NULL,
-  `streak` INT NOT NULL,
+  `final_date` DATE,
+  `type` ENUM('boolean', 'int') NOT NULL,
+  `completion_array` JSON NOT NULL,
+  `created_at` DATE NOT NULL,
   `fk_utilizador` INT NOT NULL REFERENCES `utilizador`(utilizador_id),
-  `fk_category` INT REFERENCES `category`(category_id)
+  `fk_category` INT NOT NULL REFERENCES `category`(category_id)
+) ENGINE=InnoDB;
+
+CREATE TABLE `settings` (
+  `settings_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `time_format` ENUM('12h','24h') NOT NULL DEFAULT '24h',
+  `dark_theme` BOOLEAN NOT NULL,
+  `private_perfil` BOOLEAN NOT NULL DEFAULT '0',
+  `fk_utilizador_id` INT NOT NULL REFERENCES `utilizador`(utilizador_id)
+) ENGINE=InnoDB;
+
+CREATE TABLE `friends` (
+  PRIMARY KEY (`sender`, `receiver`),
+  `sender` INT NOT NULL  REFERENCES `utilizador`(utilizador_id),
+  `receiver` INT NOT NULL REFERENCES `utilizador`(utilizador_id),
+  `status` ENUM('rejeitado','aceite','pendente') NOT NULL
+) ENGINE=InnoDB;
+
+CREATE TABLE `weekly_challenge` (
+  `weekly_challenge_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `description` VARCHAR(255),
+  `start_date` DATE NOT NULL,
+  `status` BOOLEAN NOT NULL
+) ENGINE=InnoDB;
+
+CREATE TABLE `badge` (
+  `badge_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `image` VARCHAR(255) NOT NULL
+) ENGINE=InnoDB;
+
+CREATE TABLE `weekly_challenge_utilizador` (
+  PRIMARY KEY (`fk_utilizador`, `fk_weekly_challenge`),
+  `fk_utilizador` INT NOT NULL  REFERENCES `utilizador`(utilizador_id),
+  `fk_weekly_challenge` INT NOT NULL  REFERENCES `weekly_challenge`(weekly_challenge_id),
+  `completion_array` JSON NOT NULL
+) ENGINE=InnoDB;
+
+CREATE TABLE `badge_utilizador` (
+  PRIMARY KEY (`fk_utilizador`, `fk_badge`),
+  `fk_utilizador` INT NOT NULL  REFERENCES `utilizador`(utilizador_id),
+  `fk_badge` INT NOT NULL  REFERENCES `badge`(badge_id)
 ) ENGINE=InnoDB;
