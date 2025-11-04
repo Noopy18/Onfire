@@ -275,3 +275,20 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+
+
+/*Estilo dos cards dos badges*/
+
+.badge-image {
+    background-color: #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+}
+.card {
+    background-color: #f8f9fa;
+    transition: all 0.2s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}

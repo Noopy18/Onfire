@@ -55,8 +55,8 @@ $this->title = 'Weekly Challenges';
             </div>
 
             <div class="mb-3">
-                <label for="habitTime" class="form-label">Tempo (em minutos)</label>
-                <input type="number" class="form-control" id="habitTime" min="1" required>
+                <label for="habitTime" class="form-label">Data inicial do streak</label>
+                <input type="week" class="form-control" id="habitTime" min="1" required>
             </div>
 
             <button type="submit" class="btn btn-primary w-100">Guardar</button>

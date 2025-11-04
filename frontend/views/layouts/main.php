@@ -27,7 +27,7 @@ $currentRoute = Yii::$app->controller->route;
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
 
-    <!-- CSS principal -->
+    
     <link href="<?= Yii::getAlias('@web') ?>/css/style.css" rel="stylesheet">
     <link href="<?= Yii::getAlias('@web') ?>/css/site.css" rel="stylesheet">
     <link href="<?= Yii::getAlias('@web') ?>/img/favicon.ico" rel="icon">   
@@ -103,7 +103,6 @@ $currentRoute = Yii::$app->controller->route;
                     <span class="d-none d-lg-inline-flex">Utilizador</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                    <a href="#" class="dropdown-item">Perfil</a>
                     <a href="#" class="dropdown-item">Definições</a>
                     <a href="#" class="dropdown-item">Sair</a>
                 </div>
@@ -129,15 +128,23 @@ $currentRoute = Yii::$app->controller->route;
                     <i class="bi bi-calendar"></i>Desafios Semanais
                 </a>
                 
-                <a href="#" class="nav-item nav-link"><i class="bi bi-trophy"></i>Conquistas</a>
+                <a href="<?= \yii\helpers\Url::to(['site/badges']) ?>"
+                     class="nav-item nav-link <?= $currentRoute == 'site/badges' ? 'active' : '' ?>">
+                    <i class="bi bi-trophy"></i>Conquistas
+                </a>
                 
-                <a href="#" class="nav-item nav-link"><i class="bi bi-person"></i>Amigos</a>
+                <a href="<?= \yii\helpers\Url::to(['site/friends']) ?>" 
+                    class="nav-item nav-link <?= $currentRoute == 'site/friends' ? 'active' : '' ?>">
+                   <i class="bi bi-people"></i>Amigos
+                </a>
                 
                 <a href="#" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
                 
                 <a href="<?= \yii\helpers\Url::to(['site/signup']) ?>" class="nav-item nav-link"><i class="fa fa-user-plus me-2"></i>Sign up</a>
                 
                 <a href="<?= \yii\helpers\Url::to(['site/login']) ?>" class="nav-item nav-link"><i class="fa fa-sign-in-alt me-2"></i>Login</a>
+
+                <a href="<?= \yii\helpers\Url::to(['site/profile']) ?>" class="nav-item nav-link <?= $currentRoute == 'site/profile' ? 'active' : '' ?>"><i class="fa fa-user me-2"></i>Profile</a>
             </div>
         </nav>
     </div>
@@ -173,8 +180,8 @@ $currentRoute = Yii::$app->controller->route;
 <script src="<?= Yii::getAlias('@web') ?>/lib/tempusdominus/js/moment-timezone.min.js"></script>
 <script src="<?= Yii::getAlias('@web') ?>/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 <script src="<?= Yii::getAlias('@web') ?>/https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?= Yii::getAlias('@web') ?>/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 
 </body>

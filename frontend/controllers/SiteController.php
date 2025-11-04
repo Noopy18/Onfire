@@ -262,4 +262,22 @@ class SiteController extends Controller
         $this->layout = 'main'; 
         return $this->render('weekly');
     }
+
+    public function actionBadges()
+    {
+        $this->layout = 'main'; 
+        return $this->render('badges');
+    }
+
+    public function actionFriends()
+    {
+        $this->layout = 'main'; 
+        return $this->render('friends');
+    }
+
+    public function actionProfile()
+    {
+        $this->layout = 'main'; 
+        return $this->render('profile');
+    }
 }
