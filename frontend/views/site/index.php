@@ -2,7 +2,7 @@
 
 /** @var yii\web\View $this */
 
-$this->title = 'OnFire';
+$this->title = 'Inicio | OnFire';
 ?>
 
 <!-- Recent Sales Start -->

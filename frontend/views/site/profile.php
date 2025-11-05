@@ -1,7 +1,7 @@
 <?php  
 use yii\helpers\Html;
 
-$this->title = 'Profile';
+$this->title = 'Perfil';
 ?>
 
 <div class="col-md-4">

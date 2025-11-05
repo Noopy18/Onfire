@@ -1,30 +1,67 @@
 <?php
 use yii\helpers\Html;
 
-$this->title = 'Weekly Challenges';
+$this->title = 'Desafios Semanais | OnFire';
 ?>
 
 <div class="container-fluid py-4">
     <div class="d-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800"><?= Html::encode($this->title) ?></h1>
+        <h1 class="h3 mb-0 text-gray-800">Desafios Semanais</h1>
         <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createHabitModal">
             <i class="bi bi-plus-circle"></i> Criar Novo Hábito
         </button>
     </div>
 
-    <div class="row">
-        <!-- Desafios já existentes -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card shadow-sm mb-4">
+    <div class="row g-4">
+        <div class="col-md-3">
+            <div class="d-flex flex-column gap-2">
+                <button class="btn btn-outline-secondary w-100 rounded-pill">Todas as categorias</button>
+                <button class="btn btn-outline-secondary w-100 rounded-pill">Saude</button>
+                <button class="btn btn-outline-secondary w-100 rounded-pill">Desporto</button>
+                <button class="btn btn-outline-secondary w-100 rounded-pill">Categoria</button>
+                <button class="btn btn-outline-secondary w-100 rounded-pill">Categoria</button>
+            </div>
+        </div>
+
+        <!-- Tabela do(s) desafio(s) semanais-->
+        <div class="col-md-9">
+            <div class="card shadow-sm border-0 rounded-4">
                 <div class="card-body">
-                    <h5 class="card-title">Desafio da Semana #1</h5>
-                    <p class="card-text">Completa 10 treinos esta semana e ganha 50 pontos!</p>
-                    <a href="#" class="btn btn-primary btn-sm">Participar</a>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle text-center mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Titulo</th>
+                                    <th>Descrição</th>
+                                    <th>Categoria</th>
+                                    <th>Due Time</th>
+                                    <th>Streak</th>
+                                    <th>Feito</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Read a Book</td>
+                                    <td class="text-muted">Read 20 pages this week</td>
+                                    <td>Study</td>
+                                    <td>2025-11-10</td>
+                                    <td>3</td>
+                                    <td>
+                                        <input type="checkbox" class="form-check-input">
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-primary btn-sm">Guardar</button>
+                                    </td>
+                                </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Modal Criar Hábito -->
 <div class="modal fade" id="createHabitModal" tabindex="-1" aria-labelledby="createHabitModalLabel" aria-hidden="true">

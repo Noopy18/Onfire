@@ -13,7 +13,7 @@ AppAsset::register($this);
 $action = Yii::$app->controller->action->id;
 $controller = Yii::$app->controller->id;
 //paginas sem sidebar e navbar
-$hideSidebar = in_array($action, ['login', 'signup', 'request-password-reset', 'error']); 
+$hideSidebar = in_array($action, ['login', 'signup', 'request-password-reset', 'error', 'about']); 
 //função para mostar a pagina ativa na sidebar
 $currentRoute = Yii::$app->controller->route;
 ?>
@@ -137,6 +137,11 @@ $currentRoute = Yii::$app->controller->route;
                     class="nav-item nav-link <?= $currentRoute == 'site/friends' ? 'active' : '' ?>">
                    <i class="bi bi-people"></i>Amigos
                 </a>
+
+                <a href="<?= \yii\helpers\Url::to(['site/profile']) ?>" 
+                    class="nav-item nav-link <?= $currentRoute == 'site/profile' ? 'active' : '' ?>">
+                    <i class="fa fa-user me-2"></i>Profile
+                </a>
                 
                 <a href="#" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
                 
@@ -144,7 +149,7 @@ $currentRoute = Yii::$app->controller->route;
                 
                 <a href="<?= \yii\helpers\Url::to(['site/login']) ?>" class="nav-item nav-link"><i class="fa fa-sign-in-alt me-2"></i>Login</a>
 
-                <a href="<?= \yii\helpers\Url::to(['site/profile']) ?>" class="nav-item nav-link <?= $currentRoute == 'site/profile' ? 'active' : '' ?>"><i class="fa fa-user me-2"></i>Profile</a>
+                
             </div>
         </nav>
     </div>

@@ -7,7 +7,7 @@
 use yii\bootstrap5\Html;
 use yii\bootstrap5\ActiveForm;
 
-$this->title = 'Login';
+$this->title = 'Entrar';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
@@ -58,6 +58,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     <p class="text-center mb-0">
                         Não tem conta? <?= Html::a('Criar conta', ['site/signup']) ?>
+                    </p>
+
+                    <p class="text-center mb-0">
+                        Sobre nós <?= Html::a('Sobre nós', ['site/about']) ?>
                     </p>
 
                 <?php ActiveForm::end(); ?>

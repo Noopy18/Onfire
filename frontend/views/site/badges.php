@@ -1,7 +1,7 @@
 <?php
 use yii\helpers\Html;
 
-$this->title = 'Badges';
+$this->title = 'Conquistas | OnFire';
 ?>
 
 
