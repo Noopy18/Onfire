@@ -54,7 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row g-4 justify-content-center">
         <div class="col-md-3 col-sm-6">
             <div class="card border-0 shadow-sm text-center p-3">
-                <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mb-3" alt="Membro da equipa">
+                <img src="" class="rounded-circle mx-auto mb-3">
                 <h5 class="fw-bold mb-1">Diogo Faria</h5>
                 <p class="text-muted small mb-2">CEO & Fundador</p>
             </div>
@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="col-md-3 col-sm-6">
             <div class="card border-0 shadow-sm text-center p-3">
-                <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mb-3" alt="Membro da equipa">
+                <img src="" class="rounded-circle mx-auto mb-3">
                 <h5 class="fw-bold mb-1">Miguel Costa</h5>
                 <p class="text-muted small mb-2">CEO & Fundador</p>
             </div>
@@ -70,7 +70,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="col-md-3 col-sm-6">
             <div class="card border-0 shadow-sm text-center p-3">
-                <img src="https://via.placeholder.com/150" class="rounded-circle mx-auto mb-3" alt="Membro da equipa">
+                <img src="" class="rounded-circle mx-auto mb-3">
                 <h5 class="fw-bold mb-1">Max Butescu</h5>
                 <p class="text-muted small mb-2">CEO & Fundador</p>
                 

@@ -38,17 +38,17 @@ $this->title = 'Amigos | OnFire';
                 <small class="text-center lh-sm">Current<br>Streak</small>
               </div>
               <div class="badge bg-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                <small>Badge</small>
+                <small>Conquista</small>
               </div>
               <div class="badge bg-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                <small>Badge</small>
+                <small>Conquista</small>
               </div>
             </div>
           </div>
 
         
           <div class="bg-light p-2 rounded-3 mb-3">
-            <h5 class="mb-0 fw-semibold">Username</h5>
+            <h5 class="mb-0 fw-semibold">Nome do utilizador</h5>
           </div>
 
           
