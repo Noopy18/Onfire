@@ -49,7 +49,6 @@ $this->params['breadcrumbs'][] = $this->title;
     
     <div class="text-center mb-4">
         <h2 class="fw-bold mb-3" style="color: #ff7b00;">A Nossa Equipa</h2>
-        <p class="text-muted">Um grupo de mentes criativas e dedicadas, empenhadas em transformar hábitos em conquistas.</p>
     </div>
 
     <div class="row g-4 justify-content-center">
