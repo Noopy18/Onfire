@@ -52,108 +52,79 @@ $currentRoute = Yii::$app->controller->route;
 
 <?php if (!$hideSidebar): ?>
     <!-- Navbar Start -->        
-    <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
-        <a href="#" class="navbar-brand d-flex d-lg-none me-4">
-            <h2 class="text-primary mb-0"></h2>
-        </a>
-        <a href="#" class="sidebar-toggler flex-shrink-0">
-            <i class="fa fa-bars"></i>
-        </a>
-        <div class="navbar-nav align-items-center ms-auto">
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                    <i class="fa fa-envelope me-lg-2"></i>
-                    <span class="d-none d-lg-inline-flex">Message</span>
+    <!-- Navbar Start -->        
+<nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-2 shadow-sm">
+    <!-- Botão da sidebar à esquerda -->
+    <a href="#" class="sidebar-toggler flex-shrink-0">
+        <i class="fa fa-bars"></i>
+    </a>
+
+    <!-- Logo centrado -->
+        <div class="navbar-brand mx-auto d-flex justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
+            <?= Html::img('@web/img/logo_Onfire_no_bg.png', [
+                'alt' => 'OnFire Logo',
+                'style' => 'width: 70px; height: 70px; object-fit: contain;'
+            ]); ?>
+        </div>
+
+    <!-- Notificações à direita -->
+    <div class="navbar-nav align-items-center ms-auto">
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="fa fa-bell me-lg-2"></i>
+                <span class="d-none d-lg-inline-flex">Notificações</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                <a href="#" class="dropdown-item">
+                    <h6 class="fw-normal mb-0">Perfil atualizado</h6>
+                    <small>há 15 minutos</small>
                 </a>
-                <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                    <a href="#" class="dropdown-item">
-                        <div class="d-flex align-items-center">
-                            <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <div class="ms-2">
-                                <h6 class="fw-normal mb-0">John sent you a message</h6>
-                                <small>15 minutes ago</small>
-                            </div>
-                        </div>
-                    </a>
-                    <hr class="dropdown-divider">
-                    <a href="#" class="dropdown-item text-center">See all messages</a>
-                </div>
-            </div>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                    <i class="fa fa-bell me-lg-2"></i>
-                    <span class="d-none d-lg-inline-flex">Notifications</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                    <a href="#" class="dropdown-item">
-                        <h6 class="fw-normal mb-0">Profile updated</h6>
-                        <small>15 minutes ago</small>
-                    </a>
-                    <hr class="dropdown-divider">
-                    <a href="#" class="dropdown-item text-center">See all notifications</a>
-                </div>
-            </div>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                    <?= Html::img('@web/img/user.jpg', [
-                        'class' => 'rounded-circle me-lg-2',
-                        'alt' => '',
-                        'style' => 'width: 40px; height: 40px;',
-                    ]) ?>
-                    <span class="d-none d-lg-inline-flex">Utilizador</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                    <a href="#" class="dropdown-item">Definições</a>
-                    <a href="#" class="dropdown-item">Sair</a>
-                </div>
+                <hr class="dropdown-divider">
+                <a href="#" class="dropdown-item text-center">Ver todas as notificações</a>
             </div>
         </div>
-    </nav>
-    <!-- Navbar End -->
+    </div>
+</nav>
+<!-- Navbar End -->
 
-    <!-- Sidebar Start -->
+<!-- Sidebar Start -->
     <div class="sidebar pe-4 pb-3">
         <nav class="navbar bg-light navbar-light">
-            <a href="#" class="navbar-brand mx-4 mb-3">
-                <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i></h3>
-            </a>
             <div class="navbar-nav w-100">
                 <a href="<?= \yii\helpers\Url::to(['site/index']) ?>"
-                    class="nav-item nav-link <?= $currentRoute == 'site/index' ? 'active' : '' ?>">
-                    <i class="fa fa-home"></i> Inicio
+                   class="nav-item nav-link <?= $currentRoute == 'site/index' ? 'active' : '' ?>">
+                    <i class="fa fa-home"></i> Início
                 </a>
-                
-                <a href="<?= \yii\helpers\Url::to(['site/weekly']) ?>" 
-                    class="nav-item nav-link <?= $currentRoute == 'site/weekly' ? 'active' : '' ?>">
-                    <i class="bi bi-calendar"></i>Desafios Semanais
+                <a href="<?= \yii\helpers\Url::to(['site/weekly']) ?>"
+                   class="nav-item nav-link <?= $currentRoute == 'site/weekly' ? 'active' : '' ?>">
+                    <i class="bi bi-calendar"></i> Desafios Semanais
                 </a>
-                
                 <a href="<?= \yii\helpers\Url::to(['site/badges']) ?>"
-                     class="nav-item nav-link <?= $currentRoute == 'site/badges' ? 'active' : '' ?>">
-                    <i class="bi bi-trophy"></i>Conquistas
+                   class="nav-item nav-link <?= $currentRoute == 'site/badges' ? 'active' : '' ?>">
+                    <i class="bi bi-trophy"></i> Conquistas
                 </a>
-                
-                <a href="<?= \yii\helpers\Url::to(['site/friends']) ?>" 
-                    class="nav-item nav-link <?= $currentRoute == 'site/friends' ? 'active' : '' ?>">
-                   <i class="bi bi-people"></i>Amigos
+                <a href="<?= \yii\helpers\Url::to(['site/friends']) ?>"
+                   class="nav-item nav-link <?= $currentRoute == 'site/friends' ? 'active' : '' ?>">
+                    <i class="bi bi-people"></i> Amigos
                 </a>
-
-                <a href="<?= \yii\helpers\Url::to(['site/profile']) ?>" 
-                    class="nav-item nav-link <?= $currentRoute == 'site/profile' ? 'active' : '' ?>">
-                    <i class="fa fa-user me-2"></i>Profile
+                <a href="<?= \yii\helpers\Url::to(['site/profile']) ?>"
+                   class="nav-item nav-link <?= $currentRoute == 'site/profile' ? 'active' : '' ?>">
+                    <i class="fa fa-user me-2"></i> Perfil
                 </a>
-                
-                <a href="#" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
-                
-                <a href="<?= \yii\helpers\Url::to(['site/signup']) ?>" class="nav-item nav-link"><i class="fa fa-user-plus me-2"></i>Sign up</a>
-                
-                <a href="<?= \yii\helpers\Url::to(['site/login']) ?>" class="nav-item nav-link"><i class="fa fa-sign-in-alt me-2"></i>Login</a>
-
-                
+                <a href="<?= \yii\helpers\Url::to(['site/settings']) ?>"
+                   class="nav-item nav-link <?= $currentRoute == 'site/settings' ? 'active' : '' ?>">
+                    <i class="fa fa-cog me-2"></i> Definições
+                </a>
+                <a href="<?= \yii\helpers\Url::to(['site/signup']) ?>" class="nav-item nav-link">
+                    <i class="fa fa-user-plus me-2"></i> Sign up
+                </a>
+                <a href="<?= \yii\helpers\Url::to(['site/login']) ?>" class="nav-item nav-link">
+                    <i class="fa fa-sign-in-alt me-2"></i> Login
+                </a>
             </div>
         </nav>
     </div>
-    <!-- Sidebar End -->
+<!-- Sidebar End -->
 <?php endif; ?>
 
 <main role="main" class="flex-shrink-0">

@@ -280,4 +280,10 @@ class SiteController extends Controller
         $this->layout = 'main'; 
         return $this->render('profile');
     }
+
+    public function actionSettings()
+    {
+        $this->layout = 'main'; 
+        return $this->render('settings');
+    }
 }

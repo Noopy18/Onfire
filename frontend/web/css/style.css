@@ -13,7 +13,6 @@
     z-index: 99;
 }
 
-
 /*** Spinner ***/
 #spinner {
     opacity: 0;
@@ -27,7 +26,6 @@
     visibility: visible;
     opacity: 1;
 }
-
 
 /*** Button ***/
 .btn {
@@ -63,7 +61,6 @@
     font-weight: normal;
     border-radius: 50px;
 }
-
 
 /*** Layout ***/
 .sidebar {
@@ -119,7 +116,6 @@
         margin-left: 0;
     }
 }
-
 
 /*** Navbar ***/
 .sidebar .navbar .navbar-nav .nav-link {
@@ -216,7 +212,6 @@
     }
 }
 
-
 /*** Date Picker ***/
 .bootstrap-datetimepicker-widget.bottom {
     top: auto !important;
@@ -244,13 +239,11 @@
     border-bottom-color: var(--primary);
 }
 
-
 /*** Testimonial ***/
 .progress .progress-bar {
     width: 0px;
     transition: 2s;
 }
-
 
 /*** Testimonial ***/
 .testimonial-carousel .owl-dots {
@@ -276,19 +269,51 @@
     border-color: var(--primary);
 }
 
-
-/*Estilo dos cards dos badges*/
-
+/* Estilo dos cards dos badges */
 .badge-image {
     background-color: #e0e0e0;
     border-radius: 12px;
     padding: 20px;
 }
+
 .card {
     background-color: #f8f9fa;
     transition: all 0.2s ease-in-out;
 }
+
 .card:hover {
     transform: translateY(-4px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/********** FIX: Navbar e Sidebar alinhadas **********/
+.navbar-brand {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* Garante que a navbar fica sempre por cima da sidebar */
+.navbar.sticky-top {
+    z-index: 1030;
+}
+
+/* Afasta a sidebar da navbar */
+.sidebar {
+    top: 80px; /* altura da navbar */
+}
+
+/* Afasta o conteúdo da navbar */
+.content {
+    margin-top: 80px;   
+}
+
+/* Corrige o overlap no mobile */
+@media (max-width: 991.98px) {
+    .sidebar {
+        top: 70px;
+    }
+
+    .content {
+        margin-top: 70px;
+    }
 }

@@ -44,7 +44,7 @@ $this->title = 'Inicio | OnFire';
                                         <input type="checkbox" class="form-check-input">
                                     </td>
                                     <td>
-                                        <button class="btn btn-outline-primary btn-sm">Guardar</button>
+                                        <button class="btn btn-sm" style="color: black; background-color:  #ff7b00;"><b>Guardar<b></button>
                                     </td>
                                 </tr>
                         </table>

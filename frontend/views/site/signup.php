@@ -79,7 +79,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     <p class="text-center mb-0">
                         Sobre nós <?= Html::a('Sobre nós', ['site/about']) ?>
                     </p>
-
                 <?php ActiveForm::end(); ?>
             </div>
         </div>
