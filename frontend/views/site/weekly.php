@@ -7,24 +7,24 @@ $this->title = 'Desafios Semanais | OnFire';
 <div class="container-fluid py-4">
     <div class="d-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Desafios Semanais</h1>
-        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createHabitModal">
-            <i class="bi bi-plus-circle"></i> Criar Novo Hábito
-        </button>
     </div>
 
     <div class="row g-4">
         <div class="col-md-3">
             <div class="d-flex flex-column gap-2">
-                <button class="btn btn-outline-secondary w-100 rounded-pill">Todas as categorias</button>
-                <button class="btn btn-outline-secondary w-100 rounded-pill">Saude</button>
-                <button class="btn btn-outline-secondary w-100 rounded-pill">Desporto</button>
-                <button class="btn btn-outline-secondary w-100 rounded-pill">Categoria</button>
-                <button class="btn btn-outline-secondary w-100 rounded-pill">Categoria</button>
+                <button class="btn w-100 rounded-pill" style="background-color: #ff7b00;" data-bs-toggle="modal" data-bs-target="#createHabitModal">
+                    <i class="bi bi-plus-circle"></i> Criar Novo Hábito
+                </button>
+                <button class="btn btn-success w-100 rounded-pill">Todas as categorias</button>
+                <button class="btn btn-success w-100 rounded-pill">Saude</button>
+                <button class="btn btn-success w-100 rounded-pill">Desporto</button>
+                <button class="btn btn-success w-100 rounded-pill">Categoria</button>
+                <button class="btn btn-success w-100 rounded-pill">Categoria</button>
             </div>
         </div>
 
         <!-- Tabela do(s) desafio(s) semanais-->
-        <div class="col-md-9">
+         <div class="col-md-9">
             <div class="card shadow-sm border-0 rounded-4">
                 <div class="card-body">
                     <div class="table-responsive">
@@ -42,16 +42,16 @@ $this->title = 'Desafios Semanais | OnFire';
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Read a Book</td>
-                                    <td class="text-muted">Read 20 pages this week</td>
-                                    <td>Study</td>
-                                    <td>2025-11-10</td>
+                                    <td>Titulo</td>
+                                    <td class="text-muted">Descrição do streak</td>
+                                    <td>Categoria do streak</td>
+                                    <td>tempo que falta</td>
                                     <td>3</td>
                                     <td>
                                         <input type="checkbox" class="form-check-input">
                                     </td>
                                     <td>
-                                        <button class="btn btn-outline-primary btn-sm">Guardar</button>
+                                        <button class="btn btn-sm" style="color: black; background-color:  #ff7b00;"><b>Guardar<b></button>
                                     </td>
                                 </tr>
                         </table>

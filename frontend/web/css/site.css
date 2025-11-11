@@ -34,6 +34,20 @@ main > .container, main > .container-fluid
 /*Fim do botao login*/
 
 
+.btn-outline-green {
+    color: #198754; /* verde Bootstrap */
+    border: 1px solid #198754;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-green:hover {
+    background-color: #198754;
+    color: #fff;
+    border-color: #198754;
+}
+
+
 /* add sorting icons to gridview sort links */
 a.asc:after, a.desc:after {
     content: '';

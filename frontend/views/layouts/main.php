@@ -51,43 +51,8 @@ $currentRoute = Yii::$app->controller->route;
 <?php $this->beginBody() ?>
 
 <?php if (!$hideSidebar): ?>
-    <!-- Navbar Start -->        
-    <!-- Navbar Start -->        
-<nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-2 shadow-sm">
-    <!-- Botão da sidebar à esquerda -->
-    <a href="#" class="sidebar-toggler flex-shrink-0">
-        <i class="fa fa-bars"></i>
-    </a>
 
-    <!-- Logo centrado -->
-        <div class="navbar-brand mx-auto d-flex justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
-            <?= Html::img('@web/img/logo_Onfire_no_bg.png', [
-                'alt' => 'OnFire Logo',
-                'style' => 'width: 70px; height: 70px; object-fit: contain;'
-            ]); ?>
-        </div>
-
-    <!-- Notificações à direita -->
-    <div class="navbar-nav align-items-center ms-auto">
-        <div class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                <i class="fa fa-bell me-lg-2"></i>
-                <span class="d-none d-lg-inline-flex">Notificações</span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                <a href="#" class="dropdown-item">
-                    <h6 class="fw-normal mb-0">Perfil atualizado</h6>
-                    <small>há 15 minutos</small>
-                </a>
-                <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item text-center">Ver todas as notificações</a>
-            </div>
-        </div>
-    </div>
-</nav>
-<!-- Navbar End -->
-
-<!-- Sidebar Start -->
+    <!-- Sidebar Start -->
     <div class="sidebar pe-4 pb-3">
         <nav class="navbar bg-light navbar-light">
             <div class="navbar-nav w-100">
@@ -125,6 +90,40 @@ $currentRoute = Yii::$app->controller->route;
         </nav>
     </div>
 <!-- Sidebar End -->
+    <!-- Navbar Start -->        
+<nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-2 shadow-sm">
+    <a href="#" class="sidebar-toggler flex-shrink-0">
+        <i class="fa fa-bars"></i>
+    </a>
+
+        <div class="navbar-brand mx-auto d-flex justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
+            <?= Html::img('@web/img/logo_Onfire_no_bg.png', [
+                'alt' => 'OnFire Logo',
+                'style' => 'width: 70px; height: 70px; object-fit: contain;'
+            ]); ?>
+        </div>
+
+    <!-- Notificações à direita -->
+    <div class="navbar-nav align-items-center ms-auto">
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="fa fa-bell me-lg-2"></i>
+                <span class="d-none d-lg-inline-flex">Notificações</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                <a href="#" class="dropdown-item">
+                    <h6 class="fw-normal mb-0">Perfil atualizado</h6>
+                    <small>há 15 minutos</small>
+                </a>
+                <hr class="dropdown-divider">
+                <a href="#" class="dropdown-item text-center">Ver todas as notificações</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->
+
+
 <?php endif; ?>
 
 <main role="main" class="flex-shrink-0">
