@@ -19,15 +19,36 @@ class m130524_201442_init extends Migration
             'password_hash' => $this->string()->notNull(),
             'password_reset_token' => $this->string()->unique(),
             'email' => $this->string()->notNull()->unique(),
-
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
+
+        $this->insert('{{%user}}', [
+            'id' => 1,
+            'username' => 'admin',
+            'auth_key' => Yii::$app->security->generateRandomString(),
+            'password_hash' => Yii::$app->security->generatePasswordHash('admin'),
+            'password_reset_token' => Yii::$app->security->generateRandomString() . '_' . time(),
+            'verification_token' => Yii::$app->security->generateRandomString() . '_' . time(),
+            'email' => 'admin@gmail.com',
+            'status' => 10,
+            'created_at' => time(),
+            'updated_at' => time(),
+
+        ]);
+
+        $auth = Yii::$app->authManager;
+        $admin = $auth->createRole('admin');
+        $auth->add($admin);
+        $auth->assign($admin, 1);
     }
 
     public function down()
     {
         $this->dropTable('{{%user}}');
+
+        $auth = Yii::$app->authManager;
+        $auth->removeAll();
     }
 }

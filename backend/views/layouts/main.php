@@ -29,9 +29,6 @@ $this->registerJsFile($publishedRes[1].'/control_sidebar.js', ['depends' => '\ha
 <?php $this->beginBody() ?>
 
 <div class="wrapper">
-    <!-- Navbar -->
-    <?= $this->render('navbar', ['assetDir' => $assetDir]) ?>
-    <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
     <?= $this->render('sidebar', ['assetDir' => $assetDir]) ?>

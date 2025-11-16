@@ -2,6 +2,7 @@
 
 namespace frontend\models;
 
+use common\models\Utilizador;
 use Yii;
 use yii\base\Model;
 use common\models\User;
@@ -57,8 +58,17 @@ class SignupForm extends Model
         $user->setPassword($this->password);
         $user->generateAuthKey();
         $user->generateEmailVerificationToken();
+        $user->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
+        $user->verification_token = Yii::$app->security->generateRandomString() . '_' . time();
+        $user->status = User::STATUS_ACTIVE;
+        $user->save();
 
-        return $user->save() && $this->sendEmail($user);
+        $utilizador = new Utilizador();
+        $utilizador->name = $this->username;
+        $utilizador->fk_user = $user->id;
+        $utilizador->save();
+
+        return $this->sendEmail($user);
     }
 
     /**
