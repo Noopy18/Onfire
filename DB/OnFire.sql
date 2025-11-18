@@ -85,4 +85,4 @@ CREATE TABLE `badge_utilizador` (
 ) ENGINE=InnoDB;
 
 INSERT INTO `utilizador` VALUES (1, '', 'ADM', 1);
-INSERT INTO `utilizador` VALUES (1, '', 'TECH', 2);
+INSERT INTO `utilizador` VALUES (2, '', 'TECH', 2);
