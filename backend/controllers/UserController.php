@@ -153,12 +153,26 @@ class UserController extends Controller
      */
     public function actionDelete($id)
     {
+        //verifica a role que o utilizador está autenticado
+        $current_user = Yii::$app->user->identity->id;
+        $current_user_role = Yii::$app->authManager->getRolesByUser($current_user);
+        
+        //role que o utilizador quer eliminar
+        $rolesTodelete = Yii::$app->authManager->getRolesByUser($id);
+
+        //if que proibe o tecnico apagar o admin
+        if (isset($current_user_role['technician']) && isset($rolesTodelete['administrator'])) {
+            throw new NotFoundHttpException('Não podes eliminar um Administrador.');
+        }
+
+
         $user_extra = Utilizador::findOne(['fk_user' => $id]);
         $user_extra->delete();
 
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+
     }
 
     /**
