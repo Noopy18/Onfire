@@ -2,62 +2,51 @@
 
 namespace backend\controllers;
 
-use common\models\Category;
+use common\models\WeeklyChallenge;
 use yii\data\ActiveDataProvider;
-use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CategoryController implements the CRUD actions for Category model.
+ * WeeklyChallengeController implements the CRUD actions for WeeklyChallenge model.
  */
-class CategoryController extends Controller
+class WeeklyChallengeController extends Controller
 {
     /**
      * @inheritDoc
      */
     public function behaviors()
     {
-        return [
-            'access' => [
-                'class' => AccessControl::class,
-                'rules' => [
-                    [
-                        'actions' => ['login', 'error', 'logout'],
-                        'allow' => true,
-                    ],
-                    [
-                        'allow' => true,
-                        'roles' => ['administrator'],
+        return array_merge(
+            parent::behaviors(),
+            [
+                'verbs' => [
+                    'class' => VerbFilter::className(),
+                    'actions' => [
+                        'delete' => ['POST'],
                     ],
                 ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
+            ]
+        );
     }
 
     /**
-     * Lists all Category models.
+     * Lists all WeeklyChallenge models.
      *
      * @return string
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Category::find(),
+            'query' => WeeklyChallenge::find(),
             /*
             'pagination' => [
                 'pageSize' => 50
             ],
             'sort' => [
                 'defaultOrder' => [
-                    'category_id' => SORT_DESC,
+                    'weekly_challenge_id' => SORT_DESC,
                 ]
             ],
             */
@@ -69,30 +58,30 @@ class CategoryController extends Controller
     }
 
     /**
-     * Displays a single Category model.
-     * @param int $category_id Category ID
+     * Displays a single WeeklyChallenge model.
+     * @param int $weekly_challenge_id Weekly Challenge ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($category_id)
+    public function actionView($weekly_challenge_id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($category_id),
+            'model' => $this->findModel($weekly_challenge_id),
         ]);
     }
 
     /**
-     * Creates a new Category model.
+     * Creates a new WeeklyChallenge model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Category();
+        $model = new WeeklyChallenge();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'category_id' => $model->category_id]);
+                return $this->redirect(['view', 'weekly_challenge_id' => $model->weekly_challenge_id]);
             }
         } else {
             $model->loadDefaultValues();
@@ -104,18 +93,18 @@ class CategoryController extends Controller
     }
 
     /**
-     * Updates an existing Category model.
+     * Updates an existing WeeklyChallenge model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $category_id Category ID
+     * @param int $weekly_challenge_id Weekly Challenge ID
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($category_id)
+    public function actionUpdate($weekly_challenge_id)
     {
-        $model = $this->findModel($category_id);
+        $model = $this->findModel($weekly_challenge_id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'category_id' => $model->category_id]);
+            return $this->redirect(['view', 'weekly_challenge_id' => $model->weekly_challenge_id]);
         }
 
         return $this->render('update', [
@@ -124,29 +113,29 @@ class CategoryController extends Controller
     }
 
     /**
-     * Deletes an existing Category model.
+     * Deletes an existing WeeklyChallenge model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $category_id Category ID
+     * @param int $weekly_challenge_id Weekly Challenge ID
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($category_id)
+    public function actionDelete($weekly_challenge_id)
     {
-        $this->findModel($category_id)->delete();
+        $this->findModel($weekly_challenge_id)->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the Category model based on its primary key value.
+     * Finds the WeeklyChallenge model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $category_id Category ID
-     * @return Category the loaded model
+     * @param int $weekly_challenge_id Weekly Challenge ID
+     * @return WeeklyChallenge the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($category_id)
+    protected function findModel($weekly_challenge_id)
     {
-        if (($model = Category::findOne(['category_id' => $category_id])) !== null) {
+        if (($model = WeeklyChallenge::findOne(['weekly_challenge_id' => $weekly_challenge_id])) !== null) {
             return $model;
         }
 

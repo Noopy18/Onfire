@@ -16,7 +16,7 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
         <div class="col-12 col-sm-6 col-md-3">
             <?= \hail812\adminlte\widgets\InfoBox::widget([
                     'text' => 'Categories:',
-                    'number' => \app\models\Category::find()->count(),
+                    'number' => \common\models\Category::find()->count(),
                     'icon' => 'fa fa-list-alt',
             ]) ?>
         </div>

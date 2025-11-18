@@ -1,6 +1,6 @@
 <?php
 
-use common\models\Category;
+use common\models\WeeklyChallenge;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
@@ -9,15 +9,15 @@ use yii\grid\GridView;
 /** @var yii\web\View $this */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Categories';
+$this->title = 'Weekly Challenges';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="category-index">
+<div class="weekly-challenge-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Category', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Weekly Challenge', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
 
@@ -26,14 +26,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'category_id',
+            'weekly_challenge_id',
             'name',
             'description',
-            'color',
+            'start_date',
+            'status',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Category $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'category_id' => $model->category_id]);
+                'urlCreator' => function ($action, WeeklyChallenge $model, $key, $index, $column) {
+                    return Url::toRoute([$action, 'weekly_challenge_id' => $model->weekly_challenge_id]);
                  }
             ],
         ],

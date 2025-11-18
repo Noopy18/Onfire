@@ -2,62 +2,51 @@
 
 namespace backend\controllers;
 
-use common\models\Category;
+use common\models\Badge;
 use yii\data\ActiveDataProvider;
-use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * CategoryController implements the CRUD actions for Category model.
+ * BadgeController implements the CRUD actions for Badge model.
  */
-class CategoryController extends Controller
+class BadgeController extends Controller
 {
     /**
      * @inheritDoc
      */
     public function behaviors()
     {
-        return [
-            'access' => [
-                'class' => AccessControl::class,
-                'rules' => [
-                    [
-                        'actions' => ['login', 'error', 'logout'],
-                        'allow' => true,
-                    ],
-                    [
-                        'allow' => true,
-                        'roles' => ['administrator'],
+        return array_merge(
+            parent::behaviors(),
+            [
+                'verbs' => [
+                    'class' => VerbFilter::className(),
+                    'actions' => [
+                        'delete' => ['POST'],
                     ],
                 ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
+            ]
+        );
     }
 
     /**
-     * Lists all Category models.
+     * Lists all Badge models.
      *
      * @return string
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Category::find(),
+            'query' => Badge::find(),
             /*
             'pagination' => [
                 'pageSize' => 50
             ],
             'sort' => [
                 'defaultOrder' => [
-                    'category_id' => SORT_DESC,
+                    'badge_id' => SORT_DESC,
                 ]
             ],
             */
@@ -69,30 +58,30 @@ class CategoryController extends Controller
     }
 
     /**
-     * Displays a single Category model.
-     * @param int $category_id Category ID
+     * Displays a single Badge model.
+     * @param int $badge_id Badge ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($category_id)
+    public function actionView($badge_id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($category_id),
+            'model' => $this->findModel($badge_id),
         ]);
     }
 
     /**
-     * Creates a new Category model.
+     * Creates a new Badge model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Category();
+        $model = new Badge();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'category_id' => $model->category_id]);
+                return $this->redirect(['view', 'badge_id' => $model->badge_id]);
             }
         } else {
             $model->loadDefaultValues();
@@ -104,18 +93,18 @@ class CategoryController extends Controller
     }
 
     /**
-     * Updates an existing Category model.
+     * Updates an existing Badge model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $category_id Category ID
+     * @param int $badge_id Badge ID
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($category_id)
+    public function actionUpdate($badge_id)
     {
-        $model = $this->findModel($category_id);
+        $model = $this->findModel($badge_id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'category_id' => $model->category_id]);
+            return $this->redirect(['view', 'badge_id' => $model->badge_id]);
         }
 
         return $this->render('update', [
@@ -124,29 +113,29 @@ class CategoryController extends Controller
     }
 
     /**
-     * Deletes an existing Category model.
+     * Deletes an existing Badge model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $category_id Category ID
+     * @param int $badge_id Badge ID
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($category_id)
+    public function actionDelete($badge_id)
     {
-        $this->findModel($category_id)->delete();
+        $this->findModel($badge_id)->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the Category model based on its primary key value.
+     * Finds the Badge model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $category_id Category ID
-     * @return Category the loaded model
+     * @param int $badge_id Badge ID
+     * @return Badge the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($category_id)
+    protected function findModel($badge_id)
     {
-        if (($model = Category::findOne(['category_id' => $category_id])) !== null) {
+        if (($model = Badge::findOne(['badge_id' => $badge_id])) !== null) {
             return $model;
         }
 

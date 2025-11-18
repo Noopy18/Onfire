@@ -34,8 +34,9 @@ use yii\helpers\Url;
 
                     ['label' => 'Models', 'header' => true],
                     ['label' => 'Users', 'icon' => 'users', 'url' => ['user/index']],
-                    ['label' => 'Category', 'icon' => 'fa fa-list-alt', 'url' => ['category/index']],
-                    ['label' => 'Weekly Challenges', 'icon' => 'fa fa-calendar', 'url' => ['category/index']],
+                    ['label' => 'Categories', 'icon' => 'fa fa-list-alt', 'url' => ['category/index']],
+                    ['label' => 'Weekly Challenges', 'icon' => 'fa fa-calendar', 'url' => ['weekly-challenge/index']],
+                    ['label' => 'Badges', 'icon' => 'fa fa-trophy', 'url' => ['badge/index']],
 
                     ['label' => 'Other', 'header' => true],
                 ],
