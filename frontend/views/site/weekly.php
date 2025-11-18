@@ -9,29 +9,34 @@ $this->title = 'Desafios Semanais | OnFire';
         <h1 class="h3 mb-0 text-gray-800">Desafios Semanais</h1>
     </div>
 
-    <div class="row g-4">
+     <div class="row g-4">
+
+        <!-- Sidebar de Categorias -->
         <div class="col-md-3">
             <div class="d-flex flex-column gap-2">
-                <button class="btn w-100 rounded-pill" style="background-color: #ff7b00;" data-bs-toggle="modal" data-bs-target="#createHabitModal">
+                <button class="btn w-100 rounded-pill" style="background-color: #ff7b00;"
+                        data-bs-toggle="modal" data-bs-target="#createHabitModal">
                     <i class="bi bi-plus-circle"></i> Criar Novo Hábito
                 </button>
+
                 <button class="btn btn-success w-100 rounded-pill">Todas as categorias</button>
-                <button class="btn btn-success w-100 rounded-pill">Saude</button>
-                <button class="btn btn-success w-100 rounded-pill">Desporto</button>
+                <button class="btn btn-success w-100 rounded-pill">Categoria</button>
+                <button class="btn btn-success w-100 rounded-pill">Categoria</button>
                 <button class="btn btn-success w-100 rounded-pill">Categoria</button>
                 <button class="btn btn-success w-100 rounded-pill">Categoria</button>
             </div>
         </div>
 
-        <!-- Tabela do(s) desafio(s) semanais-->
-         <div class="col-md-9">
+        <!-- Tabela dos hábitos -->
+        <div class="col-md-9">
             <div class="card shadow-sm border-0 rounded-4">
-                <div class="card-body">
+                <div class="card-body p-0">
+
                     <div class="table-responsive">
-                        <table class="table table-hover align-middle text-center mb-0">
+                        <table class="table align-middle table-hover mb-0">
                             <thead class="table-light">
                                 <tr>
-                                    <th>Titulo</th>
+                                    <th class="text-start">Título</th>
                                     <th>Descrição</th>
                                     <th>Categoria</th>
                                     <th>Due Time</th>
@@ -40,26 +45,30 @@ $this->title = 'Desafios Semanais | OnFire';
                                     <th></th>
                                 </tr>
                             </thead>
+
                             <tbody>
                                 <tr>
-                                    <td>Titulo</td>
+                                    <td class="text-start fw-semibold">Titulo</td>
                                     <td class="text-muted">Descrição do streak</td>
                                     <td>Categoria do streak</td>
                                     <td>tempo que falta</td>
-                                    <td>3</td>
+                                    <td class="fw-semibold">3</td>
                                     <td>
                                         <input type="checkbox" class="form-check-input">
                                     </td>
                                     <td>
-                                        <button class="btn btn-sm" style="color: black; background-color:  #ff7b00;"><b>Guardar<b></button>
+                                        <button class="btn btn-sm rounded-pill px-3" style="background-color: orange">
+                                            Guardar
+                                        </button>
                                     </td>
                                 </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
 </div>
 
 

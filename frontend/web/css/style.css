@@ -73,13 +73,12 @@
     overflow-y: auto;
     background: var(--light);
     transition: 0.5s;
-    z-index: 999;
+    z-index: 1050;
 }
 
 .content {
     margin-left: 250px;
     min-height: 100vh;
-    background: #FFFFFF;
     transition: 0.5s;
 }
 
@@ -140,7 +139,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #FFFFFF;
     border-radius: 40px;
 }
 
@@ -188,7 +186,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #FFFFFF;
     border-radius: 40px;
 }
 
@@ -298,12 +295,9 @@
 }
 
 .sidebar {
-    top: 0;
+    top: 40;
 }
 
-.content {
-    margin-top: 80px;   
-}
 
 @media (max-width: 991.98px) {
     .sidebar {

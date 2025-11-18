@@ -57,7 +57,7 @@ $currentRoute = Yii::$app->controller->route;
         <nav class="navbar bg-light navbar-light">
             <div class="navbar-nav w-100">
                 <a href="<?= \yii\helpers\Url::to(['site/index']) ?>"
-                   class="nav-item nav-link <?= $currentRoute == 'site/index' ? 'active' : '' ?>">
+                   class="nav-item nav-link" style="margin-top: 100px" <?= $currentRoute == 'site/index' ? 'active' : '' ?>">
                     <i class="fa fa-home"></i> Início
                 </a>
                 <a href="<?= \yii\helpers\Url::to(['site/weekly']) ?>"
@@ -76,16 +76,35 @@ $currentRoute = Yii::$app->controller->route;
                    class="nav-item nav-link <?= $currentRoute == 'site/profile' ? 'active' : '' ?>">
                     <i class="fa fa-user me-2"></i> Perfil
                 </a>
-                <a href="<?= \yii\helpers\Url::to(['site/settings']) ?>"
-                   class="nav-item nav-link <?= $currentRoute == 'site/settings' ? 'active' : '' ?>">
-                    <i class="fa fa-cog me-2"></i> Definições
-                </a>
-                <a href="<?= \yii\helpers\Url::to(['site/signup']) ?>" class="nav-item nav-link">
-                    <i class="fa fa-user-plus me-2"></i> Sign up
-                </a>
                 <a href="<?= \yii\helpers\Url::to(['site/login']) ?>" class="nav-item nav-link">
-                    <i class="fa fa-sign-in-alt me-2"></i> Login
+                    <i class="fa fa-sign-in-alt me-2"></i> Logout
                 </a>
+                 <hr class="my-3">
+
+                <!-- Tema: Sol / Lua -->
+                <div class="nav-item nav-link d-flex justify-content-between align-items-center">
+                    <span>Tema</span>
+                    <div class="d-flex gap-2">
+
+                        <!-- Light Mode -->
+                        <i class="bi bi-sun-fill"
+                        onclick="setLightMode()"
+                        style="cursor: pointer; font-size: 20px; color: #ff7b00;"></i>
+
+                        <!-- Dark Mode -->
+                        <i class="bi bi-moon-fill"
+                        onclick="setDarkMode()"
+                        style="cursor: pointer; font-size: 20px; color: #6c757d;"></i>
+                    </div>
+                </div>
+
+                <!-- Formato Horário -->
+                <div class="nav-item nav-link d-flex justify-content-between align-items-center">
+                    <span>Formato</span>
+                    <i class="bi bi-clock-history"
+                    onclick="toggleHourFormat()"
+                    style="cursor: pointer; font-size: 20px;"></i>
+                </div>
             </div>
         </nav>
     </div>
@@ -126,16 +145,20 @@ $currentRoute = Yii::$app->controller->route;
 
 <?php endif; ?>
 
-<main role="main" class="flex-shrink-0">
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
-</main>
+<div class="content">
 
+    <main role="main" class="flex-shrink-0">
+        <div class="container">
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
+
+            <?= Alert::widget() ?>
+            <?= $content ?>
+        </div>
+    </main>
+
+</div>
 <?php if (!$hideSidebar): ?>
 <footer class="footer mt-auto py-3 text-muted">
     <div class="container">

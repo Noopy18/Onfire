@@ -5,7 +5,7 @@
 use yii\helpers\Html;
 
 $this->title = 'Sobre nós';
-$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="container py-5">
     
