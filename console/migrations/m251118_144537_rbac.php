@@ -19,12 +19,15 @@ class m251118_144537_rbac extends Migration
         $technician = $auth->createRole('technician');
         $auth->add($technician);
         $auth->addChild($technician, $user);
+        $auth->assign($technician, 2);
 
         //Criação da role "Administrator" com a herança de todas as permições do "Technician".
         $administrator = $auth->createRole('administrator');
         $auth->add($administrator);
         $auth->addChild($administrator, $technician);
         $auth->assign($administrator, 1);
+
+
 
         // ################################################## USER
 

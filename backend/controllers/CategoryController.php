@@ -29,7 +29,7 @@ class CategoryController extends Controller
                     ],
                     [
                         'allow' => true,
-                        'roles' => ['administrator'],
+                        'roles' => ['administrator', 'technician'],
                     ],
                 ],
             ],
