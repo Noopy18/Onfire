@@ -29,7 +29,7 @@ class SiteController extends Controller
                     ],
                     [
                         'allow' => true,
-                        'roles' => ['admin'],
+                        'roles' => ['administrator'],
                     ],
                 ],
             ],
@@ -76,9 +76,8 @@ class SiteController extends Controller
         }
 
         $this->layout = 'blank';
-
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login() && Yii::$app->user->can('admin')) {
+        if ($model->load(Yii::$app->request->post()) && $model->login() && Yii::$app->user->can('administrator')) {
             return $this->goBack();
         }
 

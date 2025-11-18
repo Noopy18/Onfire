@@ -9,7 +9,7 @@ use yii\bootstrap5\ActiveForm;
     </div>
     <div class="card">
         <div class="card-body login-card-body">
-            <p class="login-box-msg">Sign in</p>
+            <p class="login-box-msg">Entrar</p>
 
             <?php $form = ActiveForm::begin(['id' => 'login-form']) ?>
 
@@ -33,7 +33,7 @@ use yii\bootstrap5\ActiveForm;
 
             <div class="row">
                 <div class="col-4">
-                    <?= Html::submitButton('Sign In', ['class' => 'btn btn-primary btn-block']) ?>
+                    <?= Html::submitButton('Entrar', ['class' => 'btn btn-primary btn-block']) ?>
                 </div>
             </div>
 
