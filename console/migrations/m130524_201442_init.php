@@ -39,9 +39,89 @@ class m130524_201442_init extends Migration
         ]);
 
         $auth = Yii::$app->authManager;
-        $admin = $auth->createRole('admin');
-        $auth->add($admin);
-        $auth->assign($admin, 1);
+
+        //Criação da role "User".
+        $user = $auth->createRole('user');
+        $auth->add($user);
+
+        //Criação da role "Technician" com a herança de todas as permições do "User".
+        $technician = $auth->createRole('technician');
+        $auth->add($technician);
+        $auth->addChild($technician, $user);
+
+        //Criação da role "Administrator" com a herança de todas as permições do "Technician".
+        $administrator = $auth->createRole('administrator');
+        $auth->add($administrator);
+        $auth->addChild($administrator, $technician);
+        $auth->assign($administrator, 1);
+
+        // ################################################## USER
+
+        //Permissão para a criação de Utilizadores.
+        $createUser = $auth->createPermission('createUser');
+        $auth->add($createUser);
+        $auth->addChild($createUser, $technician);
+
+        //Permissão para a atualização de Utilizadores.
+        $updateUser = $auth->createPermission('updateUser');
+        $auth->add($updateUser);
+        $auth->addChild($updateUser, $technician);
+
+        //Permissão para a vizualização de Utilizadores.
+        $viewUser = $auth->createPermission('viewUser');
+        $auth->add($viewUser);
+        $auth->addChild($viewUser, $technician);
+
+        //Permissão para a eliminação de Utilizadores.
+        $deleteUser = $auth->createPermission('deleteUser');
+        $auth->add($deleteUser);
+        $auth->addChild($deleteUser, $technician);
+
+        // ################################################## CATEGORIA
+
+        //Permissão para a criação de Categorias.
+        $createCategory = $auth->createPermission('createCategory');
+        $auth->add($createCategory);
+        $auth->addChild($createCategory, $technician);
+
+        //Permissão para a atualização de Categorias.
+        $updateCategory = $auth->createPermission('updateCategory');
+        $auth->add($updateCategory);
+        $auth->addChild($updateCategory, $technician);
+
+        //Permissão para a vizualização de Categorias.
+        $viewCategory = $auth->createPermission('viewCategory');
+        $auth->add($viewCategory);
+        $auth->addChild($viewCategory, $technician);
+
+        //Permissão para a eliminação de Categorias.
+        $deleteCategory = $auth->createPermission('deleteCategory');
+        $auth->add($deleteCategory);
+        $auth->addChild($deleteCategory, $technician);
+
+        // ################################################## CRACHÁS
+
+        //Permissão para a criação de Crachás.
+        $createBadge = $auth->createPermission('createBadge');
+        $auth->add($createBadge);
+        $auth->addChild($createBadge, $technician);
+
+        //Permissão para a atualização de Crachás.
+        $updateBadge = $auth->createPermission('updateBadge');
+        $auth->add($updateBadge);
+        $auth->addChild($updateBadge, $technician);
+
+        //Permissão para a vizualização de Crachás.
+        $viewBadge = $auth->createPermission('viewBadge');
+        $auth->add($viewBadge);
+        $auth->addChild($viewBadge, $user);
+
+        //Permissão para a eliminação de Crachás.
+        $deleteBadge = $auth->createPermission('deleteBadge');
+        $auth->add($deleteBadge);
+        $auth->addChild($deleteBadge, $technician);
+
+
     }
 
     public function down()
