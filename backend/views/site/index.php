@@ -21,6 +21,21 @@ $this->params['breadcrumbs'] = [['label' => $this->title]];
             ]) ?>
         </div>
 
+        <div class="col-12 col-sm-6 col-md-3">
+            <?= \hail812\adminlte\widgets\InfoBox::widget([
+                    'text' => 'Badges:',
+                    'number' => \common\models\Badge::find()->count(),
+                    'icon' => 'fa fa-trophy',
+            ]) ?>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3">
+            <?= \hail812\adminlte\widgets\InfoBox::widget([
+                    'text' => 'WeeklyChallenges:',
+                    'number' => \common\models\WeeklyChallenge::find()->count(),
+                    'icon' => 'fa fa-calendar',
+            ]) ?>
+        </div>
 
     </div>
 </div>
