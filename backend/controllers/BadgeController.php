@@ -8,6 +8,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * BadgeController implements the CRUD actions for Badge model.
@@ -90,18 +91,35 @@ class BadgeController extends Controller
     {
         $model = new Badge();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+        if (Yii::$app->request->isPost) {
+
+            $model->load(Yii::$app->request->post());
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+
+            if ($model->imageFile) {
+
+                $folder = Yii::getAlias('@frontend/web/uploads/badges/');
+
+                if (!is_dir($folder)) {
+                    mkdir($folder, 0777, true);
+                }
+
+                $fileName = time() . '_' . $model->imageFile->baseName . '.' . $model->imageFile->extension;
+
+                if ($model->imageFile->saveAs($folder . $fileName)) {
+                    $model->image = $fileName;
+                }
+            }
+
+            if ($model->save(false)) {
                 return $this->redirect(['view', 'badge_id' => $model->badge_id]);
             }
-        } else {
-            $model->loadDefaultValues();
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        return $this->render('create', ['model' => $model]);
     }
+
+
 
     /**
      * Updates an existing Badge model.

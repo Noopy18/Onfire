@@ -76,9 +76,12 @@ $currentRoute = Yii::$app->controller->route;
                    class="nav-item nav-link <?= $currentRoute == 'site/profile' ? 'active' : '' ?>">
                     <i class="fa fa-user me-2"></i> Perfil
                 </a>
-                <a href="<?= \yii\helpers\Url::to(['site/login']) ?>" class="nav-item nav-link">
+                <?= Html::beginForm(['site/logout'], 'post') ?>
+                    <button class="nav-item nav-link btn btn-link" style="text-align:left;">
                     <i class="fa fa-sign-in-alt me-2"></i> Logout
-                </a>
+                    </button>
+                <?= Html::endForm() ?>
+
                  <hr class="my-3">
 
                 <!-- Tema: Sol / Lua -->
@@ -177,7 +180,7 @@ $currentRoute = Yii::$app->controller->route;
 <script src="<?= Yii::getAlias('@web') ?>/lib/tempusdominus/js/moment.min.js"></script>
 <script src="<?= Yii::getAlias('@web') ?>/lib/tempusdominus/js/moment-timezone.min.js"></script>
 <script src="<?= Yii::getAlias('@web') ?>/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-<script src="<?= Yii::getAlias('@web') ?>/https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="<?= Yii::getAlias('@web') ?>/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 

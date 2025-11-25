@@ -29,15 +29,18 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['logout', 'signup'],
+                'only' => ['index', 'contact', 'about', 'weekly', 'badges', 'friends', 'profile', 'settings', 'logout', 'signup'],
                 'rules' => [
                     [
-                        'actions' => ['signup'],
+                        'actions' => ['signup', 'error', 'login'],
                         'allow' => true,
-                        'roles' => ['?'],
                     ],
                     [
                         'actions' => ['logout'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                    [
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -266,7 +269,10 @@ class SiteController extends Controller
     public function actionBadges()
     {
         $this->layout = 'main'; 
-        return $this->render('badges');
+
+        $badges = \common\models\Badge::find()->all();
+
+        return $this->render('badges', ['badges' => $badges]);
     }
 
     public function actionFriends()
@@ -277,8 +283,24 @@ class SiteController extends Controller
 
     public function actionProfile()
     {
-        $this->layout = 'main'; 
-        return $this->render('profile');
+        $this->layout = 'main';
+        $user = Yii::$app->user->identity;
+
+        if (Yii::$app->request->isPost) {
+
+            $user->username = Yii::$app->request->post('username');
+
+            if ($user->save()) {
+                Yii::$app->session->setFlash('success', 'Nome atualizado com sucesso!');
+            } else {
+                Yii::$app->session->setFlash('error', 'Erro ao atualizar nome.');
+                Yii::error($user->errors, 'profile');
+            }
+        }
+
+        return $this->render('profile', [
+            'user' => $user,
+        ]);
     }
 
     public function actionSettings()

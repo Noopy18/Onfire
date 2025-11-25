@@ -18,7 +18,7 @@ use Yii;
 class Badge extends \yii\db\ActiveRecord
 {
 
-
+    public $imageFile;
     /**
      * {@inheritdoc}
      */
@@ -33,8 +33,16 @@ class Badge extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'description', 'image'], 'required'],
+            [['name', 'description'], 'required'],
             [['name', 'description', 'image'], 'string', 'max' => 255],
+            [['image'], 'string', 'max' => 255], 
+
+            [
+                ['imageFile'], 
+                'file', 
+                'skipOnEmpty' => true, 
+                'extensions' => 'png, jpg, jpeg'
+            ],
         ];
     }
 
