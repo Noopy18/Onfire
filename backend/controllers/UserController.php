@@ -164,22 +164,29 @@ class UserController extends Controller
     public function actionDelete($id)
     {
         //verifica a role que o utilizador está autenticado
-        $current_user = Yii::$app->user->identity->id;
-        $current_user_role = Yii::$app->authManager->getRolesByUser($current_user);
-        
+        //$current_user = Yii::$app->user->identity->id;
+        //$current_user_role = Yii::$app->authManager->getRolesByUser($current_user);
+
         //role que o utilizador quer eliminar
-        $rolesTodelete = Yii::$app->authManager->getRolesByUser($id);
+
+        $roleTodelete = Yii::$app->authManager->getRolesByUser($id);
 
         //if que proibe o tecnico apagar o admin
-        if (isset($current_user_role['technician']) && isset($rolesTodelete['administrator'])) {
+        //if (isset($current_user_role['technician']) && isset($rolesTodelete['administrator'])) {
+        //throw new NotFoundHttpException('Não podes eliminar um Administrador.');
+        //}
+
+
+        // PPL comentei o código anterior porque não acho que o ADM pode ser eliminado
+        //só temos 1 ADM e não faz sentido ele eliminar a si próprio
+
+        if (isset($roleTodelete['administrator'])) {
             throw new NotFoundHttpException('Não podes eliminar um Administrador.');
         }
 
-
-        $user_extra = Utilizador::findOne(['fk_user' => $id]);
-        $user_extra->delete();
-
-        $this->findModel($id)->delete();
+        $user = $this->findModel($id);
+            $user->status = User::STATUS_DELETED;
+        $user->save();
 
         return $this->redirect(['index']);
 

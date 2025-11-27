@@ -167,7 +167,7 @@ class m251118_144537_rbac extends Migration
         $auth->add($acceptInvitation);
         $auth->addChild($user, $acceptInvitation);
 
-        // ################################################## BACKEND LOGIN
+        // ################################################## BACKEND
 
         //Permissão para login.
         $enterBackoffice = $auth->createPermission('enterBackoffice');
