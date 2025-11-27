@@ -24,7 +24,6 @@ class m251118_144537_rbac extends Migration
         //Criação da role "Administrator" com a herança de todas as permições do "Technician".
         $administrator = $auth->createRole('administrator');
         $auth->add($administrator);
-        $auth->addChild($administrator, $technician);
         $auth->assign($administrator, 1);
 
 
@@ -167,6 +166,15 @@ class m251118_144537_rbac extends Migration
         $acceptInvitation = $auth->createPermission('acceptInvitation');
         $auth->add($acceptInvitation);
         $auth->addChild($user, $acceptInvitation);
+
+        // ################################################## BACKEND LOGIN
+
+        //Permissão para login.
+        $enterBackoffice = $auth->createPermission('enterBackoffice');
+        $auth->add($enterBackoffice);
+        $auth->addChild($technician, $enterBackoffice);
+
+        $auth->addChild($administrator, $technician);
 
     
     }

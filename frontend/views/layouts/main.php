@@ -148,20 +148,53 @@ $currentRoute = Yii::$app->controller->route;
 
 <?php endif; ?>
 
-<div class="content">
+<!-- Content of the site -->
+<!--<div class="content">-->
+<!--    <main role="main" class="flex-shrink-0">-->
+<!--        <div class="container">-->
+<!--            --><?php //= Breadcrumbs::widget([
+//                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+//            ]) ?>
+<!---->
+<!--            --><?php //= Alert::widget() ?>
+<!--            --><?php //= $content ?>
+<!--        </div>-->
+<!--    </main>-->
+<!--</div>-->
 
-    <main role="main" class="flex-shrink-0">
-        <div class="container">
-            <?= Breadcrumbs::widget([
-                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            ]) ?>
+    <!--
+    Fix to desalinhamento do login.
+    btw não tenho a certeza se era para fazer assim mas por agora fica assim, quem tiver ideia ou tempo para arranjar de outra forma
+    esta bem vindo para o fazer
+    -->
 
-            <?= Alert::widget() ?>
-            <?= $content ?>
-        </div>
-    </main>
+<?php
 
-</div>
+if (!Yii::$app->user->isGuest){
+    echo('<div class="content">');
+    echo('<main role="main" class="flex-shrink-0">');
+    echo('<div class="container">');
+    echo(Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+    ]));
+    echo(Alert::widget());
+    echo($content);
+    echo('</div>');
+    echo('</div>');
+    echo('</div>');
+} else {
+    echo('<div class="container">');
+    echo(Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+    ]));
+    echo(Alert::widget());
+    echo($content);
+    echo('</div>');
+}
+
+?>
+
+
 <?php if (!$hideSidebar): ?>
 <footer class="footer mt-auto py-3 text-muted">
     <div class="container">

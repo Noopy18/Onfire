@@ -112,6 +112,11 @@ class UserController extends Controller
             $model_extra->load($this->request->post());
             if ($model->validate() && $model_extra->validate()) {
                 $model->save();
+
+                $auth = Yii::$app->authManager;
+                $userRole = $auth->getRole('user');
+                $auth->assign($userRole, $model->id);
+
                 $model_extra->fk_user = $model->id;
                 $model_extra->save();
                 return $this->redirect(['view', 'id' => $model->id]);
