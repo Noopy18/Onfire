@@ -287,26 +287,73 @@ class SiteController extends Controller
         $this->layout = 'main'; 
         return $this->render('friends');
 
-        //codigo para devolver os resultados da pesquisa JSON para a pesquisa dos amigos
+    }
 
+    //este codigo precisa de muitas alterações para funcionar corretamente
+    public function actionSearchUsers($q = '')
+    {
         Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 
-        if(trim($q)==='') {
+        $q = trim($q);
+        if ($q === '') {
             return [];
         }
 
+        $currentUser = Yii::$app->user->id;
+
+        // não mostrar o proprio utilizador(eu no caso) nem amigos já adicionados pelo utilizador
+        $alreadyFriends = (new \yii\db\Query())
+            ->select('friend_id')
+            ->from('friends')
+            ->where(['user_id' => $currentUser])
+            ->column();
+
         $users = \common\models\User::find()
             ->where(['like', 'username', $q])
+            ->andWhere(['<>', 'id', $currentUser])
+            ->andWhere(['NOT IN', 'id', $alreadyFriends])
             ->limit(20)
             ->all();
 
         $results = [];
-        foreach($users as $user) {
-            $results[] = ['id' => $user->id, 'text' => $user->username];
+        foreach ($users as $user) {
+            $results[] = [
+                'id' => $user->id,
+                'username' => $user->username,
+                'avatar' => $user->getAvatarUrl(),
+            ];
         }
 
         return $results;
     }
+
+    //REVER ESTE CODIGO PARA TENTAR FUNCIONAR O ADICIONAR AMIGOS CORRETAMENTE
+    public function actionAddFriend($id)
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        $currentUser = Yii::$app->user->id;
+
+        // evitar duplicação
+        $exists = (new \yii\db\Query())
+            ->from('friends')
+            ->where(['user_id' => $currentUser, 'friend_id' => $id])
+            ->exists();
+
+        if ($exists) {
+            return ['success' => false, 'message' => 'Já é teu amigo.'];
+        }
+
+        Yii::$app->db->createCommand()->insert('friends', [
+            'user_id' => $currentUser,
+            'friend_id' => $id,
+        ])->execute();
+
+        return ['success' => true];
+    }
+
+
+
 
     public function actionProfile()
     {
