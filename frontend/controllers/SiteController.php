@@ -78,7 +78,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $this->layout = 'main';
+
+        $categories = \common\models\Category::find()->all();
+
+        return $this->render('index', ['categories' => $categories]);
     }
 
     /**
@@ -263,7 +267,10 @@ class SiteController extends Controller
     public function actionWeekly()
     {
         $this->layout = 'main'; 
-        return $this->render('weekly');
+
+        $categories = \common\models\Category::find()->all();
+
+        return $this->render('weekly', ['categories' => $categories]);
     }
 
     public function actionBadges()
@@ -279,6 +286,26 @@ class SiteController extends Controller
     {
         $this->layout = 'main'; 
         return $this->render('friends');
+
+        //codigo para devolver os resultados da pesquisa JSON para a pesquisa dos amigos
+
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        if(trim($q)==='') {
+            return [];
+        }
+
+        $users = \common\models\User::find()
+            ->where(['like', 'username', $q])
+            ->limit(20)
+            ->all();
+
+        $results = [];
+        foreach($users as $user) {
+            $results[] = ['id' => $user->id, 'text' => $user->username];
+        }
+
+        return $results;
     }
 
     public function actionProfile()

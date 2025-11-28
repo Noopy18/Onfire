@@ -20,10 +20,13 @@ $this->title = 'Desafios Semanais | OnFire';
                 </button>
 
                 <button class="btn btn-success w-100 rounded-pill">Todas as categorias</button>
-                <button class="btn btn-success w-100 rounded-pill">Categoria</button>
-                <button class="btn btn-success w-100 rounded-pill">Categoria</button>
-                <button class="btn btn-success w-100 rounded-pill">Categoria</button>
-                <button class="btn btn-success w-100 rounded-pill">Categoria</button>
+                <!--codigo que puxa as categorias da bd -->
+                <?php foreach ($categories as $cat): ?>
+                    <button class="btn w-100 rounded-pill"
+                        style="background-color: <?= htmlspecialchars($cat->color) ?>; color: white;">
+                        <?= htmlspecialchars($cat->name) ?>
+                    </button>
+                <?php endforeach; ?>
             </div>
         </div>
 
