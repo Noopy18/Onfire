@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use frontend\models\Habit;
 use frontend\models\HabitSearch;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -41,9 +42,16 @@ class HabitController extends Controller
         $searchModel = new HabitSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
+        $user = Yii::$app->user->identity;
+        $categories = \common\models\Category::find()->all();
+        $model = new Habit();
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'categories' => $categories,
+            'user' => $user,
+            'model' => $model
         ]);
     }
 

@@ -14,7 +14,43 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
+            </div>
+        </div>
+        <div class="row">
+
+            <table class="table table-bordered table-hover table-striped dataTable dtr-inline">
+                <thead>
+                    <tr>
+                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="descending">#</th>
+                        <th class="sorting" tabindex="0">First</th>
+                        <th class="sorting" tabindex="0">Last</th>
+                        <th class="sorting" tabindex="0">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
 
     <p>
         <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
@@ -33,14 +69,16 @@ $this->params['breadcrumbs'][] = $this->title;
             //'password_reset_token',
             'email:email',
             'status',
-            //'created_at',
+            'created_at',
             //'updated_at',
             //'verification_token',
             [
                 'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, user $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                'buttons' => [
+                        'view' => function ($url, $model) {
+                            return Html::a('<i class="fas fa-sign-out-alt" hidden></i>', ['/site/logout'], ['data-method' => 'post']);
+                        }
+                ],
             ],
         ],
     ]); ?>

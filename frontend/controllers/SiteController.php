@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use frontend\models\Habit;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -32,7 +33,7 @@ class SiteController extends Controller
                 'only' => ['index', 'contact', 'about', 'weekly', 'badges', 'friends', 'profile', 'settings', 'logout', 'signup'],
                 'rules' => [
                     [
-                        'actions' => ['signup', 'error', 'login'],
+                        'actions' => ['signup', 'error', 'login', 'index'],
                         'allow' => true,
                     ],
                     [
@@ -78,11 +79,21 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $this->layout = 'main';
+        if (Yii::$app->user->isGuest) {
+            $this->layout = "pre-entry";
+            return $this->render('index');
+        }
+        $this->layout = "main";
+        return $this->redirect('habit\index');
 
-        $categories = \common\models\Category::find()->all();
+        //$this->layout = 'main';
+        //$user = Yii::$app->user->identity;
 
-        return $this->render('index', ['categories' => $categories]);
+        //$categories = \common\models\Category::find()->all();
+
+        //$model = new Habit();
+
+        //return $this->render('index', ['model'=> $model, 'categories' => $categories, 'user' => $user]);
     }
 
     /**
