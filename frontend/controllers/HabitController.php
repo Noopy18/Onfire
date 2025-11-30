@@ -45,6 +45,17 @@ class HabitController extends Controller
         $user = Yii::$app->user->identity;
         $categories = \common\models\Category::find()->all();
         $model = new Habit();
+        
+        // Handle habit creation
+        if ($model->load(Yii::$app->request->post())) {
+            $model->fk_utilizador = Yii::$app->user->id;
+            $model->created_at = date('Y-m-d');
+            
+            if ($model->save()) {
+                Yii::$app->session->setFlash('success', 'Habit created successfully!');
+                return $this->refresh();
+            }
+        }
 
         return $this->render('index', [
             'searchModel' => $searchModel,
