@@ -49,29 +49,60 @@ $this->title = 'Inicio | OnFire';
                                 <th class="text-start">Título</th>
                                 <th>Descrição</th>
                                 <th>Categoria</th>
-                                <th>Due Time</th>
                                 <th>Streak</th>
-                                <th>Feito</th>
-                                <th></th>
+                                <th>Próxima</th>
+                                <th>Total Completions</th>
+                                <th>Completion</th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            <tr>
-                                <td class="text-start fw-semibold">Titulo</td>
-                                <td class="text-muted">Descrição do streak</td>
-                                <td>Categoria do streak</td>
-                                <td>tempo que falta</td>
-                                <td class="fw-semibold">3</td>
-                                <td>
-                                    <input type="checkbox" class="form-check-input">
-                                </td>
-                                <td>
-                                    <button class="btn btn-sm rounded-pill px-3" style="background-color: orange">
-                                        Guardar
-                                    </button>
-                                </td>
-                            </tr>
+                            <?php
+
+                            foreach ($dataProvider->getModels() as $habit){
+
+                                $todayDate = date("Y-m-d");
+                                $todayWeekday = date("w")-1;
+                                $weekdayToComplete = json_decode($habit->frequency, true);
+                                $proxima = "Não sei :(";
+
+                                $weekIndex = $todayWeekday;
+                                $totalDayTillNext = 0;
+                                while ($weekdayToComplete[$weekIndex] == 0){
+
+                                    $weekIndex++;
+                                    $totalDayTillNext++;
+                                    if ($weekIndex > 6){
+                                        $weekIndex = 0;
+                                    }
+                                    if ($weekdayToComplete[$weekIndex] == 1){
+                                        break;
+                                    }
+                                }
+
+                                if ($weekdayToComplete[$todayWeekday] == 1){
+                                    $proxima = "Hoje.";
+                                } else if ($weekdayToComplete[$todayWeekday+1] == 1){
+                                    $proxima = "Amanhã.";
+                                } else if ($weekdayToComplete[$todayWeekday+2] == 1){
+                                    $proxima = "Depois de amanhã.";
+                                } else {
+                                    $proxima = date('d/m/Y', strtotime('+'.$totalDayTillNext.' days'));
+                                }
+
+
+                                echo '<tr>';
+                                echo('<td>'.$habit->name.'</td>');
+                                echo('<td>'.$habit->description.'</td>');
+                                echo('<td>'.$habit->category->name.'</td>');
+                                echo('<td>Streak</td>');
+                                echo('<td>'.$proxima.'</td>');
+                                echo('<td>'.count($habit->habitCompletions).'</td>');
+                                echo('<td><button class="btn btn-sm rounded-pill px-3" style="background-color: orange">Guardar</button></td>');
+                                echo('</tr>');
+                            }
+
+                            ?>
                             </tbody>
                         </table>
                     </div>

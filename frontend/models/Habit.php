@@ -80,7 +80,7 @@ class Habit extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getFkCategory()
+    public function getCategory()
     {
         return $this->hasOne(Category::class, ['category_id' => 'fk_category']);
     }
