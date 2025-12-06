@@ -56,8 +56,8 @@ $currentRoute = Yii::$app->controller->route;
     <div class="sidebar pe-4 pb-3">
         <nav class="navbar bg-light navbar-light">
             <div class="navbar-nav w-100">
-                <a href="<?= \yii\helpers\Url::to(['site/index']) ?>"
-                   class="nav-item nav-link" style="margin-top: 100px" <?= $currentRoute == 'site/index' ? 'active' : '' ?>">
+                <a href="<?= \yii\helpers\Url::to(['habit/index']) ?>"
+                   class="nav-item nav-link" style="margin-top: 100px" <?= $currentRoute == 'habit/index' ? 'active' : '' ?>">
                     <i class="fa fa-home"></i> Início
                 </a>
                 <a href="<?= \yii\helpers\Url::to(['site/weekly']) ?>"
@@ -196,9 +196,10 @@ if (!Yii::$app->user->isGuest){
 
 
 <?php if (!$hideSidebar): ?>
+<!-- Footer -->
 <footer class="footer mt-auto py-3 text-muted">
-    <div class="container">
-        <p class="float-start">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+    <div class="container text-center">
+        <p>&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?> Todos os direitos reservados.</p>
     </div>
 </footer>
 <?php endif; ?>
