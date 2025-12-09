@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use frontend\models\Habit;
+use frontend\models\HabitCompletion;
 use frontend\models\HabitSearch;
 use Yii;
 use yii\data\ActiveDataProvider;
@@ -50,15 +51,16 @@ class HabitController extends Controller
             'query' => Habit::find(),
         ]);
         
-        // Handle habit creation
-        if ($model->load(Yii::$app->request->post())) {
-            $model->fk_utilizador = Yii::$app->user->id;
-            $model->created_at = date('Y-m-d');
+        // Handle habit completion
+        $habitCompletion = new HabitCompletion();
+        if ($habitCompletion->load(Yii::$app->request->post())) {
             
-            if ($model->save()) {
-                Yii::$app->session->setFlash('success', 'Habit created successfully!');
+            if ($habitCompletion->save()) {
+                Yii::$app->session->setFlash('success', 'Hábito completado com sucesso!');
                 return $this->refresh();
             }
+            Yii::$app->session->setFlash('error', 'Erro ao completar hábito.');
+            return $this->refresh();
         }
 
         return $this->render('index', [
@@ -90,18 +92,34 @@ class HabitController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Habit();
+        $searchModel = new HabitSearch();
+        //$dataProvider = $searchModel->search($this->request->queryParams);
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'habit_id' => $model->habit_id]);
+        $user = Yii::$app->user->identity;
+        $categories = \common\models\Category::find()->all();
+        $model = new Habit();
+        $dataProvider = new ActiveDataProvider([
+            'query' => Habit::find(),
+        ]);
+
+        if ($model->load(Yii::$app->request->post())) {
+            $model->fk_utilizador = Yii::$app->user->id;
+            $model->created_at = date('Y-m-d');
+
+            if ($model->save()) {
+                Yii::$app->session->setFlash('success', 'Habit created successfully!');
+                return $this->redirect(['index']);
             }
-        } else {
-            $model->loadDefaultValues();
         }
 
+        $this->layout = "pre-entry";
+
         return $this->render('create', [
-            'model' => $model,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'categories' => $categories,
+            'user' => $user,
+            'model' => $model
         ]);
     }
 
