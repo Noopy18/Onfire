@@ -151,4 +151,36 @@ class Habit extends \yii\db\ActiveRecord
     {
         $this->type = self::TYPE_INT;
     }
+
+    public function getStreak(){
+        $creation_date = $this->created_at;
+        $today_date = date("Y-m-d");
+        $frequency = json_decode($this->frequency, true);
+        $hc_array = $this->habitCompletions;
+
+        $streak = 0;
+        $break = false;
+        while ($creation_date != $today_date and !$break){
+            $indexWeekday = date("w", strtotime($today_date))-1;
+            if ($indexWeekday < 0){
+                $indexWeekday = 6;
+            }
+            $add = false;
+            if ($frequency[$indexWeekday] == 1){
+                foreach ($hc_array as $hc){
+                    if ($hc->date == $today_date){
+                        $add = true;
+                    }
+                }
+                if ($add){
+                    $add = false;
+                    $streak++;
+                } else {
+                    break;
+                }
+            }
+            $today_date = date("Y-m-d", strtotime("-1 day", strtotime($today_date)));
+        }
+        return $streak;
+    }
 }

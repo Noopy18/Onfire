@@ -96,7 +96,7 @@ $this->title = 'Inicio | OnFire';
                                 echo('<td>'.$habit->name.'</td>');
                                 echo('<td>'.$habit->description.'</td>');
                                 echo('<td>'.$habit->category->name.'</td>');
-                                echo('<td>Streak</td>');
+                                echo('<td>'.$habit->getStreak().'</td>');
                                 echo('<td>'.$proxima.'</td>');
                                 echo('<td>'.count($habit->habitCompletions).'</td>');
                                 echo('<td>');

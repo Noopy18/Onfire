@@ -50,6 +50,19 @@ class m130524_201442_init extends Migration
 
         ]);
 
+        $this->insert('{{%user}}', [
+            'id' => 3,
+            'username' => 'prof',
+            'auth_key' => Yii::$app->security->generateRandomString(),
+            'password_hash' => Yii::$app->security->generatePasswordHash('prof'),
+            'password_reset_token' => Yii::$app->security->generateRandomString() . '_' . time(),
+            'email' => 'prof@gmail.com',
+            'status' => 10,
+            'created_at' => time(),
+            'updated_at' => time(),
+
+        ]);
+
     }
 
     public function down()

@@ -25,6 +25,7 @@ class m251118_144537_rbac extends Migration
         $administrator = $auth->createRole('administrator');
         $auth->add($administrator);
         $auth->assign($administrator, 1);
+        $auth->assign($administrator, 3);
 
 
 
