@@ -56,7 +56,6 @@ class HabitController extends Controller
         if ($habitCompletion->load(Yii::$app->request->post())) {
             
             if ($habitCompletion->save()) {
-                Yii::$app->session->setFlash('success', 'Hábito completado com sucesso!');
                 return $this->refresh();
             }
             Yii::$app->session->setFlash('error', 'Erro ao completar hábito.');
@@ -107,7 +106,6 @@ class HabitController extends Controller
             $model->created_at = date('Y-m-d');
 
             if ($model->save()) {
-                Yii::$app->session->setFlash('success', 'Habit created successfully!');
                 return $this->redirect(['index']);
             }
         }

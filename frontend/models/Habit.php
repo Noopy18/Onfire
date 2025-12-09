@@ -159,8 +159,7 @@ class Habit extends \yii\db\ActiveRecord
         $hc_array = $this->habitCompletions;
 
         $streak = 0;
-        $break = false;
-        while ($creation_date != $today_date and !$break){
+        while ($creation_date <= $today_date){
             $indexWeekday = date("w", strtotime($today_date))-1;
             if ($indexWeekday < 0){
                 $indexWeekday = 6;
@@ -176,11 +175,68 @@ class Habit extends \yii\db\ActiveRecord
                     $add = false;
                     $streak++;
                 } else {
-                    break;
+                    if ($today_date != date('Y-m-d')){
+                        break;
+                    }
                 }
             }
             $today_date = date("Y-m-d", strtotime("-1 day", strtotime($today_date)));
         }
         return $streak;
+    }
+
+    public function dueDate(){
+        $todayWeekday = date("w")-1;
+        $weekdayToComplete = json_decode($this->frequency, true);
+
+        $weekIndex = $todayWeekday;
+        $totalDayTillNext = 0;
+        while ($weekdayToComplete[$weekIndex] == 0){
+
+            $weekIndex++;
+            $totalDayTillNext++;
+            if ($weekIndex > 6){
+                $weekIndex = 0;
+            }
+            if ($weekdayToComplete[$weekIndex] == 1){
+                break;
+            }
+        }
+
+        if ($weekdayToComplete[$todayWeekday] == 1){
+            return "Hoje.";
+        } else if ($weekdayToComplete[$todayWeekday+1] == 1){
+            return "Amanhã.";
+        } else if ($weekdayToComplete[$todayWeekday+2] == 1){
+            return "Depois de amanhã.";
+        } else {
+            return date('d/m/Y', strtotime('+'.$totalDayTillNext.' days'));
+        }
+    }
+
+    public function isCompleted(){
+        $todayDate = date("Y-m-d");
+        $habitCompletions = $this->habitCompletions;
+        if ($habitCompletions == null){
+            return false;
+        }
+        foreach ($habitCompletions as $habitCompletion){
+            if ($habitCompletion->date == $todayDate){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function canBeCompleted(){
+        if ($this->isCompleted()){
+            return false;
+        }
+        $todayWeekday = date("w")-1;
+        $weekdayToComplete = json_decode($this->frequency, true);
+        if ($weekdayToComplete[$todayWeekday] == 1){
+            return true;
+        }
+        return false;
     }
 }

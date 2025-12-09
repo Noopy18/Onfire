@@ -62,77 +62,28 @@ $this->title = 'Inicio | OnFire';
 
                             foreach ($dataProvider->getModels() as $habit){
 
-                                $todayDate = date("Y-m-d");
-                                $todayWeekday = date("w")-1;
-                                $weekdayToComplete = json_decode($habit->frequency, true);
-                                $proxima = "Não sei :(";
-
-                                $weekIndex = $todayWeekday;
-                                $totalDayTillNext = 0;
-                                while ($weekdayToComplete[$weekIndex] == 0){
-
-                                    $weekIndex++;
-                                    $totalDayTillNext++;
-                                    if ($weekIndex > 6){
-                                        $weekIndex = 0;
-                                    }
-                                    if ($weekdayToComplete[$weekIndex] == 1){
-                                        break;
-                                    }
-                                }
-
-                                if ($weekdayToComplete[$todayWeekday] == 1){
-                                    $proxima = "Hoje.";
-                                } else if ($weekdayToComplete[$todayWeekday+1] == 1){
-                                    $proxima = "Amanhã.";
-                                } else if ($weekdayToComplete[$todayWeekday+2] == 1){
-                                    $proxima = "Depois de amanhã.";
-                                } else {
-                                    $proxima = date('d/m/Y', strtotime('+'.$totalDayTillNext.' days'));
-                                }
-
-
                                 echo '<tr>';
                                 echo('<td>'.$habit->name.'</td>');
                                 echo('<td>'.$habit->description.'</td>');
                                 echo('<td>'.$habit->category->name.'</td>');
                                 echo('<td>'.$habit->getStreak().'</td>');
-                                echo('<td>'.$proxima.'</td>');
+                                echo('<td>'.$habit->dueDate().'</td>');
                                 echo('<td>'.count($habit->habitCompletions).'</td>');
                                 echo('<td>');
 
-                                if ($habit->habitCompletions != null){
-                                    foreach ($habit->habitCompletions as $completion){
-                                        if ($completion->date == $todayDate){
-                                            echo('<button class="btn btn-sm rounded-pill px-3" style="background-color: lime">Completed!</button>');
-                                            break;
-                                        } else {
-                                            if ($weekdayToComplete[$todayWeekday] == 1){
-                                                echo Html::beginForm(['habit/index'], 'post');
-                                                echo Html::hiddenInput('HabitCompletion[fk_habit]', $habit->habit_id);
-                                                echo Html::hiddenInput('HabitCompletion[completed]', true);
-                                                echo Html::hiddenInput('HabitCompletion[date]', date('Y-m-d'));
-                                                echo Html::submitButton('Completar', ['class' => 'btn btn-sm rounded-pill px-3', 'style' => 'background-color: orange']);
-                                                echo Html::endForm();
-                                                break;
-                                            } else {
-                                                echo('<button class="btn btn-sm rounded-pill px-3" style="background-color: grey">Not the day!</button>');
-                                                break;
-                                            }
-                                        }
-                                    }
+                                if ($habit->isCompleted()){
+                                    echo('<button class="btn btn-sm rounded-pill px-3" style="background-color: lime">Completed!</button>');
+                                } elseif ($habit->canBeCompleted()) {
+                                    echo Html::beginForm(['habit/index'], 'post');
+                                    echo Html::hiddenInput('HabitCompletion[fk_habit]', $habit->habit_id);
+                                    echo Html::hiddenInput('HabitCompletion[completed]', true);
+                                    echo Html::hiddenInput('HabitCompletion[date]', date('Y-m-d'));
+                                    echo Html::submitButton('Completar', ['class' => 'btn btn-sm rounded-pill px-3', 'style' => 'background-color: orange']);
+                                    echo Html::endForm();
                                 } else {
-                                    if ($weekdayToComplete[$todayWeekday] == 1){
-                                        echo Html::beginForm(['habit/index'], 'post');
-                                        echo Html::hiddenInput('HabitCompletion[fk_habit]', $habit->habit_id);
-                                        echo Html::hiddenInput('HabitCompletion[completed]', true);
-                                        echo Html::hiddenInput('HabitCompletion[date]', date('Y-m-d'));
-                                        echo Html::submitButton('Completar', ['class' => 'btn btn-sm rounded-pill px-3', 'style' => 'background-color: orange']);
-                                        echo Html::endForm();
-                                    } else {
-                                        echo('<button class="btn btn-sm rounded-pill px-3" style="background-color: grey">Not the day!</button>');
-                                    }
+                                    echo('<button class="btn btn-sm rounded-pill px-3" style="background-color: grey">Not the day!</button>');
                                 }
+
                                 echo('</td>');
                                 echo('</tr>');
                             }
