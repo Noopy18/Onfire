@@ -109,7 +109,7 @@ $this->title = 'Inicio | OnFire';
                                         } else {
                                             if ($weekdayToComplete[$todayWeekday] == 1){
                                                 echo Html::beginForm(['habit/index'], 'post');
-                                                echo Html::hiddenInput('HabitCompletion[fk_habit]', $habit->id);
+                                                echo Html::hiddenInput('HabitCompletion[fk_habit]', $habit->habit_id);
                                                 echo Html::hiddenInput('HabitCompletion[completed]', true);
                                                 echo Html::hiddenInput('HabitCompletion[date]', date('Y-m-d'));
                                                 echo Html::submitButton('Completar', ['class' => 'btn btn-sm rounded-pill px-3', 'style' => 'background-color: orange']);
