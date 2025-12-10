@@ -41,15 +41,13 @@ class HabitController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new HabitSearch();
-        //$dataProvider = $searchModel->search($this->request->queryParams);
-
-        $user = Yii::$app->user->identity;
         $categories = \common\models\Category::find()->all();
         $model = new Habit();
         $dataProvider = new ActiveDataProvider([
             'query' => Habit::find(),
         ]);
+
+        $selectedCategory = Yii::$app->request->get('selectedCategory');
         
         // Handle habit completion
         $habitCompletion = new HabitCompletion();
@@ -63,10 +61,9 @@ class HabitController extends Controller
         }
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'categories' => $categories,
-            'user' => $user,
+            'selectedCategory' => $selectedCategory,
             'model' => $model
         ]);
     }

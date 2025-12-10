@@ -22,19 +22,32 @@ $this->title = 'Inicio | OnFire';
         <!-- Sidebar de Categorias -->
         <div class="col-md-3">
             <div class="d-flex flex-column gap-2">
-                <button class="btn w-100 rounded-pill" style="background-color: #ff7b00;"
-                        data-bs-toggle="modal" data-bs-target="#createHabitModal">
+                <button class="btn w-100 rounded-pill" style="background-color: #ff7b00;" data-bs-toggle="modal" data-bs-target="#createHabitModal">
                     <i class="bi bi-plus-circle"></i> Criar Novo Hábito
                 </button>
 
-                <button class="btn btn-success w-100 rounded-pill">Todas as categorias</button>
-                <!--codigo que puxa as categorias da bd -->
-                <?php foreach ($categories as $cat): ?>
-                    <button class="btn w-100 rounded-pill"
-                            style="background-color: <?= htmlspecialchars($cat->color) ?>; color: white;">
-                        <?= htmlspecialchars($cat->name) ?>
-                    </button>
-                <?php endforeach; ?>
+                <?php
+
+                echo Html::a("Todas as Categorias", ['habit/index', 'selectedCategory' => null], [
+                        'class' => 'btn w-100 rounded-pill btn-success',
+                ]);
+
+                foreach ($categories as $category) {
+
+                    //Código da net para dividir o HEX em RGB.
+                    $color = list($r, $g, $b) = sscanf($category->color, "#%02x%02x%02x");
+
+                    $check_light = $color[1] + $color[1] +$color[1] / 1000;
+                    //#000000 = White | #FFFFFF = Black | se o RGB a dividir por 1000 é menor de 250, cor é escura.
+                    $text_color = $check_light > 250 ? '#000000' : '#FFFFFF';
+
+                    echo Html::a($category->name, ['habit/index', 'selectedCategory' => $category->category_id], [
+                            'class' => 'btn w-100 rounded-pill',
+                            'style' => 'background-color: '.htmlspecialchars($category->color).'; color: '.htmlspecialchars($text_color).'; border-color: black;',
+                    ]);
+                }
+
+                ?>
             </div>
         </div>
 
@@ -54,14 +67,27 @@ $this->title = 'Inicio | OnFire';
                                 <th>Próxima</th>
                                 <th>Total Completions</th>
                                 <th>Completion</th>
+                                <th>Settings</th>
                             </tr>
                             </thead>
 
                             <tbody>
                             <?php
 
-                            foreach ($dataProvider->getModels() as $habit){
+                            //Find by category.
+                            $models = $dataProvider->getModels();
+                            $searchedArray = [];
+                            if ($selectedCategory != null) {
+                                foreach ($models as $model) {
+                                    if ($selectedCategory == $model->fk_category) {
+                                        $searchedArray[] = $model;
+                                    }
+                                }
+                            } else {
+                                $searchedArray = $models;
+                            }
 
+                            foreach ($searchedArray as $habit){
                                 echo '<tr>';
                                 echo('<td>'.$habit->name.'</td>');
                                 echo('<td>'.$habit->description.'</td>');
@@ -85,6 +111,13 @@ $this->title = 'Inicio | OnFire';
                                 }
 
                                 echo('</td>');
+
+                                echo('<td>');
+                                echo Html::beginForm(['habit/view', 'habit_id' => $habit->habit_id], 'post');
+                                echo Html::submitButton('<i class="bi bi-gear-fill"></i>', ['class' => 'btn btn-sm rounded-pill px-3', 'style' => 'background-color: orange']);
+                                echo Html::endForm();
+                                echo('</td>');
+
                                 echo('</tr>');
                             }
 
