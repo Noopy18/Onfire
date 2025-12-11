@@ -152,18 +152,25 @@ class Habit extends \yii\db\ActiveRecord
         $this->type = self::TYPE_INT;
     }
 
-    public function getStreak(){
+    public function getStreaks(){
+        $streaks = [];
+
         $creation_date = $this->created_at;
         $today_date = date("Y-m-d");
         $frequency = json_decode($this->frequency, true);
         $hc_array = $this->habitCompletions;
 
         $streak = 0;
+        //while its not the creation day, decrease days until then
         while ($creation_date <= $today_date){
+
+            //decrement week days and loop around 0 to 6
             $indexWeekday = date("w", strtotime($today_date))-1;
             if ($indexWeekday < 0){
                 $indexWeekday = 6;
             }
+
+            // when its a weekday that has to be completed check if exists complition, if not save the string to array and start streak count over
             $add = false;
             if ($frequency[$indexWeekday] == 1){
                 foreach ($hc_array as $hc){
@@ -174,15 +181,30 @@ class Habit extends \yii\db\ActiveRecord
                 if ($add){
                     $add = false;
                     $streak++;
+                    if ($this->created_at == date('Y-m-d')){
+                        $streaks[] = $streak;
+                    }
                 } else {
                     if ($today_date != date('Y-m-d')){
-                        break;
+                        $streaks[] = $streak;
+                        $streak = 0;
                     }
                 }
             }
+
+            //subtract a day
             $today_date = date("Y-m-d", strtotime("-1 day", strtotime($today_date)));
         }
-        return $streak;
+        if (count($streaks) > 0){ return $streaks; }
+        return [0];
+    }
+
+    public function getStreak(){
+        return $this->getStreaks()[0];
+    }
+
+    public function getBestStreak(){
+        return max($this->getStreaks());
     }
 
     public function dueDate(){
@@ -238,5 +260,38 @@ class Habit extends \yii\db\ActiveRecord
             return true;
         }
         return false;
+    }
+
+    public function getSuccessRate(){
+
+        $all_days = 0;
+
+        $creation_date = $this->created_at;
+        $today_date = date("Y-m-d");
+        $frequency = json_decode($this->frequency, true);
+        $hc_array = $this->habitCompletions;
+
+        $streak = 0;
+        //while its not the creation day, decrease days until then
+        while ($creation_date <= $today_date){
+
+            //decrement week days and loop around 0 to 6
+            $indexWeekday = date("w", strtotime($today_date))-1;
+            if ($indexWeekday < 0){
+                $indexWeekday = 6;
+            }
+
+            // when its a weekday that has to be completed check if exists complition, if not save the string to array and start streak count over
+            if ($frequency[$indexWeekday] == 1){
+                $all_days++;
+            }
+
+            //subtract a day
+            $today_date = date("Y-m-d", strtotime("-1 day", strtotime($today_date)));
+        }
+
+        if (count($hc_array) > 0) { return round((count($hc_array) / $all_days) * 100); }
+        return 0;
+
     }
 }

@@ -53,8 +53,18 @@ $currentRoute = Yii::$app->controller->route;
 <?php if (!$hideSidebar): ?>
 
     <!-- Sidebar Start -->
-    <div class="sidebar pe-4 pb-3">
+    <div class="sidebar bg-light pe-4 pb-3">
         <nav class="navbar bg-light navbar-light">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center justify-content-center gap-2">
+                    <?= Html::img('@web/img/logo_Onfire_no_bg_centered.png', [
+                            'alt' => 'OnFire Logo',
+                            'style' => 'width: 35%; height: 35%; object-fit: contain;',
+                            'class' => 'img-fluid',
+                    ]); ?>
+                    <h4 class="mb-0" style="font-family: Gadugi,serif">OnFire</h4>
+                </div>
+            </div>
             <div class="navbar-nav w-100">
                 <a href="<?= \yii\helpers\Url::to(['habit/index']) ?>"
                    class="nav-item nav-link" style="margin-top: 100px" <?= $currentRoute == 'habit/index' ? 'active' : '' ?>">
@@ -117,13 +127,6 @@ $currentRoute = Yii::$app->controller->route;
     <a href="#" class="sidebar-toggler flex-shrink-0">
         <i class="fa fa-bars"></i>
     </a>
-
-        <div class="navbar-brand mx-auto d-flex justify-content-center align-items-center position-absolute top-50 start-50 translate-middle">
-            <?= Html::img('@web/img/logo_Onfire_no_bg.png', [
-                'alt' => 'OnFire Logo',
-                'style' => 'width: 70px; height: 70px; object-fit: contain;'
-            ]); ?>
-        </div>
 
     <!-- Notificações à direita -->
     <div class="navbar-nav align-items-center ms-auto">

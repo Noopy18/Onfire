@@ -76,6 +76,17 @@ class HabitController extends Controller
      */
     public function actionView($habit_id)
     {
+        // Handle habit completion
+        $habitCompletion = new HabitCompletion();
+        if ($habitCompletion->load(Yii::$app->request->post())) {
+
+            if ($habitCompletion->save()) {
+                return $this->refresh();
+            }
+            Yii::$app->session->setFlash('error', 'Erro ao completar hábito.');
+            return $this->refresh();
+        }
+
         return $this->render('view', [
             'model' => $this->findModel($habit_id),
         ]);
@@ -127,6 +138,7 @@ class HabitController extends Controller
      */
     public function actionUpdate($habit_id)
     {
+        $categories = \common\models\Category::find()->all();
         $model = $this->findModel($habit_id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
@@ -135,6 +147,7 @@ class HabitController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'categories' => $categories
         ]);
     }
 
@@ -147,7 +160,13 @@ class HabitController extends Controller
      */
     public function actionDelete($habit_id)
     {
-        $this->findModel($habit_id)->delete();
+        $habit = $this->findModel($habit_id);
+
+        foreach ($habit->habitCompletions as $habitCompletion) {
+            $habitCompletion->delete();
+        }
+
+        $habit->delete();
 
         return $this->redirect(['index']);
     }

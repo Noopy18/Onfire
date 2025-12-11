@@ -98,16 +98,16 @@ $this->title = 'Inicio | OnFire';
                                 echo('<td>');
 
                                 if ($habit->isCompleted()){
-                                    echo('<button class="btn btn-sm rounded-pill px-3" style="background-color: lime">Completed!</button>');
+                                    echo('<button class="btn btn-sm rounded-pill px-3 bg-success text-white">Completed!</button>');
                                 } elseif ($habit->canBeCompleted()) {
                                     echo Html::beginForm(['habit/index'], 'post');
                                     echo Html::hiddenInput('HabitCompletion[fk_habit]', $habit->habit_id);
                                     echo Html::hiddenInput('HabitCompletion[completed]', true);
                                     echo Html::hiddenInput('HabitCompletion[date]', date('Y-m-d'));
-                                    echo Html::submitButton('Completar', ['class' => 'btn btn-sm rounded-pill px-3', 'style' => 'background-color: orange']);
+                                    echo Html::submitButton('Completar', ['class' => 'btn btn-sm rounded-pill px-3 text-white', 'style' => 'background-color: orange']);
                                     echo Html::endForm();
                                 } else {
-                                    echo('<button class="btn btn-sm rounded-pill px-3" style="background-color: grey">Not the day!</button>');
+                                    echo('<button class="btn btn-sm rounded-pill px-3 text-white" style="background-color: grey">Not the day!</button>');
                                 }
 
                                 echo('</td>');
