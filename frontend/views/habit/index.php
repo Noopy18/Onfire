@@ -33,17 +33,9 @@ $this->title = 'Inicio | OnFire';
                 ]);
 
                 foreach ($categories as $category) {
-
-                    //Código da net para dividir o HEX em RGB.
-                    $color = list($r, $g, $b) = sscanf($category->color, "#%02x%02x%02x");
-
-                    $check_light = $color[1] + $color[1] +$color[1] / 1000;
-                    //#000000 = White | #FFFFFF = Black | se o RGB a dividir por 1000 é menor de 250, cor é escura.
-                    $text_color = $check_light > 250 ? '#000000' : '#FFFFFF';
-
                     echo Html::a($category->name, ['habit/index', 'selectedCategory' => $category->category_id], [
                             'class' => 'btn w-100 rounded-pill',
-                            'style' => 'background-color: '.htmlspecialchars($category->color).'; color: '.htmlspecialchars($text_color).'; border-color: black;',
+                            'style' => 'background-color: '.$category->color.'; color: '.$category->getOppositeColor().'; border-color: black;',
                     ]);
                 }
 

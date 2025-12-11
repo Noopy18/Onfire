@@ -14,29 +14,42 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="habit-view py-4">
 
     <div class="container">
-    
-         <div class="card shadow-sm border-0 mb-3 " style="background-color: orange">
-            <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col-md-8">
-                        <div class="d-flex align-items-center mb-3">
-                            <h1 class="h2 mb-0 mr-3 text-white"><?= Html::encode($model->name) ?></h1>
-                        </div>
-                        <p class="text-success align-items-center justify-content-center">
-                            <?= $model->description ?>
-                        </p>
-                    </div>
-                    <div class="col-md-4 text-md-end">
-                        <div class="d-flex flex-wrap gap-2 justify-content-md-end">
-                            <p class="text-success align-items-center justify-content-center">
-                                <i class="fas fa-info-circle"></i> Categoria: <?= Html::encode($model->category->name) ?>
-                            </p>
+
+        <div class="row g-3">
+            <div class="col-md-9">
+                <div class="card shadow-sm border-0 mb-3 " style="background-color: orange">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <div class="d-flex align-items-center mb-3">
+                                    <h1 class="h2 mb-0 mr-3 text-white"><?= $model->name ?></h1>
+                                </div>
+                                <p class="text-success align-items-center justify-content-center">
+                                    <?= $model->description ?>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
+            </div>
+            <div class="col-md-3">
+                <div class="card shadow-sm border-1 mb-3 " style="background-color: <?= $model->category->color ?>">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <div class="d-flex align-items-center mb-3">
+                                    <h1 class="h2 mb-0 mr-3" style="color: <?= $model->category->getOppositeColor()?>">Categoria: </h1>
+                                </div>
+                                <p class="align-items-center justify-content-center" style="color: <?= $model->category->getOppositeColor()?>">
+                                    <?= $model->category->name ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
 
         <div class="row g-3 mb-3">
             <div class="col-md-6">

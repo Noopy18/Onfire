@@ -2,6 +2,7 @@
 
 namespace frontend\models;
 
+use common\models\Category;
 use common\models\Utilizador;
 use Yii;
 

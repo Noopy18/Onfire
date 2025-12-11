@@ -63,4 +63,12 @@ class Category extends \yii\db\ActiveRecord
         return $this->hasMany(Habit::class, ['fk_category' => 'category_id']);
     }
 
+    public function getOppositeColor(){
+        $color = list($r, $g, $b) = sscanf($this->color, "#%02x%02x%02x");
+
+        $check_light = $color[1] + $color[1] +$color[1] / 1000;
+        //#000000 = White | #FFFFFF = Black | se o RGB a dividir por 1000 é menor de 250, cor é escura.
+        return $check_light > 250 ? '#000000' : '#FFFFFF';
+    }
+
 }
