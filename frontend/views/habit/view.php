@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="habit-view py-4">
 
-    <div class="container">
+    <div class="container-fluid py-4">
 
         <div class="row g-3">
             <div class="col-md-9">
@@ -27,6 +27,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <p class="text-success align-items-center justify-content-center">
                                     <?= $model->description ?>
                                 </p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <div class="d-flex flex-wrap gap-2 justify-content-md-end">
+                                    <p class="text-white align-items-center justify-content-center">Data de criação: <br><?= $model->created_at ?></p>
+                                </div>
                             </div>
                         </div>
                     </div>

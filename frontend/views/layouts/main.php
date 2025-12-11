@@ -152,50 +152,41 @@ $currentRoute = Yii::$app->controller->route;
 <?php endif; ?>
 
 <!-- Content of the site -->
-<!--<div class="content">-->
-<!--    <main role="main" class="flex-shrink-0">-->
-<!--        <div class="container">-->
-<!--            --><?php //= Breadcrumbs::widget([
-//                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-//            ]) ?>
-<!---->
-<!--            --><?php //= Alert::widget() ?>
-<!--            --><?php //= $content ?>
-<!--        </div>-->
-<!--    </main>-->
-<!--</div>-->
+<div class="content">
+    <main role="main" class="flex-shrink-0">
+        <?= Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
 
-    <!--
-    Fix to desalinhamento do login.
-    btw não tenho a certeza se era para fazer assim mas por agora fica assim, quem tiver ideia ou tempo para arranjar de outra forma
-    esta bem vindo para o fazer
-    -->
+        <?= Alert::widget() ?>
+        <?= $content ?>
+    </main>
+</div>
 
 <?php
-
-if (!Yii::$app->user->isGuest){
-    echo('<div class="content">');
-    echo('<main role="main" class="flex-shrink-0">');
-    echo('<div class="container">');
-    echo(Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-    ]));
-    echo(Alert::widget());
-    echo($content);
-    echo('</div>');
-    echo('</div>');
-    echo('</div>');
-} else {
-    echo('<div class="container">');
-    echo(Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-    ]));
-    echo(Alert::widget());
-    echo($content);
-    echo('</div>');
-}
-
-?>
+//if (!Yii::$app->user->isGuest){
+//    echo('<div class="content">');
+//    echo('<main role="main" class="flex-shrink-0">');
+//    echo('<div class="container">');
+//    echo(Breadcrumbs::widget([
+//            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+//    ]));
+//    echo(Alert::widget());
+//    echo($content);
+//    echo('</div>');
+//    echo('</div>');
+//    echo('</div>');
+//} else {
+//    echo('<div class="container">');
+//    echo(Breadcrumbs::widget([
+//            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+//    ]));
+//    echo(Alert::widget());
+//    echo($content);
+//    echo('</div>');
+//}
+//
+//?>
 
 
 <?php if (!$hideSidebar): ?>

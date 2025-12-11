@@ -114,6 +114,8 @@ class SiteController extends Controller
 
         $model->password = '';
 
+        $this->layout = "pre-entry";
+
         return $this->render('login', [
             'model' => $model,
         ]);

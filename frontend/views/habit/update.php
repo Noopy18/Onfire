@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'ha
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="habit-update">
-    <div class="container-fluid">
+    <div class="container-fluid py-4">
         <div class="card-body p-4">
             <?php echo Html::beginForm(['habit/update', 'habit_id' => $model->habit_id], 'post'); ?>
 
