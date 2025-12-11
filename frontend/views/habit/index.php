@@ -32,6 +32,10 @@ $this->title = 'Inicio | OnFire';
                         'class' => 'btn w-100 rounded-pill btn-success',
                 ]);
 
+                echo Html::a("Hábitos Archivados", ['habit/index', 'selectedCategory' => null], [
+                        'class' => 'btn w-100 rounded-pill btn-secondary',
+                ]);
+
                 foreach ($categories as $category) {
                     echo Html::a($category->name, ['habit/index', 'selectedCategory' => $category->category_id], [
                             'class' => 'btn w-100 rounded-pill',
