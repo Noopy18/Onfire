@@ -56,10 +56,6 @@ $this->title = 'Entrar';
                     Não tem conta? <?= Html::a('Criar conta', ['site/signup']) ?>
                 </p>
 
-                <p class="text-center">
-                    <?= Html::a('Sobre nós', ['site/about']) ?>
-                </p>
-
             <?php ActiveForm::end(); ?>
         </div>
 

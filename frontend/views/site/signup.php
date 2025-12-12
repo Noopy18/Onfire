@@ -12,8 +12,7 @@ $this->title = 'Criar conta';
 ?>
 <div class="site-signup">
 
-
-    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+   <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
     <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
 
         <div class="card shadow-lg rounded-4 p-4">
