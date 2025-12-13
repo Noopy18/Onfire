@@ -209,7 +209,9 @@ class Habit extends \yii\db\ActiveRecord
     }
 
     public function dueDate(){
-        $todayWeekday = date("w")-1;
+        // +6 para a semana começar na segunda, e %7 para dividir e dar o resto que é igual ao dia da semana
+        $todayWeekday = (date("w") + 6) % 7;
+
         $weekdayToComplete = json_decode($this->frequency, true);
 
         $weekIndex = $todayWeekday;
@@ -221,16 +223,16 @@ class Habit extends \yii\db\ActiveRecord
             if ($weekIndex > 6){
                 $weekIndex = 0;
             }
-            if ($weekdayToComplete[$weekIndex] == 1){
+            if ($weekdayToComplete[$weekIndex  % 7] == 1){
                 break;
             }
         }
 
         if ($weekdayToComplete[$todayWeekday] == 1){
             return "Hoje.";
-        } else if ($weekdayToComplete[$todayWeekday+1] == 1){
+        } else if ($weekdayToComplete[($todayWeekday+1) % 7] == 1){
             return "Amanhã.";
-        } else if ($weekdayToComplete[$todayWeekday+2] == 1){
+        } else if ($weekdayToComplete[($todayWeekday+2) % 7] == 1){
             return "Depois de amanhã.";
         } else {
             return date('d/m/Y', strtotime('+'.$totalDayTillNext.' days'));
