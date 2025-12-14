@@ -2,6 +2,9 @@
 
 namespace common\models;
 
+use common\models\User;
+use frontend\models\Friends;
+use frontend\models\Habit;
 use Yii;
 
 /**
@@ -39,6 +42,11 @@ class Utilizador extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getHabits()
+    {
+        return $this->hasMany(Habit::class, ['fk_utilizador' => 'utilizador_id']);
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -50,6 +58,11 @@ class Utilizador extends \yii\db\ActiveRecord
             'name' => 'Name',
             'fk_user' => 'Fk User',
         ];
+    }
+
+    public function friendshipWith($id){
+        $friends = new Friends();
+        return $friends->findFriendship($id);
     }
 
 }

@@ -78,8 +78,8 @@ $currentRoute = Yii::$app->controller->route;
                    class="nav-item nav-link <?= $currentRoute == 'site/badges' ? 'active' : '' ?>">
                     <i class="bi bi-trophy"></i> Conquistas
                 </a>
-                <a href="<?= \yii\helpers\Url::to(['site/friends']) ?>"
-                   class="nav-item nav-link <?= $currentRoute == 'site/friends' ? 'active' : '' ?>">
+                <a href="<?= \yii\helpers\Url::to(['friends/index']) ?>"
+                   class="nav-item nav-link <?= $currentRoute == 'friends/index' ? 'active' : '' ?>">
                     <i class="bi bi-people"></i> Amigos
                 </a>
                 <a href="<?= \yii\helpers\Url::to(['site/profile']) ?>"

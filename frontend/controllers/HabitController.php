@@ -44,7 +44,8 @@ class HabitController extends Controller
         $categories = \common\models\Category::find()->all();
         $model = new Habit();
         $dataProvider = new ActiveDataProvider([
-            'query' => Habit::find(),
+            'query' => Habit::find()
+            ->where(['fk_utilizador' => Yii::$app->user->id]),
         ]);
 
         $selectedCategory = Yii::$app->request->get('selectedCategory');
@@ -76,6 +77,21 @@ class HabitController extends Controller
      */
     public function actionView($habit_id)
     {
+
+        if ( $habit_id == null ) {
+            return $this->redirect(['index']);
+        } 
+        
+        if ( !Yii::$app->user->isGuest ) {
+            $currentUserId = Yii::$app->user->id;
+            $habit = $this->findModel($habit_id);
+            if ( $habit->fk_utilizador != $currentUserId ) {
+                return $this->redirect(['index']);
+            }
+        } else {
+            return $this->redirect(['index']);
+        }
+
         // Handle habit completion
         $habitCompletion = new HabitCompletion();
         if ($habitCompletion->load(Yii::$app->request->post())) {

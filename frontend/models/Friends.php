@@ -3,6 +3,7 @@
 namespace frontend\models;
 
 use Yii;
+use common\models\Utilizador;
 
 /**
  * This is the model class for table "friends".
@@ -139,5 +140,16 @@ class Friends extends \yii\db\ActiveRecord
     public function setStatusToPendente()
     {
         $this->status = self::STATUS_PENDENTE;
+    }
+
+    public static function findFriendship($otherUser){
+
+        $currentUser = Yii::$app->user->id;
+
+        return self::find()->where([
+            'or',
+            ['sender' => $currentUser, 'receiver' => $otherUser],
+            ['sender' => $otherUser, 'receiver' => $currentUser]
+        ])->one();
     }
 }

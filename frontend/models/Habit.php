@@ -257,7 +257,7 @@ class Habit extends \yii\db\ActiveRecord
         if ($this->isCompleted()){
             return false;
         }
-        $todayWeekday = date("w")-1;
+        $todayWeekday = (date("w")+6) % 7;
         $weekdayToComplete = json_decode($this->frequency, true);
         if ($weekdayToComplete[$todayWeekday] == 1){
             return true;
