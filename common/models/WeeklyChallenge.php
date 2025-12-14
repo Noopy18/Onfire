@@ -65,4 +65,19 @@ class WeeklyChallenge extends \yii\db\ActiveRecord
         return $this->hasMany(WeeklyChallengeUtilizador::class, ['fk_weekly_challenge' => 'weekly_challenge_id']);
     }
 
+    public function isCompletedByUser($userId = null)
+    {
+        if ($userId === null) {
+            $userId = Yii::$app->user->id;
+        }
+
+        return WeeklyChallengeUtilizador::find()
+        ->innerJoinWith('weeklyChallengeCompletions')
+        ->where([
+            'weekly_challenge_utilizador.fk_weekly_challenge' => $this->weekly_challenge_id,
+            'weekly_challenge_utilizador.fk_utilizador' => $userId,
+            'weekly_challenge_completion.completed' => 1,
+        ])
+        ->exists();
+    }
 }

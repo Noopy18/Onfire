@@ -70,8 +70,8 @@ $currentRoute = Yii::$app->controller->route;
                    class="nav-item nav-link" style="margin-top: 100px" <?= $currentRoute == 'habit/index' ? 'active' : '' ?>">
                     <i class="fa fa-home"></i> Início
                 </a>
-                <a href="<?= \yii\helpers\Url::to(['site/weekly']) ?>"
-                   class="nav-item nav-link <?= $currentRoute == 'site/weekly' ? 'active' : '' ?>">
+                <a href="<?= \yii\helpers\Url::to(['weekly/index']) ?>"
+                   class="nav-item nav-link <?= $currentRoute == 'weekly/index' ? 'active' : '' ?>">
                     <i class="bi bi-calendar"></i> Desafios Semanais
                 </a>
                 <a href="<?= \yii\helpers\Url::to(['site/badges']) ?>"

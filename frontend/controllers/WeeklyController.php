@@ -2,16 +2,20 @@
 
 namespace frontend\controllers;
 
-use frontend\models\WeeklyChallenge;
+use common\models\WeeklyChallenge;
 use frontend\models\WeeklyChallengeSearch;
+use frontend\models\WeeklyChallengeCompletion;
+use common\models\WeeklyChallengeUtilizador;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
+use yii;
 
 /**
  * WeeklyChallengeController implements the CRUD actions for WeeklyChallenge model.
  */
-class WeeklyChallengeController extends Controller
+class WeeklyController extends Controller
 {
     /**
      * @inheritDoc
@@ -38,11 +42,41 @@ class WeeklyChallengeController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new WeeklyChallengeSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $dataProvider = new ActiveDataProvider([
+            'query' => WeeklyChallenge::find()
+                ->where(['status' => 1]),
+        ]);
+
+        
+        $completion = new WeeklyChallengeCompletion();
+
+        if ($completion->load(Yii::$app->request->post())) {
+
+            
+            $weeklychallengeuser = WeeklyChallengeUtilizador::findOne([
+                'fk_weekly_challenge' => $completion->fk_weekly_challenge,
+                'fk_utilizador' => Yii::$app->user->id,
+            ]);
+
+            if ($weeklychallengeuser === null) {
+                $weeklychallengeuser = new WeeklyChallengeUtilizador();
+                $weeklychallengeuser->fk_weekly_challenge = $completion->fk_weekly_challenge;
+                $weeklychallengeuser->fk_utilizador = Yii::$app->user->id;
+                $weeklychallengeuser->save(false);
+            }
+
+            // if que evita o user concluir mais que uma vez o mesmo desafio semanal
+            if (!$weeklychallengeuser->isCompleted()) {
+                $completion->fk_weekly_challenge_utilizador = $weeklychallengeuser->weekly_challenge_utilizador_id;
+                $completion->completed = 1;
+                $completion->date = date('Y-m-d');
+                $completion->save(false);
+            }
+
+            return $this->refresh();
+        }
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

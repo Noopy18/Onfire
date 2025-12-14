@@ -14,11 +14,6 @@ $this->title = 'Desafios Semanais | OnFire';
         <!-- Sidebar de Categorias -->
         <div class="col-md-3">
             <div class="d-flex flex-column gap-2">
-                <button class="btn w-100 rounded-pill" style="background-color: #ff7b00;"
-                        data-bs-toggle="modal" data-bs-target="#createHabitModal">
-                    <i class="bi bi-plus-circle"></i> Criar Novo Hábito
-                </button>
-
                 <button class="btn btn-success w-100 rounded-pill">Todas as categorias</button>
                 <!--codigo que puxa as categorias da bd -->
                 <?php foreach ($categories as $cat): ?>

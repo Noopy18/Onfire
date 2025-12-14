@@ -282,10 +282,8 @@ class SiteController extends Controller
     public function actionWeekly()
     {
         $this->layout = 'main'; 
+        return $this->redirect('weekly/index');
 
-        $categories = \common\models\Category::find()->all();
-
-        return $this->render('weekly', ['categories' => $categories]);
     }
 
     public function actionBadges()

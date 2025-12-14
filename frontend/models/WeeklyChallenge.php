@@ -3,6 +3,8 @@
 namespace frontend\models;
 
 use Yii;
+use common\models\WeeklyChallengeUtilizador;
+use common\models\WeeklyChallengeCompletion;
 
 /**
  * This is the model class for table "weekly_challenge".
@@ -63,6 +65,22 @@ class WeeklyChallenge extends \yii\db\ActiveRecord
     public function getWeeklyChallengeUtilizadors()
     {
         return $this->hasMany(WeeklyChallengeUtilizador::class, ['fk_weekly_challenge' => 'weekly_challenge_id']);
+    }
+
+    public function isCompletedByUser()
+    {
+        if (Yii::$app->user->isGuest) {
+            return false;
+        }
+
+        $weeklyChallengeUser = WeeklyChallengeUtilizador::findOne([
+            'fk_weekly_challenge' => $this->weekly_challenge_id,
+            'fk_utilizador' => Yii::$app->user->id,
+        ]);
+
+        return $weeklyChallengeUser
+            ? $weeklyChallengeUser->isCompleted()
+            : false;
     }
 
 }
