@@ -229,7 +229,8 @@ $this->title = 'Amigos | OnFire';
                     </div>
 
                     <!-- Action Buttons -->
-                    <?php if($utilizadores->friendshipWith($friend_id)->status == 'aceite'): ?>
+                    <?php if($utilizadores->friendshipWith($friend_id) != null &&
+                    $utilizadores->friendshipWith($friend_id)->status == 'aceite'): ?>
                         <div class="d-flex gap-2 justify-content-end">
                             <div class="d-flex gap-2 justify-content-end">
                                 <?php
@@ -244,7 +245,8 @@ $this->title = 'Amigos | OnFire';
                             </div>
                         </div>
                     <?php endif; ?>
-                    <?php if($utilizadores->friendshipWith($friend_id)->status == 'pendente'): ?>
+                    <?php if($utilizadores->friendshipWith($friend_id) != null &&
+                        $utilizadores->friendshipWith($friend_id)->status == 'pendente'): ?>
                         <div class="d-flex gap-2 justify-content-end">
                             <div class="d-flex gap-2 justify-content-end">
                                 <?php
