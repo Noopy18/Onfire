@@ -14,67 +14,92 @@ $this->title = 'Desafios Semanais | OnFire';
         <h1 class="h3 mb-0 text-gray-800">Desafios Semanais</h1>
     </div>
 
-    <div class="row g-4">
+    <div class="col-md-12">
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-body p-0">
 
-        <?php foreach ($dataProvider->getModels() as $weekly): ?>
-            <div class="col-md-6 col-lg-4">
-                <div class="card shadow-sm border-0 rounded-4 h-100">
-                    <div class="card-body d-flex flex-column">
+            <div class="table-responsive">
+                <table class="table align-middle table-hover mb-0">
+                    <thead class="table-light">
+                    <tr>
+                        <th class="text-start">Título</th>
+                        <th>Descrição</th>
+                        <th>Data-final</th>
+                        <th>Completion</th>
+                    </tr>
+                    </thead>
 
-                        <!-- Título -->
-                        <h5 class="card-title fw-bold">
-                            <?= Html::encode($weekly->name) ?>
-                        </h5>
+                    <tbody>
+                    <?php
+                    $models = $dataProvider->getModels();
 
-                        <!-- Descrição -->
-                        <p class="card-text text-muted">
-                            <?= Html::encode($weekly->description) ?>
-                        </p>
+                    if (empty($models)) {
+                        echo '<tr>';
+                        echo '<td colspan="4" class="text-center text-muted py-4">';
+                        echo 'Não existem desafios semanais ativos.';
+                        echo '</td>';
+                        echo '</tr>';
+                    }
 
-                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                    foreach ($models as $weekly) {
+                        echo '<tr>';
 
-                            <!-- COMPLETION -->
-                            <?php if ($weekly->isCompletedByUser()): ?>
-                                <button class="btn btn-sm rounded-pill bg-success text-white">
-                                    Completado!
-                                </button>
-                            <?php else: ?>
-                                <?= Html::beginForm(['weekly-challenge/index'], 'post') ?>
+                        // Título
+                        echo '<td class="fw-semibold">';
+                        echo Html::encode($weekly->name);
+                        echo '</td>';
 
-                                    <?= Html::hiddenInput(
-                                        'WeeklyChallengeCompletion[fk_weekly_challenge]',
-                                        $weekly->weekly_challenge_id
-                                    ) ?>
+                        // Descrição
+                        echo '<td class="text-muted">';
+                        echo Html::encode($weekly->description);
+                        echo '</td>';
 
-                                    <?= Html::submitButton(
-                                        'Completar',
-                                        [
-                                            'class' => 'btn btn-sm rounded-pill text-white',
-                                            'style' => 'background-color: orange'
-                                        ]
-                                    ) ?>
+                        // Datas
+                        echo '<td>';
+                        echo Yii::$app->formatter->asDate($weekly->start_date);
+                        if (!empty($weekly->end_date)) {
+                            echo ' → ' . Yii::$app->formatter->asDate($weekly->end_date);
+                        }
+                        echo '</td>';
 
-                                <?= Html::endForm() ?>
-                            <?php endif; ?>
+                        // Completion
+                        echo '<td>';
 
-                            <!-- Data -->
-                            <small class="text-muted">
-                                Até <?= Yii::$app->formatter->asDate($weekly->end_date) ?>
-                            </small>
+                        if ($weekly->isCompletedByUser()) {
 
-                        </div>
-                    </div>
-                </div>
+                            echo '<button class="btn btn-sm rounded-pill px-3 bg-success text-white">';
+                            echo 'Completado!';
+                            echo '</button>';
+
+                        } else {
+
+                            echo Html::beginForm(['weekly-challenge/index'], 'post');
+
+                            echo Html::hiddenInput(
+                                'WeeklyChallengeCompletion[fk_weekly_challenge]',
+                                $weekly->weekly_challenge_id
+                            );
+
+                            echo Html::submitButton(
+                                'Completar',
+                                [
+                                    'class' => 'btn btn-sm rounded-pill px-3 text-white',
+                                    'style' => 'background-color: orange'
+                                ]
+                            );
+
+                            echo Html::endForm();
+                        }
+
+                        echo '</td>';
+
+                        echo '</tr>';
+                    }
+                    ?>
+                    </tbody>
+                </table>
             </div>
-        <?php endforeach; ?>
 
-        <?php if (empty($dataProvider->getModels())): ?>
-            <div class="col-12">
-                <div class="alert alert-info">
-                    Não existem desafios semanais ativos.
-                </div>
-            </div>
-        <?php endif; ?>
-
+        </div>
     </div>
 </div>

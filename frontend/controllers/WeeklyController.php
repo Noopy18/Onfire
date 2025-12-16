@@ -3,8 +3,8 @@
 namespace frontend\controllers;
 
 use common\models\WeeklyChallenge;
-use frontend\models\WeeklyChallengeSearch;
-use frontend\models\WeeklyChallengeCompletion;
+use common\models\WeeklyChallengeSearch;
+use common\models\WeeklyChallengeCompletion;
 use common\models\WeeklyChallengeUtilizador;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

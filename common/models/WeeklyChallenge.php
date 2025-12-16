@@ -65,6 +65,7 @@ class WeeklyChallenge extends \yii\db\ActiveRecord
         return $this->hasMany(WeeklyChallengeUtilizador::class, ['fk_weekly_challenge' => 'weekly_challenge_id']);
     }
 
+    //verifica se o desafio semanal ja foi completado pelo user
     public function isCompletedByUser($userId = null)
     {
         if ($userId === null) {
@@ -79,5 +80,58 @@ class WeeklyChallenge extends \yii\db\ActiveRecord
             'weekly_challenge_completion.completed' => 1,
         ])
         ->exists();
+    }
+
+     public function getEndDate(): \DateTime
+    {
+        return (new \DateTime($this->start_date))
+            ->modify('+7 days');
+    }
+
+    
+    public function isExpired(): bool
+    {
+        return new \DateTime('today') > $this->getEndDate();
+    }
+
+    // Dias restantes
+    public function getDaysLeft(): int
+    {
+        if ($this->isExpired()) {
+            return 0;
+        }
+
+        return (new \DateTime('today'))
+            ->diff($this->getEndDate())
+            ->days;
+    }
+
+    
+    public function getTimeLeftLabel(): array
+    {
+        if ($this->isExpired()) {
+            return [
+                'label' => 'Expirado',
+                'class' => 'badge bg-secondary'
+            ];
+        }
+
+        if ($this->getDaysLeft() === 0) {
+            return [
+                'label' => 'Último dia!',
+                'class' => 'badge bg-danger'
+            ];
+        }
+
+        return [
+            'label' => $this->getDaysLeft() . ' dias restantes',
+            'class' => 'badge bg-info'
+        ];
+    }
+
+    
+    public function isActive(): bool
+    {
+        return !$this->isExpired() && $this->status == 1;
     }
 }

@@ -1,8 +1,9 @@
 <?php
 
-namespace frontend\models;
+namespace common\models;
 
 use Yii;
+use common\models\WeeklyChallengeCompletion;
 
 /**
  * This is the model class for table "weekly_challenge_utilizador".
