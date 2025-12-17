@@ -56,9 +56,9 @@ $this->title = 'Desafios Semanais | OnFire';
 
                         // Datas
                         echo '<td>';
-                        echo Yii::$app->formatter->asDate($weekly->start_date);
-                        if (!empty($weekly->end_date)) {
-                            echo ' → ' . Yii::$app->formatter->asDate($weekly->end_date);
+                        if (!empty($weekly->start_date)) {
+                            echo Yii::$app->formatter->asDate(
+                                $weekly->getEndDate()->format('Y-m-d'));
                         }
                         echo '</td>';
 
@@ -73,7 +73,7 @@ $this->title = 'Desafios Semanais | OnFire';
 
                         } else {
 
-                            echo Html::beginForm(['weekly-challenge/index'], 'post');
+                            echo Html::beginForm(['weekly/index'], 'post');
 
                             echo Html::hiddenInput(
                                 'WeeklyChallengeCompletion[fk_weekly_challenge]',

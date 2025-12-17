@@ -18,6 +18,8 @@ use common\models\FkWeeklyChallengeUtilizador;
 class WeeklyChallengeCompletion extends \yii\db\ActiveRecord
 {
 
+    //campo virtual para guardar o desafio semanal selecionado
+    public $fk_weekly_challenge;
 
     /**
      * {@inheritdoc}
@@ -35,6 +37,7 @@ class WeeklyChallengeCompletion extends \yii\db\ActiveRecord
         return [
             [['date', 'completed', 'fk_weekly_challenge_utilizador'], 'required'],
             [['date'], 'safe'],
+            [['fk_weekly_challenge'], 'safe'], //atributo virtual para guardar o desafio semanal selecionado
             [['completed', 'fk_weekly_challenge_utilizador'], 'integer'],
             [['fk_weekly_challenge_utilizador'], 'exist', 'skipOnError' => true, 'targetClass' => WeeklyChallengeUtilizador::class, 'targetAttribute' => ['fk_weekly_challenge_utilizador' => 'weekly_challenge_utilizador_id']],
         ];
@@ -63,4 +66,6 @@ class WeeklyChallengeCompletion extends \yii\db\ActiveRecord
         return $this->hasOne(WeeklyChallengeUtilizador::class, ['weekly_challenge_utilizador_id' => 'fk_weekly_challenge_utilizador']);
     }
 
+    
 }
+

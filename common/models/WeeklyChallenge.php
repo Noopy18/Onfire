@@ -85,13 +85,14 @@ class WeeklyChallenge extends \yii\db\ActiveRecord
      public function getEndDate(): \DateTime
     {
         return (new \DateTime($this->start_date))
-            ->modify('+7 days');
+            ->setTime(23, 59, 59)
+            ->modify('+6 days');
     }
 
     
     public function isExpired(): bool
     {
-        return new \DateTime('today') > $this->getEndDate();
+        return new \DateTime() > $this->getEndDate();
     }
 
     // Dias restantes
@@ -101,9 +102,10 @@ class WeeklyChallenge extends \yii\db\ActiveRecord
             return 0;
         }
 
-        return (new \DateTime('today'))
-            ->diff($this->getEndDate())
-            ->days;
+        $now = new \DateTime();
+        $endDate = $this->getEndDate(); 
+
+        return (int)$now->diff($endDate)->format('%a');
     }
 
     
