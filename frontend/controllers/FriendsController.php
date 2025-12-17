@@ -243,15 +243,13 @@ class FriendsController extends Controller
 
         $receiverId = Yii::$app->user->id;
 
-        $friendship = Friends::findFriendship($$senderId, $receiverId);
-        if ($friendship) {
-            return $this->redirect(['index']);
-        }
+        $friendship = Friends::findFriendship($senderId, $receiverId);
 
         if ($action === 'accepted') {
             $friendship->status = Friends::STATUS_ACEITE;
-        } elseif ($action === 'declined') {
-            $friendship->status = Friends::STATUS_RECUSADO;
+        } else if ($action === 'declined') {
+            $friendship->delete();
+            return $this->redirect(['index']);
         } else {
             return $this->redirect(['index']);
         }

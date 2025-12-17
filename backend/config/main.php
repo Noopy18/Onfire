@@ -47,6 +47,9 @@ return [
             'showScriptName' => false,
             'rules' => [
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/category', 'pluralize' => false],
+                ['class' => 'yii\rest\UrlRule','controller' => 'api/habit', 'pluralize' => false],
+                ['class' => 'yii\rest\UrlRule','controller' => 'api/habit-completion', 'pluralize' => false],
+                ['class' => 'yii\rest\UrlRule','controller' => 'api/weekly-challenge', 'pluralize' => false],
             ],
         ],
         
