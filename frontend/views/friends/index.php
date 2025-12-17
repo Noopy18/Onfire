@@ -33,7 +33,9 @@ $this->title = 'Amigos | OnFire';
 
                                     <?= Html::beginForm(['friends/index', 'friend_id' => $friend->id], 'post', ['class' => 'mb-2']) ?>
                                         <button type="submit" class="list-group-item list-group-item-action d-flex align-items-center border-0 rounded-3 shadow-sm w-100 p-3" style="background: none; border: none;">
-                                            <img src="https://via.placeholder.com/45" class="rounded-circle me-3" alt="Avatar">
+                                            <img src="<?= $friend->utilizador->getProfilePictureUrl() ?>"
+                                                class="rounded-circle me-3"
+                                                style="width:45px; height:45px; object-fit:cover;">
                                             <div class="flex-grow-1">
                                                 <h6 class="mb-0 fw-semibold"><?= Html::encode($friend->username) ?></h6>
                                                 <?php 
@@ -72,11 +74,15 @@ $this->title = 'Amigos | OnFire';
                             
                                     <?php
                                         if ($friendRequest->receiver == Yii::$app->user->id){
+                                            $senderUser = $users::findOne($friendRequest->sender);
+                                            $receiverUser = $users::findOne($friendRequest->receiver);
                                     ?>
                                         <div class="d-flex mb-2">
                                             <?= Html::beginForm(['friends/index', 'friend_id' => $friendRequest->sender], 'post', ['class' => 'flex-grow-1']) ?>
                                                 <button type="submit" class="btn btn-light d-flex align-items-center w-100 p-3 border-0 shadow-sm" style="border-radius: 0.75rem 0 0 0.75rem;">
-                                                    <img src="https://via.placeholder.com/45" class="rounded-circle me-3" alt="Avatar">
+                                                    <img src="<?= $senderUser->utilizador->getProfilePictureUrl() ?>"
+                                                        class="rounded-circle me-3"
+                                                        style="width:45px; height:45px; object-fit:cover;">
                                                     <div class="flex-grow-1 text-start">
                                                         <h6 class="mb-0 fw-semibold"><?= $users::findOne($friendRequest->sender)->username ?></h6>
                                                         <small class="text-muted">Pedido de amizade</small>
@@ -94,11 +100,14 @@ $this->title = 'Amigos | OnFire';
                                         </div>
                                     <?php
                                         } else {
+                                            $receiverUser = $users::findOne($friendRequest->receiver);
                                     ?>
                                         <div class="d-flex mb-2">
                                             <?= Html::beginForm(['friends/index', 'friend_id' => $users::findOne($friendRequest->receiver)->id], 'post', ['class' => 'flex-grow-1']) ?>
                                                 <button type="submit" class="btn btn-light d-flex align-items-center w-100 p-3 border-0 shadow-sm" style="border-radius: 0.75rem 0 0 0.75rem;">
-                                                <img src="https://via.placeholder.com/45" class="rounded-circle me-3" alt="Avatar">
+                                                <img src="<?= $receiverUser->utilizador->getProfilePictureUrl() ?>"
+                                                    class="rounded-circle me-3"
+                                                    style="width:45px; height:45px; object-fit:cover;">
                                                     <div class="flex-grow-1 text-start">
                                                         <h6 class="mb-0 fw-semibold"><?= Html::encode($users::findOne($friendRequest->receiver)->username) ?></h6>
                                                     <?php 
@@ -158,9 +167,12 @@ $this->title = 'Amigos | OnFire';
         <div class="col-md-8">
             <div class="card shadow-sm border-0 rounded-4 h-100">
                 <?php if ($friend_id != -1): ?>
+                <?php $friendUser = $users::findOne($friend_id);?>
                 <div class="card-header bg-gradient text-success text-center py-4" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 1rem 1rem 0 0 !important;">
                     <div class="position-relative d-inline-block mb-3">
-                        <img src="https://via.placeholder.com/120" class="rounded-circle border border-4 border-white shadow" alt="Avatar" style="min-width: 120px; min-height: 120px; object-fit: cover;">
+                        <img src="<?= $friendUser->utilizador->getProfilePictureUrl() ?>"
+                            class="rounded-circle border border-4 border-white shadow"
+                            style="width:120px; height:120px; object-fit:cover;">
                     </div>
                     <h4 class="mb-1 fw-bold"><?= $users::findOne($friend_id)->username ?></h4>
                 </div>
@@ -336,7 +348,7 @@ $this->title = 'Amigos | OnFire';
                                     <input type="hidden" name="friend_id" value="${user.id}">
                                     <input type="hidden" name="<?= Yii::$app->request->csrfParam ?>" value="<?= Yii::$app->request->csrfToken ?>">
                                     <button type="submit" class="list-group-item list-group-item-action d-flex align-items-center border-0 rounded-3 shadow-sm w-100 p-3" style="background: none; border: none;">
-                                        <img src="https://via.placeholder.com/45" class="rounded-circle me-3" alt="Avatar">
+                                        <img src="${user.profile_picture}"class="rounded-circle me-3" style="width:45px; height:45px; object-fit:cover;">
                                         <div class="flex-grow-1">
                                             <h6 class="mb-0 fw-semibold">${user.username}</h6>
                                         </div>

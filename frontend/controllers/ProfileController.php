@@ -42,10 +42,10 @@ class ProfileController extends Controller
 
         if (Yii::$app->request->isPost) {
 
-            // 🔹 Atualizar username (tabela user)
+            //  Atualizar username (tabela user)
             $user->username = Yii::$app->request->post('username');
 
-            // 🔹 Upload da foto (tabela utilizador)
+            //  Upload da foto (tabela utilizador)
             $file = UploadedFile::getInstanceByName('profile_picture');
 
             if ($file) {

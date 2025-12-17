@@ -202,7 +202,7 @@ class FriendsController extends Controller
             $results[] = [
                 'id' => $user->id,
                 'username' => $user->username,
-                'avatar' => null,
+                'profile_picture' => $user->utilizador->getProfilePictureUrl(),
             ];
         }
 

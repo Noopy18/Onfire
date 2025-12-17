@@ -65,4 +65,12 @@ class Utilizador extends \yii\db\ActiveRecord
         return $friends->findFriendship($id);
     }
 
+    public function getProfilePictureUrl(){
+        if ($this->profile_picture){
+            return Yii::getAlias('@web') . '/' . $this->profile_picture;
+        } 
+
+        return Yii::getAlias('@web') . '/uploads/profile/default_profile_picture.png';
+    }
+
 }
