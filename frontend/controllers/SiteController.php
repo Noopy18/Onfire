@@ -298,23 +298,7 @@ class SiteController extends Controller
     public function actionProfile()
     {
         $this->layout = 'main';
-        $user = Yii::$app->user->identity;
-
-        if (Yii::$app->request->isPost) {
-
-            $user->username = Yii::$app->request->post('username');
-
-            if ($user->save()) {
-                Yii::$app->session->setFlash('success', 'Nome atualizado com sucesso!');
-            } else {
-                Yii::$app->session->setFlash('error', 'Erro ao atualizar nome.');
-                Yii::error($user->errors, 'profile');
-            }
-        }
-
-        return $this->render('profile', [
-            'user' => $user,
-        ]);
+        return $this->redirect('profile/index');
     }
 
     public function actionSettings()

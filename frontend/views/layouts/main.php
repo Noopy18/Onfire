@@ -82,8 +82,8 @@ $currentRoute = Yii::$app->controller->route;
                    class="nav-item nav-link <?= $currentRoute == 'friends/index' ? 'active' : '' ?>">
                     <i class="bi bi-people"></i> Amigos
                 </a>
-                <a href="<?= \yii\helpers\Url::to(['site/profile']) ?>"
-                   class="nav-item nav-link <?= $currentRoute == 'site/profile' ? 'active' : '' ?>">
+                <a href="<?= \yii\helpers\Url::to(['profile/index']) ?>"
+                   class="nav-item nav-link <?= $currentRoute == 'profile/index' ? 'active' : '' ?>">
                     <i class="fa fa-user me-2"></i> Perfil
                 </a>
                 <?= Html::beginForm(['site/logout'], 'post') ?>

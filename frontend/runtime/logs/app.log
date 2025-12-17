@@ -42734,3 +42734,1651 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1765933329.3297
     'REQUEST_TIME' => 1765933329
 ]
+2025-12-17 01:53:35 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: C:\wamp64\www\onfire\frontend\views\site\profile/index.php in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php:234
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\o...', Array, Object(frontend\controllers\SiteController))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('profile/index', Array, Object(frontend\controllers\SiteController))
+#2 C:\wamp64\www\onfire\frontend\controllers\SiteController.php(301): yii\base\Controller->render('profile/index')
+#3 [internal function]: frontend\controllers\SiteController->actionProfile()
+#4 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#5 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#6 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('profile', Array)
+#7 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/profile', Array)
+#8 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2025-12-17 01:53:35 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/habit/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '49693'
+    'REDIRECT_URL' => '/onfire/frontend/web/site/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/site/profile'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765936415.3863
+    'REQUEST_TIME' => 1765936415
+]
+2025-12-17 01:54:27 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: C:\wamp64\www\onfire\frontend\views\site\profile/index.php in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php:234
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\o...', Array, Object(frontend\controllers\SiteController))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('profile/index', Array, Object(frontend\controllers\SiteController))
+#2 C:\wamp64\www\onfire\frontend\controllers\SiteController.php(301): yii\base\Controller->render('profile/index')
+#3 [internal function]: frontend\controllers\SiteController->actionProfile()
+#4 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#5 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#6 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('profile', Array)
+#7 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/profile', Array)
+#8 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2025-12-17 01:54:27 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/habit/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '63606'
+    'REDIRECT_URL' => '/onfire/frontend/web/site/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/site/profile'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765936467.7335
+    'REQUEST_TIME' => 1765936467
+]
+2025-12-17 01:54:28 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: C:\wamp64\www\onfire\frontend\views\site\profile/index.php in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php:234
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\o...', Array, Object(frontend\controllers\SiteController))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('profile/index', Array, Object(frontend\controllers\SiteController))
+#2 C:\wamp64\www\onfire\frontend\controllers\SiteController.php(301): yii\base\Controller->render('profile/index')
+#3 [internal function]: frontend\controllers\SiteController->actionProfile()
+#4 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#5 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#6 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('profile', Array)
+#7 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/profile', Array)
+#8 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2025-12-17 01:54:28 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/habit/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '63607'
+    'REDIRECT_URL' => '/onfire/frontend/web/site/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/site/profile'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765936468.4761
+    'REQUEST_TIME' => 1765936468
+]
+2025-12-17 01:54:28 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: C:\wamp64\www\onfire\frontend\views\site\profile/index.php in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php:234
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\o...', Array, Object(frontend\controllers\SiteController))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('profile/index', Array, Object(frontend\controllers\SiteController))
+#2 C:\wamp64\www\onfire\frontend\controllers\SiteController.php(301): yii\base\Controller->render('profile/index')
+#3 [internal function]: frontend\controllers\SiteController->actionProfile()
+#4 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#5 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#6 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('profile', Array)
+#7 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/profile', Array)
+#8 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2025-12-17 01:54:28 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/habit/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '63610'
+    'REDIRECT_URL' => '/onfire/frontend/web/site/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/site/profile'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765936468.6267
+    'REQUEST_TIME' => 1765936468
+]
+2025-12-17 01:54:28 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: C:\wamp64\www\onfire\frontend\views\site\profile/index.php in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php:234
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\o...', Array, Object(frontend\controllers\SiteController))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('profile/index', Array, Object(frontend\controllers\SiteController))
+#2 C:\wamp64\www\onfire\frontend\controllers\SiteController.php(301): yii\base\Controller->render('profile/index')
+#3 [internal function]: frontend\controllers\SiteController->actionProfile()
+#4 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#5 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#6 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('profile', Array)
+#7 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/profile', Array)
+#8 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2025-12-17 01:54:28 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/habit/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '63613'
+    'REDIRECT_URL' => '/onfire/frontend/web/site/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/site/profile'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765936468.7774
+    'REQUEST_TIME' => 1765936468
+]
+2025-12-17 01:55:32 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: C:\wamp64\www\onfire\frontend\views\site\profile/index.php in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php:234
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\o...', Array, Object(frontend\controllers\SiteController))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('profile/index', Array, Object(frontend\controllers\SiteController))
+#2 C:\wamp64\www\onfire\frontend\controllers\SiteController.php(301): yii\base\Controller->render('profile/index')
+#3 [internal function]: frontend\controllers\SiteController->actionProfile()
+#4 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#5 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#6 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('profile', Array)
+#7 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/profile', Array)
+#8 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2025-12-17 01:55:32 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/habit/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '56152'
+    'REDIRECT_URL' => '/onfire/frontend/web/site/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/site/profile'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765936532.1012
+    'REQUEST_TIME' => 1765936532
+]
+2025-12-17 01:55:32 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: C:\wamp64\www\onfire\frontend\views\site\profile/index.php in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php:234
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\o...', Array, Object(frontend\controllers\SiteController))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('profile/index', Array, Object(frontend\controllers\SiteController))
+#2 C:\wamp64\www\onfire\frontend\controllers\SiteController.php(301): yii\base\Controller->render('profile/index')
+#3 [internal function]: frontend\controllers\SiteController->actionProfile()
+#4 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#5 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#6 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('profile', Array)
+#7 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/profile', Array)
+#8 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2025-12-17 01:55:32 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/habit/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '56153'
+    'REDIRECT_URL' => '/onfire/frontend/web/site/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/site/profile'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765936532.9737
+    'REQUEST_TIME' => 1765936532
+]
+2025-12-17 01:55:33 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: C:\wamp64\www\onfire\frontend\views\site\profile/index.php in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php:234
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\o...', Array, Object(frontend\controllers\SiteController))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('profile/index', Array, Object(frontend\controllers\SiteController))
+#2 C:\wamp64\www\onfire\frontend\controllers\SiteController.php(301): yii\base\Controller->render('profile/index')
+#3 [internal function]: frontend\controllers\SiteController->actionProfile()
+#4 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#5 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#6 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('profile', Array)
+#7 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/profile', Array)
+#8 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2025-12-17 01:55:33 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/habit/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '56156'
+    'REDIRECT_URL' => '/onfire/frontend/web/site/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/site/profile'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765936533.1152
+    'REQUEST_TIME' => 1765936533
+]
+2025-12-17 01:55:33 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\base\ViewNotFoundException] yii\base\ViewNotFoundException: The view file does not exist: C:\wamp64\www\onfire\frontend\views\site\profile/index.php in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php:234
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\o...', Array, Object(frontend\controllers\SiteController))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('profile/index', Array, Object(frontend\controllers\SiteController))
+#2 C:\wamp64\www\onfire\frontend\controllers\SiteController.php(301): yii\base\Controller->render('profile/index')
+#3 [internal function]: frontend\controllers\SiteController->actionProfile()
+#4 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#5 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#6 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('profile', Array)
+#7 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/profile', Array)
+#8 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#10 {main}
+2025-12-17 01:55:33 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/habit/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '56159'
+    'REDIRECT_URL' => '/onfire/frontend/web/site/profile'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/site/profile'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765936533.3384
+    'REQUEST_TIME' => 1765936533
+]
+2025-12-17 01:56:01 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/profile/index". in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/profile/in...', Array)
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2025-12-17 01:56:01 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/habit/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '56172'
+    'REDIRECT_URL' => '/onfire/frontend/web/site/profile/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/site/profile/index'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765936561.5023
+    'REQUEST_TIME' => 1765936561
+]
+2025-12-17 01:56:14 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Controller.php:320
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(182): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+#2 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('profile/index', Array)
+#3 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2025-12-17 01:56:14 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = [
+    'username' => 'admin2'
+]
+
+$_FILES = [
+    'profile_picture' => [
+        'name' => ''
+        'full_path' => ''
+        'type' => ''
+        'tmp_name' => ''
+        'error' => 4
+        'size' => 0
+    ]
+]
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '300'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundarygjtmMeUefsfzu90l'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/profile/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '56176'
+    'REDIRECT_URL' => '/onfire/frontend/web/profile/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/profile/index'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765936574.3271
+    'REQUEST_TIME' => 1765936574
+]
+2025-12-17 01:56:20 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Controller.php:320
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(182): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+#2 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('profile/index', Array)
+#3 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2025-12-17 01:56:20 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = [
+    'username' => 'admin'
+]
+
+$_FILES = [
+    'profile_picture' => [
+        'name' => ''
+        'full_path' => ''
+        'type' => ''
+        'tmp_name' => ''
+        'error' => 4
+        'size' => 0
+    ]
+]
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '299'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryJVhNU8QHsaG8ubA0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/profile/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '56190'
+    'REDIRECT_URL' => '/onfire/frontend/web/profile/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/profile/index'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765936580.6716
+    'REQUEST_TIME' => 1765936580
+]
+2025-12-17 02:04:46 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Controller.php:320
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(182): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+#2 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('profile/index', Array)
+#3 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2025-12-17 02:04:46 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = [
+    'username' => 'admin2'
+]
+
+$_FILES = [
+    'profile_picture' => [
+        'name' => ''
+        'full_path' => ''
+        'type' => ''
+        'tmp_name' => ''
+        'error' => 4
+        'size' => 0
+    ]
+]
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '300'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundary36EscAFQWPwdWoGZ'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/profile/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '62007'
+    'REDIRECT_URL' => '/onfire/frontend/web/profile/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/profile/index'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765937086.5469
+    'REQUEST_TIME' => 1765937086
+]
+2025-12-17 02:05:42 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Controller.php:320
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(182): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+#2 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('profile/index', Array)
+#3 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2025-12-17 02:05:42 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = [
+    'username' => 'admin2'
+]
+
+$_FILES = [
+    'profile_picture' => [
+        'name' => ''
+        'full_path' => ''
+        'type' => ''
+        'tmp_name' => ''
+        'error' => 4
+        'size' => 0
+    ]
+]
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '300'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundary943382jxa4BJfTSw'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/profile/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '57959'
+    'REDIRECT_URL' => '/onfire/frontend/web/profile/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/profile/index'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765937142.345
+    'REQUEST_TIME' => 1765937142
+]
+2025-12-17 02:06:22 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Controller.php:320
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(182): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+#2 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('profile/index', Array)
+#3 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2025-12-17 02:06:22 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = [
+    'username' => 'admin2'
+]
+
+$_FILES = [
+    'profile_picture' => [
+        'name' => ''
+        'full_path' => ''
+        'type' => ''
+        'tmp_name' => ''
+        'error' => 4
+        'size' => 0
+    ]
+]
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '300'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryORFS6ktFBgIze4oO'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/profile/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '57993'
+    'REDIRECT_URL' => '/onfire/frontend/web/profile/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/profile/index'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765937182.9354
+    'REQUEST_TIME' => 1765937182
+]
+2025-12-17 02:06:36 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Controller.php:320
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(182): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+#2 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('profile/index', Array)
+#3 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2025-12-17 02:06:36 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = [
+    'username' => 'admin2'
+]
+
+$_FILES = [
+    'profile_picture' => [
+        'name' => ''
+        'full_path' => ''
+        'type' => ''
+        'tmp_name' => ''
+        'error' => 4
+        'size' => 0
+    ]
+]
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '300'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryEISALqBqMwm7BGbh'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/profile/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '58094'
+    'REDIRECT_URL' => '/onfire/frontend/web/profile/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/profile/index'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765937196.9067
+    'REQUEST_TIME' => 1765937196
+]
+2025-12-17 02:06:56 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Controller.php:320
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(182): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+#2 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('profile/index', Array)
+#3 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2025-12-17 02:06:56 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = [
+    'username' => 'admin2'
+]
+
+$_FILES = [
+    'profile_picture' => [
+        'name' => ''
+        'full_path' => ''
+        'type' => ''
+        'tmp_name' => ''
+        'error' => 4
+        'size' => 0
+    ]
+]
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '300'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryEISALqBqMwm7BGbh'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/profile/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '49676'
+    'REDIRECT_URL' => '/onfire/frontend/web/profile/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/profile/index'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765937216.7487
+    'REQUEST_TIME' => 1765937216
+]
+2025-12-17 02:07:04 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Controller.php:320
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(182): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+#2 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('profile/index', Array)
+#3 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#5 {main}
+2025-12-17 02:07:04 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = [
+    'username' => 'admin2'
+]
+
+$_FILES = [
+    'profile_picture' => [
+        'name' => ''
+        'full_path' => ''
+        'type' => ''
+        'tmp_name' => ''
+        'error' => 4
+        'size' => 0
+    ]
+]
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '300'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryO6efBKAEUQj09JRt'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/profile/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '49680'
+    'REDIRECT_URL' => '/onfire/frontend/web/profile/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/profile/index'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765937224.0924
+    'REQUEST_TIME' => 1765937224
+]
+2025-12-17 02:08:52 [::1][1][c8a6fc98680efc635eab2f25adf2090d][error][Error] Error: Call to undefined method yii\helpers\Html::csrfInput() in C:\wamp64\www\onfire\frontend\views\profile\index.php:11
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\wamp64\\www\\o...', Array)
+#2 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\o...', Array, Object(frontend\controllers\ProfileController))
+#3 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('index', Array, Object(frontend\controllers\ProfileController))
+#4 C:\wamp64\www\onfire\frontend\controllers\ProfileController.php(67): yii\base\Controller->render('index', Array)
+#5 [internal function]: frontend\controllers\ProfileController->actionIndex()
+#6 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#7 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#8 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('index', Array)
+#9 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('profile/index', Array)
+#10 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\wamp64\www\onfire\frontend\web\index.php(18): yii\base\Application->run()
+#12 {main}
+2025-12-17 02:08:52 [::1][1][c8a6fc98680efc635eab2f25adf2090d][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-frontend' => 'ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    '_identity-backend' => 'eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y\",2592000]\";}'
+    'advanced-frontend' => 'c8a6fc98680efc635eab2f25adf2090d'
+    '_csrf-frontend' => 'b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7\";}'
+    'advanced-backend' => '35015a68bc118a4fc9588fc15d442330'
+    '_csrf-backend' => 'ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '__authKey' => '8TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/frontend/web/habit/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_identity-frontend=ebf35fe80ccd56b41866915565e48bf0ec3b140d08a6759346c939a46a34ec46a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; _identity-backend=eebf6aaed7394d6cb182148d80b161594ee2bc9a7cde68b012848d12dad0b432a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%228TgMeP9vh1_uNGvRwY5QMyA2Z_fa556y%22%2C2592000%5D%22%3B%7D; advanced-frontend=c8a6fc98680efc635eab2f25adf2090d; _csrf-frontend=b1b1f782961989f2a0e90730733f8d7b02444c1ed9e3957010d0140198ec30d9a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22dojI8uIvvaoMi0Ws-xYTranOGTF5rIB7%22%3B%7D; advanced-backend=35015a68bc118a4fc9588fc15d442330; _csrf-backend=ec5ddf1f72a677660f55791504f9a2abcc808a5843d18eee49a7154ea2d78334a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j0b63CzMk8RwwpQw-y3WBPhMZC_jXd_a%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/frontend/web/index.php'
+    'REMOTE_PORT' => '49748'
+    'REDIRECT_URL' => '/onfire/frontend/web/profile/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/frontend/web/profile/index'
+    'SCRIPT_NAME' => '/onfire/frontend/web/index.php'
+    'PHP_SELF' => '/onfire/frontend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1765937332.2814
+    'REQUEST_TIME' => 1765937332
+]
