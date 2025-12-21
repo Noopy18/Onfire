@@ -2,12 +2,17 @@
 
 namespace frontend\controllers;
 
-use frontend\models\Badge;
-use frontend\models\BadgesSearch;
+use common\models\Badge;
+use common\models\BadgeUtilizador;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use Yii;
 
+/**
+ * BadgeController implements the CRUD actions for Badge model.
+ */
 class BadgeController extends Controller
 {
     /**
@@ -30,11 +35,13 @@ class BadgeController extends Controller
 
     public function actionIndex()
     {
-        $searchModel = new BadgesSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $earnedBadges = BadgeUtilizador::find()->where(['fk_utilizador' => Yii::$app->user->id])->select('fk_badge')->column();
+        
+        $dataProvider = new ActiveDataProvider([
+            'query' => Badge::find()->where(['in', 'badge_id', $earnedBadges]),
+        ]);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
