@@ -30,6 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'description',
             'image',
+            'condition_type',
+            //'condition_value',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Badge $model, $key, $index, $column) {

@@ -44,7 +44,8 @@ class WeeklyController extends Controller
     {
         $dataProvider = new ActiveDataProvider([
             'query' => WeeklyChallenge::find()
-                ->where(['status' => 1]),
+                ->where(['status' => 1])
+                ->andWhere(['>=', 'start_date', date('Y-m-d', strtotime('-1 week'))]),
         ]);
 
         

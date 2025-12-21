@@ -66,6 +66,22 @@ class WeeklyChallengeCompletion extends \yii\db\ActiveRecord
         return $this->hasOne(WeeklyChallengeUtilizador::class, ['weekly_challenge_utilizador_id' => 'fk_weekly_challenge_utilizador']);
     }
 
+    public function afterSave($insert, $changedAttributes){
+        parent::afterSave($insert, $changedAttributes);
+        if ($insert){
+            $wcu = $this->fkWeeklyChallengeUtilizador;
+            if ($wcu){
+                $earnedBadges = Badge::checkBadges($wcu->fk_utilizador);
+                if (!$earnedBadges) { return; }
+                foreach ($earnedBadges as $badge){
+                    $bu = new BadgeUtilizador();
+                    $bu->fk_utilizador = $wcu->fk_utilizador;
+                    $bu->fk_badge = $badge->badge_id;
+                    $bu->save();
+                }
+            }
+        }
+    }
     
 }
 

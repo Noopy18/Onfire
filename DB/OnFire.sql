@@ -15,6 +15,7 @@ CREATE TABLE `category` (
   `description` VARCHAR(255),
   `color` VARCHAR(7) NOT NULL DEFAULT '#000000'
 ) ENGINE=InnoDB;
+INSERT INTO `category` VALUES (1, 'Sport', 'A category for all sport related habits.', '#40826d');
 
 CREATE TABLE `habit` (
   `habit_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -62,7 +63,9 @@ CREATE TABLE `badge` (
   `badge_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `image` VARCHAR(255) NOT NULL
+  `image` VARCHAR(255) NOT NULL,
+  `condition_type` ENUM('streak', 'habit_completions','habits_completed', 'wc_completions', 'wc_completed') NOT NULL,
+  `condition_value` INT NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE `weekly_challenge_utilizador` (

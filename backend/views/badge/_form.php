@@ -10,15 +10,17 @@ use yii\widgets\ActiveForm;
 
 <div class="badge-form">
 
-    <?php $form = ActiveForm::begin([
-        'options' => ['enctype' => 'multipart/form-data']
-    ]); ?>
+    <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'imageFile')->fileInput() ?>
+    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'condition_type')->dropDownList([ 'streak' => 'Streak', 'habit_completions' => 'Habit completions', 'habits_completed' => 'Habits completed', 'wc_completions' => 'Wc completions', 'wc_completed' => 'Wc completed', ], ['prompt' => '']) ?>
+
+    <?= $form->field($model, 'condition_value')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

@@ -286,15 +286,6 @@ class SiteController extends Controller
 
     }
 
-    public function actionBadges()
-    {
-        $this->layout = 'main'; 
-
-        $badges = \common\models\Badge::find()->all();
-
-        return $this->render('badges', ['badges' => $badges]);
-    }
-
     public function actionProfile()
     {
         $this->layout = 'main';

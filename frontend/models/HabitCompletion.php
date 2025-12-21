@@ -2,6 +2,8 @@
 
 namespace frontend\models;
 
+use common\models\BadgeUtilizador;
+use common\models\Badge;
 use Yii;
 
 /**
@@ -60,6 +62,23 @@ class HabitCompletion extends \yii\db\ActiveRecord
     public function getFkHabit()
     {
         return $this->hasOne(Habit::class, ['habit_id' => 'fk_habit']);
+    }
+
+    public function afterSave($insert, $changedAttributes){
+        parent::afterSave($insert, $changedAttributes);
+        if ($insert){
+            $habit = $this->fkHabit;
+            if ($habit){
+                $earnedBadges = Badge::checkBadges($habit->fk_utilizador);
+                if (!$earnedBadges) { return; }
+                foreach ($earnedBadges as $badge){
+                    $bu = new BadgeUtilizador();
+                    $bu->fk_utilizador = $habit->fk_utilizador;
+                    $bu->fk_badge = $badge->badge_id;
+                    $bu->save();
+                }
+            }
+        }
     }
 
 }

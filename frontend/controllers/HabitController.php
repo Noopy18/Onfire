@@ -5,15 +5,14 @@ namespace frontend\controllers;
 use frontend\models\Habit;
 use frontend\models\HabitCompletion;
 use frontend\models\HabitSearch;
+use common\models\BadgeUtilizador;
+use common\models\Badge;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-/**
- * HabitController implements the CRUD actions for Habit model.
- */
 class HabitController extends Controller
 {
     /**
@@ -34,21 +33,29 @@ class HabitController extends Controller
         );
     }
 
-    /**
-     * Lists all Habit models.
-     *
-     * @return string
-     */
     public function actionIndex()
     {
         $categories = \common\models\Category::find()->all();
         $model = new Habit();
         $dataProvider = new ActiveDataProvider([
             'query' => Habit::find()
-            ->where(['fk_utilizador' => Yii::$app->user->id]),
+            ->where(['fk_utilizador' => Yii::$app->user->id])
+            ->andWhere(['or', ['>=', 'final_date', date('Y-m-d')], ['final_date' => null]]),
         ]);
 
         $selectedCategory = Yii::$app->request->get('selectedCategory');
+
+        if ( !Yii::$app->user->isGuest ) {
+            $earnedBadges = Badge::checkBadges(Yii::$app->user->id);
+            if ($earnedBadges){
+                foreach ($earnedBadges as $badge){
+                    $bu = new BadgeUtilizador();
+                    $bu->fk_utilizador = Yii::$app->user->id;
+                    $bu->fk_badge = $badge->badge_id;
+                    $bu->save();
+                }
+            }
+        }
         
         // Handle habit completion
         $habitCompletion = new HabitCompletion();
@@ -69,12 +76,6 @@ class HabitController extends Controller
         ]);
     }
 
-    /**
-     * Displays a single Habit model.
-     * @param int $habit_id Habit ID
-     * @return string
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionView($habit_id)
     {
 
@@ -108,11 +109,6 @@ class HabitController extends Controller
         ]);
     }
 
-    /**
-     * Creates a new Habit model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
-     */
     public function actionCreate()
     {
         $searchModel = new HabitSearch();
@@ -145,13 +141,6 @@ class HabitController extends Controller
         ]);
     }
 
-    /**
-     * Updates an existing Habit model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $habit_id Habit ID
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionUpdate($habit_id)
     {
         $categories = \common\models\Category::find()->all();
@@ -167,13 +156,6 @@ class HabitController extends Controller
         ]);
     }
 
-    /**
-     * Deletes an existing Habit model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $habit_id Habit ID
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     public function actionDelete($habit_id)
     {
         $habit = $this->findModel($habit_id);
@@ -187,13 +169,6 @@ class HabitController extends Controller
         return $this->redirect(['index']);
     }
 
-    /**
-     * Finds the Habit model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $habit_id Habit ID
-     * @return Habit the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     protected function findModel($habit_id)
     {
         if (($model = Habit::findOne(['habit_id' => $habit_id])) !== null) {

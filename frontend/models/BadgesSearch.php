@@ -4,7 +4,7 @@ namespace frontend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use frontend\models\Badge;
+use common\models\Badge;
 
 /**
  * BadgesSearch represents the model behind the search form of `frontend\models\Badge`.

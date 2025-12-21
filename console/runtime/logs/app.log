@@ -3757,3 +3757,688 @@ $_SERVER = [
     ]
     'argc' => 2
 ]
+2025-12-20 16:03:00 [-][-][-][error][yii\db\Exception] PDOException: could not find driver in D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php:722
+Stack trace:
+#0 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(722): PDO->__construct()
+#1 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#3 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo()
+#5 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(1181): yii\db\Command->prepare()
+#6 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(417): yii\db\Command->queryInternal()
+#7 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(366): yii\db\Command->queryAll()
+#8 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(134): yii\db\mysql\Schema->findColumns()
+#9 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\mysql\Schema->loadTableSchema()
+#10 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata()
+#11 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema()
+#12 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory()
+#13 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp()
+#15 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array()
+#16 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams()
+#17 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction()
+#18 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\console\Controller->runAction()
+#19 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction()
+#20 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction()
+#21 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\console\Application->handleRequest()
+#22 D:\wamp64\www\Onfire\yii(23): yii\base\Application->run()
+#23 {main}
+
+Next yii\db\Exception: could not find driver in D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php:648
+Stack trace:
+#0 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#1 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo()
+#3 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(1181): yii\db\Command->prepare()
+#4 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(417): yii\db\Command->queryInternal()
+#5 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(366): yii\db\Command->queryAll()
+#6 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(134): yii\db\mysql\Schema->findColumns()
+#7 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\mysql\Schema->loadTableSchema()
+#8 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata()
+#9 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema()
+#10 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory()
+#11 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp()
+#13 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array()
+#14 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams()
+#15 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction()
+#16 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\console\Controller->runAction()
+#17 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction()
+#18 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction()
+#19 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\console\Application->handleRequest()
+#20 D:\wamp64\www\Onfire\yii(23): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2025-12-20 16:02:59 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Utilizador\\AppData\\Roaming'
+    'ChocolateyInstall' => 'C:\\ProgramData\\chocolatey'
+    'ChocolateyLastPathUpdate' => '133872425556108482'
+    'CHROME_CRASHPAD_PIPE_NAME' => '\\\\.\\pipe\\crashpad_14032_QBVOHRTKBGBOVDLU'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-F227JKB'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'CUDA_PATH' => 'C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5'
+    'CUDA_PATH_V11_5' => 'C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Utilizador'
+    'JAVA_HOME' => 'C:\\Program Files\\Java\\jre-1.8'
+    'LOCALAPPDATA' => 'C:\\Users\\Utilizador\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-F227JKB'
+    'NUMBER_OF_PROCESSORS' => '6'
+    'NVCUDASAMPLES11_5_ROOT' => 'C:\\ProgramData\\NVIDIA Corporation\\CUDA Samples\\v11.5'
+    'NVCUDASAMPLES_ROOT' => 'C:\\ProgramData\\NVIDIA Corporation\\CUDA Samples\\v11.5'
+    'NVTOOLSEXT_PATH' => 'C:\\Program Files\\NVIDIA Corporation\\NvToolsExt\\'
+    'OneDrive' => 'C:\\Users\\Utilizador\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\Utilizador\\OneDrive'
+    'OPENSSL_ia32cap' => ':~0x20000000'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Cuminas\\Document Express DjVu Plug-in\\;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5\\bin;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5\\libnvvp;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2021.3.1\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;D:\\wamp64\\bin\\php\\php8.5;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Users\\Utilizador\\scoop\\shims;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python310\\;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\Utilizador\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python38;C:\\Users\\Utilizador\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\Utilizador\\.dotnet\\tools;C:\\Program Files\\JetBrains\\PhpStorm 2023.3.1\\bin;;C:\\Users\\Utilizador\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Utilizador\\AppData\\Roaming\\npm;c:\\users\\utilizador\\.local\\bin;C:\\Users\\Utilizador\\AppData\\Roaming\\Python\\Python313\\Scripts;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL'
+    'PhpStorm' => 'C:\\Program Files\\JetBrains\\PhpStorm 2023.3.1\\bin;'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 158 Stepping 10, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '9e0a'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Users\\Utilizador\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files (x86)\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\UTILIZ~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\UTILIZ~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-F227JKB'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-F227JKB'
+    'USERNAME' => 'Utilizador'
+    'USERPROFILE' => 'C:\\Users\\Utilizador'
+    'VSCODE_PYTHON_AUTOACTIVATE_GUARD' => '1'
+    'windir' => 'C:\\Windows'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.107.1'
+    'LANG' => 'en_US.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'GIT_ASKPASS' => 'c:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh'
+    'VSCODE_GIT_ASKPASS_NODE' => 'C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+    'VSCODE_GIT_ASKPASS_EXTRA_ARGS' => ''
+    'VSCODE_GIT_ASKPASS_MAIN' => 'c:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js'
+    'VSCODE_GIT_IPC_HANDLE' => '\\\\.\\pipe\\vscode-git-fa8bbba038-sock'
+    'VSCODE_INJECTION' => '1'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1766246579.3491
+    'REQUEST_TIME' => 1766246579
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2025-12-20 16:03:59 [-][-][-][error][yii\db\Exception] PDOException: could not find driver in D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php:722
+Stack trace:
+#0 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(722): PDO->__construct()
+#1 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#3 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo()
+#5 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(1181): yii\db\Command->prepare()
+#6 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(417): yii\db\Command->queryInternal()
+#7 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(366): yii\db\Command->queryAll()
+#8 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(134): yii\db\mysql\Schema->findColumns()
+#9 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\mysql\Schema->loadTableSchema()
+#10 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata()
+#11 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema()
+#12 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory()
+#13 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp()
+#15 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array()
+#16 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams()
+#17 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction()
+#18 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\console\Controller->runAction()
+#19 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction()
+#20 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction()
+#21 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\console\Application->handleRequest()
+#22 D:\wamp64\www\Onfire\yii(23): yii\base\Application->run()
+#23 {main}
+
+Next yii\db\Exception: could not find driver in D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php:648
+Stack trace:
+#0 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#1 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo()
+#3 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(1181): yii\db\Command->prepare()
+#4 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(417): yii\db\Command->queryInternal()
+#5 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(366): yii\db\Command->queryAll()
+#6 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(134): yii\db\mysql\Schema->findColumns()
+#7 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\mysql\Schema->loadTableSchema()
+#8 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata()
+#9 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema()
+#10 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory()
+#11 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp()
+#13 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array()
+#14 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams()
+#15 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction()
+#16 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\console\Controller->runAction()
+#17 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction()
+#18 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction()
+#19 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\console\Application->handleRequest()
+#20 D:\wamp64\www\Onfire\yii(23): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2025-12-20 16:03:59 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Utilizador\\AppData\\Roaming'
+    'ChocolateyInstall' => 'C:\\ProgramData\\chocolatey'
+    'ChocolateyLastPathUpdate' => '133872425556108482'
+    'CHROME_CRASHPAD_PIPE_NAME' => '\\\\.\\pipe\\crashpad_14032_QBVOHRTKBGBOVDLU'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-F227JKB'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'CUDA_PATH' => 'C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5'
+    'CUDA_PATH_V11_5' => 'C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Utilizador'
+    'JAVA_HOME' => 'C:\\Program Files\\Java\\jre-1.8'
+    'LOCALAPPDATA' => 'C:\\Users\\Utilizador\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-F227JKB'
+    'NUMBER_OF_PROCESSORS' => '6'
+    'NVCUDASAMPLES11_5_ROOT' => 'C:\\ProgramData\\NVIDIA Corporation\\CUDA Samples\\v11.5'
+    'NVCUDASAMPLES_ROOT' => 'C:\\ProgramData\\NVIDIA Corporation\\CUDA Samples\\v11.5'
+    'NVTOOLSEXT_PATH' => 'C:\\Program Files\\NVIDIA Corporation\\NvToolsExt\\'
+    'OneDrive' => 'C:\\Users\\Utilizador\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\Utilizador\\OneDrive'
+    'OPENSSL_ia32cap' => ':~0x20000000'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Cuminas\\Document Express DjVu Plug-in\\;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5\\bin;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5\\libnvvp;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2021.3.1\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;D:\\wamp64\\bin\\php\\php8.5;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Users\\Utilizador\\scoop\\shims;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python310\\;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\Utilizador\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python38;C:\\Users\\Utilizador\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\Utilizador\\.dotnet\\tools;C:\\Program Files\\JetBrains\\PhpStorm 2023.3.1\\bin;;C:\\Users\\Utilizador\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Utilizador\\AppData\\Roaming\\npm;c:\\users\\utilizador\\.local\\bin;C:\\Users\\Utilizador\\AppData\\Roaming\\Python\\Python313\\Scripts;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL'
+    'PhpStorm' => 'C:\\Program Files\\JetBrains\\PhpStorm 2023.3.1\\bin;'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 158 Stepping 10, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '9e0a'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Users\\Utilizador\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files (x86)\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\UTILIZ~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\UTILIZ~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-F227JKB'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-F227JKB'
+    'USERNAME' => 'Utilizador'
+    'USERPROFILE' => 'C:\\Users\\Utilizador'
+    'VSCODE_PYTHON_AUTOACTIVATE_GUARD' => '1'
+    'windir' => 'C:\\Windows'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.107.1'
+    'LANG' => 'en_US.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'GIT_ASKPASS' => 'c:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh'
+    'VSCODE_GIT_ASKPASS_NODE' => 'C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+    'VSCODE_GIT_ASKPASS_EXTRA_ARGS' => ''
+    'VSCODE_GIT_ASKPASS_MAIN' => 'c:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js'
+    'VSCODE_GIT_IPC_HANDLE' => '\\\\.\\pipe\\vscode-git-fa8bbba038-sock'
+    'VSCODE_INJECTION' => '1'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1766246639.2966
+    'REQUEST_TIME' => 1766246639
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2025-12-20 17:04:00 [-][-][-][error][yii\db\Exception] PDOException: could not find driver in D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php:722
+Stack trace:
+#0 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(722): PDO->__construct()
+#1 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#3 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo()
+#5 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(1181): yii\db\Command->prepare()
+#6 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(417): yii\db\Command->queryInternal()
+#7 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(366): yii\db\Command->queryAll()
+#8 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(134): yii\db\mysql\Schema->findColumns()
+#9 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\mysql\Schema->loadTableSchema()
+#10 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata()
+#11 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema()
+#12 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory()
+#13 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp()
+#15 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array()
+#16 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams()
+#17 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction()
+#18 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\console\Controller->runAction()
+#19 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction()
+#20 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction()
+#21 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\console\Application->handleRequest()
+#22 D:\wamp64\www\Onfire\yii(23): yii\base\Application->run()
+#23 {main}
+
+Next yii\db\Exception: could not find driver in D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php:648
+Stack trace:
+#0 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#1 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo()
+#3 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(1181): yii\db\Command->prepare()
+#4 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(417): yii\db\Command->queryInternal()
+#5 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(366): yii\db\Command->queryAll()
+#6 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(134): yii\db\mysql\Schema->findColumns()
+#7 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\mysql\Schema->loadTableSchema()
+#8 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata()
+#9 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema()
+#10 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory()
+#11 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp()
+#13 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array()
+#14 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams()
+#15 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction()
+#16 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\console\Controller->runAction()
+#17 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction()
+#18 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction()
+#19 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\console\Application->handleRequest()
+#20 D:\wamp64\www\Onfire\yii(23): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2025-12-20 17:04:00 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Utilizador\\AppData\\Roaming'
+    'ChocolateyInstall' => 'C:\\ProgramData\\chocolatey'
+    'ChocolateyLastPathUpdate' => '133872425556108482'
+    'CHROME_CRASHPAD_PIPE_NAME' => '\\\\.\\pipe\\crashpad_7640_PNBCWBCCZBGAMTKV'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-F227JKB'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'CUDA_PATH' => 'C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5'
+    'CUDA_PATH_V11_5' => 'C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Utilizador'
+    'JAVA_HOME' => 'C:\\Program Files\\Java\\jre-1.8'
+    'LOCALAPPDATA' => 'C:\\Users\\Utilizador\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-F227JKB'
+    'NUMBER_OF_PROCESSORS' => '6'
+    'NVCUDASAMPLES11_5_ROOT' => 'C:\\ProgramData\\NVIDIA Corporation\\CUDA Samples\\v11.5'
+    'NVCUDASAMPLES_ROOT' => 'C:\\ProgramData\\NVIDIA Corporation\\CUDA Samples\\v11.5'
+    'NVTOOLSEXT_PATH' => 'C:\\Program Files\\NVIDIA Corporation\\NvToolsExt\\'
+    'OneDrive' => 'C:\\Users\\Utilizador\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\Utilizador\\OneDrive'
+    'OPENSSL_ia32cap' => ':~0x20000000'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Cuminas\\Document Express DjVu Plug-in\\;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5\\bin;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5\\libnvvp;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2021.3.1\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;D:\\wamp64\\bin\\php\\php8.5;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Users\\Utilizador\\scoop\\shims;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python310\\;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\Utilizador\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python38;C:\\Users\\Utilizador\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\Utilizador\\.dotnet\\tools;C:\\Program Files\\JetBrains\\PhpStorm 2023.3.1\\bin;;C:\\Users\\Utilizador\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Utilizador\\AppData\\Roaming\\npm;c:\\users\\utilizador\\.local\\bin;C:\\Users\\Utilizador\\AppData\\Roaming\\Python\\Python313\\Scripts;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL'
+    'PhpStorm' => 'C:\\Program Files\\JetBrains\\PhpStorm 2023.3.1\\bin;'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 158 Stepping 10, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '9e0a'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Users\\Utilizador\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files (x86)\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\UTILIZ~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\UTILIZ~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-F227JKB'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-F227JKB'
+    'USERNAME' => 'Utilizador'
+    'USERPROFILE' => 'C:\\Users\\Utilizador'
+    'VSCODE_PYTHON_AUTOACTIVATE_GUARD' => '1'
+    'windir' => 'C:\\Windows'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.107.1'
+    'LANG' => 'en_US.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'GIT_ASKPASS' => 'c:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh'
+    'VSCODE_GIT_ASKPASS_NODE' => 'C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+    'VSCODE_GIT_ASKPASS_EXTRA_ARGS' => ''
+    'VSCODE_GIT_ASKPASS_MAIN' => 'c:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js'
+    'VSCODE_GIT_IPC_HANDLE' => '\\\\.\\pipe\\vscode-git-fa8bbba038-sock'
+    'VSCODE_INJECTION' => '1'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1766250240.462
+    'REQUEST_TIME' => 1766250240
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2025-12-20 17:17:48 [-][-][-][error][yii\db\Exception] PDOException: could not find driver in D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php:722
+Stack trace:
+#0 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(722): PDO->__construct()
+#1 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#3 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo()
+#5 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(1181): yii\db\Command->prepare()
+#6 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(417): yii\db\Command->queryInternal()
+#7 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(366): yii\db\Command->queryAll()
+#8 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(134): yii\db\mysql\Schema->findColumns()
+#9 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\mysql\Schema->loadTableSchema()
+#10 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata()
+#11 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema()
+#12 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory()
+#13 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp()
+#15 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array()
+#16 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams()
+#17 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction()
+#18 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\console\Controller->runAction()
+#19 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction()
+#20 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction()
+#21 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\console\Application->handleRequest()
+#22 D:\wamp64\www\Onfire\yii(23): yii\base\Application->run()
+#23 {main}
+
+Next yii\db\Exception: could not find driver in D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php:648
+Stack trace:
+#0 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1067): yii\db\Connection->open()
+#1 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(261): yii\db\Connection->getSlavePdo()
+#3 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(1181): yii\db\Command->prepare()
+#4 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(417): yii\db\Command->queryInternal()
+#5 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(366): yii\db\Command->queryAll()
+#6 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\mysql\Schema.php(134): yii\db\mysql\Schema->findColumns()
+#7 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(756): yii\db\mysql\Schema->loadTableSchema()
+#8 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php(192): yii\db\Schema->getTableMetadata()
+#9 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema()
+#10 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(908): yii\console\controllers\MigrateController->getMigrationHistory()
+#11 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(183): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp()
+#13 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array()
+#14 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams()
+#15 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction()
+#16 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\console\Controller->runAction()
+#17 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction()
+#18 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction()
+#19 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\console\Application->handleRequest()
+#20 D:\wamp64\www\Onfire\yii(23): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2025-12-20 17:17:48 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Utilizador\\AppData\\Roaming'
+    'ChocolateyInstall' => 'C:\\ProgramData\\chocolatey'
+    'ChocolateyLastPathUpdate' => '133872425556108482'
+    'CHROME_CRASHPAD_PIPE_NAME' => '\\\\.\\pipe\\crashpad_5760_IIKCXBZYXKLAOPSZ'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-F227JKB'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'CUDA_PATH' => 'C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5'
+    'CUDA_PATH_V11_5' => 'C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Utilizador'
+    'JAVA_HOME' => 'C:\\Program Files\\Java\\jre-1.8'
+    'LOCALAPPDATA' => 'C:\\Users\\Utilizador\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-F227JKB'
+    'NUMBER_OF_PROCESSORS' => '6'
+    'NVCUDASAMPLES11_5_ROOT' => 'C:\\ProgramData\\NVIDIA Corporation\\CUDA Samples\\v11.5'
+    'NVCUDASAMPLES_ROOT' => 'C:\\ProgramData\\NVIDIA Corporation\\CUDA Samples\\v11.5'
+    'NVTOOLSEXT_PATH' => 'C:\\Program Files\\NVIDIA Corporation\\NvToolsExt\\'
+    'OneDrive' => 'C:\\Users\\Utilizador\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\Utilizador\\OneDrive'
+    'OPENSSL_ia32cap' => ':~0x20000000'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Cuminas\\Document Express DjVu Plug-in\\;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5\\bin;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5\\libnvvp;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2021.3.1\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;D:\\wamp64\\bin\\php\\php8.5;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Users\\Utilizador\\scoop\\shims;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python310\\;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\Utilizador\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python38;C:\\Users\\Utilizador\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\Utilizador\\.dotnet\\tools;C:\\Program Files\\JetBrains\\PhpStorm 2023.3.1\\bin;;C:\\Users\\Utilizador\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Utilizador\\AppData\\Roaming\\npm;c:\\users\\utilizador\\.local\\bin;C:\\Users\\Utilizador\\AppData\\Roaming\\Python\\Python313\\Scripts;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL'
+    'PhpStorm' => 'C:\\Program Files\\JetBrains\\PhpStorm 2023.3.1\\bin;'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 158 Stepping 10, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '9e0a'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Users\\Utilizador\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files (x86)\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\UTILIZ~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\UTILIZ~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-F227JKB'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-F227JKB'
+    'USERNAME' => 'Utilizador'
+    'USERPROFILE' => 'C:\\Users\\Utilizador'
+    'VSCODE_PYTHON_AUTOACTIVATE_GUARD' => '1'
+    'windir' => 'C:\\Windows'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.107.1'
+    'LANG' => 'en_US.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'GIT_ASKPASS' => 'c:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh'
+    'VSCODE_GIT_ASKPASS_NODE' => 'C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+    'VSCODE_GIT_ASKPASS_EXTRA_ARGS' => ''
+    'VSCODE_GIT_ASKPASS_MAIN' => 'c:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js'
+    'VSCODE_GIT_IPC_HANDLE' => '\\\\.\\pipe\\vscode-git-fa8bbba038-sock'
+    'VSCODE_INJECTION' => '1'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1766251068.1511
+    'REQUEST_TIME' => 1766251068
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]
+2025-12-20 17:21:57 [-][-][-][error][yii\db\Exception] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'onfire_db.auth_item' doesn't exist in D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php:1320
+Stack trace:
+#0 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(1320): PDOStatement->execute()
+#1 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(1120): yii\db\Command->internalExecute()
+#2 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\rbac\DbManager.php(291): yii\db\Command->execute()
+#3 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\rbac\BaseManager.php(132): yii\rbac\DbManager->addItem()
+#4 D:\wamp64\www\Onfire\console\migrations\m251118_144537_rbac.php(16): yii\rbac\BaseManager->add()
+#5 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(758): m251118_144537_rbac->up()
+#6 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(216): yii\console\controllers\BaseMigrateController->migrateUp()
+#7 [internal function]: yii\console\controllers\BaseMigrateController->actionUp()
+#8 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array()
+#9 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams()
+#10 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction()
+#11 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\console\Controller->runAction()
+#12 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction()
+#13 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction()
+#14 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\console\Application->handleRequest()
+#15 D:\wamp64\www\Onfire\yii(23): yii\base\Application->run()
+#16 {main}
+
+Next yii\db\Exception: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'onfire_db.auth_item' doesn't exist
+The SQL being executed was: INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `created_at`, `updated_at`) VALUES ('user', 1, NULL, NULL, NULL, 1766251317, 1766251317) in D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Schema.php:676
+Stack trace:
+#0 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(1325): yii\db\Schema->convertException()
+#1 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\db\Command.php(1120): yii\db\Command->internalExecute()
+#2 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\rbac\DbManager.php(291): yii\db\Command->execute()
+#3 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\rbac\BaseManager.php(132): yii\rbac\DbManager->addItem()
+#4 D:\wamp64\www\Onfire\console\migrations\m251118_144537_rbac.php(16): yii\rbac\BaseManager->add()
+#5 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(758): m251118_144537_rbac->up()
+#6 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(216): yii\console\controllers\BaseMigrateController->migrateUp()
+#7 [internal function]: yii\console\controllers\BaseMigrateController->actionUp()
+#8 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array()
+#9 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams()
+#10 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Controller.php(180): yii\base\Controller->runAction()
+#11 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\console\Controller->runAction()
+#12 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction()
+#13 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction()
+#14 D:\wamp64\www\Onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\console\Application->handleRequest()
+#15 D:\wamp64\www\Onfire\yii(23): yii\base\Application->run()
+#16 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'onfire_db.auth_item' doesn't exist
+)
+
+2025-12-20 17:21:48 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\Utilizador\\AppData\\Roaming'
+    'ChocolateyInstall' => 'C:\\ProgramData\\chocolatey'
+    'ChocolateyLastPathUpdate' => '133872425556108482'
+    'CHROME_CRASHPAD_PIPE_NAME' => '\\\\.\\pipe\\crashpad_5760_IIKCXBZYXKLAOPSZ'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-F227JKB'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'CUDA_PATH' => 'C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5'
+    'CUDA_PATH_V11_5' => 'C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\Utilizador'
+    'JAVA_HOME' => 'C:\\Program Files\\Java\\jre-1.8'
+    'LOCALAPPDATA' => 'C:\\Users\\Utilizador\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-F227JKB'
+    'NUMBER_OF_PROCESSORS' => '6'
+    'NVCUDASAMPLES11_5_ROOT' => 'C:\\ProgramData\\NVIDIA Corporation\\CUDA Samples\\v11.5'
+    'NVCUDASAMPLES_ROOT' => 'C:\\ProgramData\\NVIDIA Corporation\\CUDA Samples\\v11.5'
+    'NVTOOLSEXT_PATH' => 'C:\\Program Files\\NVIDIA Corporation\\NvToolsExt\\'
+    'OneDrive' => 'C:\\Users\\Utilizador\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\Utilizador\\OneDrive'
+    'OPENSSL_ia32cap' => ':~0x20000000'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Cuminas\\Document Express DjVu Plug-in\\;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5\\bin;C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v11.5\\libnvvp;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2021.3.1\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;D:\\wamp64\\bin\\php\\php8.5;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Users\\Utilizador\\scoop\\shims;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python310\\;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python39\\;C:\\Users\\Utilizador\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Python\\Python38;C:\\Users\\Utilizador\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\Utilizador\\.dotnet\\tools;C:\\Program Files\\JetBrains\\PhpStorm 2023.3.1\\bin;;C:\\Users\\Utilizador\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\Utilizador\\AppData\\Roaming\\npm;c:\\users\\utilizador\\.local\\bin;C:\\Users\\Utilizador\\AppData\\Roaming\\Python\\Python313\\Scripts;'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL'
+    'PhpStorm' => 'C:\\Program Files\\JetBrains\\PhpStorm 2023.3.1\\bin;'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 158 Stepping 10, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '9e0a'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PSModulePath' => 'C:\\Users\\Utilizador\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files (x86)\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\UTILIZ~1\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\UTILIZ~1\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-F227JKB'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-F227JKB'
+    'USERNAME' => 'Utilizador'
+    'USERPROFILE' => 'C:\\Users\\Utilizador'
+    'VSCODE_PYTHON_AUTOACTIVATE_GUARD' => '1'
+    'windir' => 'C:\\Windows'
+    'ZES_ENABLE_SYSMAN' => '1'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.107.1'
+    'LANG' => 'en_US.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'GIT_ASKPASS' => 'c:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh'
+    'VSCODE_GIT_ASKPASS_NODE' => 'C:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe'
+    'VSCODE_GIT_ASKPASS_EXTRA_ARGS' => ''
+    'VSCODE_GIT_ASKPASS_MAIN' => 'c:\\Users\\Utilizador\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js'
+    'VSCODE_GIT_IPC_HANDLE' => '\\\\.\\pipe\\vscode-git-fa8bbba038-sock'
+    'VSCODE_INJECTION' => '1'
+    'PHP_SELF' => 'yii'
+    'SCRIPT_NAME' => 'yii'
+    'SCRIPT_FILENAME' => 'yii'
+    'PATH_TRANSLATED' => 'yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1766251308.962
+    'REQUEST_TIME' => 1766251308
+    'argv' => [
+        0 => 'yii'
+        1 => 'migrate'
+    ]
+    'argc' => 2
+]

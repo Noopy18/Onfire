@@ -82,7 +82,7 @@ class WeeklyChallenge extends \yii\db\ActiveRecord
         ->exists();
     }
 
-     public function getEndDate(): \DateTime
+    public function getEndDate(): \DateTime
     {
         return (new \DateTime($this->start_date))
             ->setTime(23, 59, 59)

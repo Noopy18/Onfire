@@ -290,11 +290,22 @@ class Habit extends \yii\db\ActiveRecord
             }
 
             //subtract a day
-            $today_date = date("Y-m-d", strtotime("-1 day", strtotime($today_date)));
+            $today_date = date("Y-m-d", strtotime("-1 day", strtotime(date("Y-m-d"))));
         }
 
         if (count($hc_array) > 0) { return round((count($hc_array) / $all_days) * 100); }
         return 0;
 
+    }
+
+    public function isFinished(){
+        if ($this->final_date == null){
+            return false;
+        }
+        $today_date = date("Y-m-d");
+        if ($today_date > $this->final_date){
+            return true;
+        }
+        return false;
     }
 }

@@ -74,8 +74,8 @@ $currentRoute = Yii::$app->controller->route;
                    class="nav-item nav-link <?= $currentRoute == 'weekly/index' ? 'active' : '' ?>">
                     <i class="bi bi-calendar"></i> Desafios Semanais
                 </a>
-                <a href="<?= \yii\helpers\Url::to(['site/badges']) ?>"
-                   class="nav-item nav-link <?= $currentRoute == 'site/badges' ? 'active' : '' ?>">
+                <a href="<?= \yii\helpers\Url::to(['badge/index']) ?>"
+                   class="nav-item nav-link <?= $currentRoute == 'badge/index' ? 'active' : '' ?>">
                     <i class="bi bi-trophy"></i> Conquistas
                 </a>
                 <a href="<?= \yii\helpers\Url::to(['friends/index']) ?>"
