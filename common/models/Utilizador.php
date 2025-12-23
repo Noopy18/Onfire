@@ -36,6 +36,7 @@ class Utilizador extends \yii\db\ActiveRecord
             [['profile_picture', 'fk_user'], 'default', 'value' => null],
             [['name'], 'required'],
             [['fk_user'], 'integer'],
+            [['private_profile'], 'boolean'],
             [['profile_picture'], 'string', 'max' => 255],
             [['name'], 'string', 'max' => 150],
             [['fk_user'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['fk_user' => 'id']],
@@ -56,6 +57,7 @@ class Utilizador extends \yii\db\ActiveRecord
             'utilizador_id' => 'Utilizador ID',
             'profile_picture' => 'Profile Picture',
             'name' => 'Name',
+            'private_profile' => 'Perfil Privado',
             'fk_user' => 'Fk User',
         ];
     }
@@ -73,4 +75,7 @@ class Utilizador extends \yii\db\ActiveRecord
         return Yii::getAlias('@web') . '/uploads/profile/default_profile_picture.png';
     }
 
+    public function isPrivateProfile(){
+        return (bool) $this->private_profile;
+    }
 }

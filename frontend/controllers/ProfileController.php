@@ -45,6 +45,9 @@ class ProfileController extends Controller
             //  Atualizar username (tabela user)
             $user->username = Yii::$app->request->post('username');
 
+            //  Atualizar perfil privado (tabela utilizador)
+            $utilizador->private_profile = Yii::$app->request->post('private_profile', 0);
+
             //  Upload da foto (tabela utilizador)
             $file = UploadedFile::getInstanceByName('profile_picture');
 

@@ -6,7 +6,7 @@ CREATE TABLE `utilizador` (
   `utilizador_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `profile_picture` VARCHAR(255),
   `name` VARCHAR(150) NOT NULL,
-  `private_perfil` BOOLEAN NOT NULL DEFAULT '0',
+  `private_profile` BOOLEAN NOT NULL DEFAULT '0',
   `fk_user` INT REFERENCES `user`(id) 
 ) ENGINE=InnoDB;
 
