@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 $this->title = 'Badges';
-$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="container-fluid py-4">
     <div class="text-center mb-5">

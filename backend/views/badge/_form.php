@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'image')->fileInput() ?>
 
     <?= $form->field($model, 'condition_type')->dropDownList([ 'streak' => 'Streak', 'habit_completions' => 'Habit completions', 'habits_completed' => 'Habits completed', 'wc_completions' => 'Wc completions', 'wc_completed' => 'Wc completed', ], ['prompt' => '']) ?>
 
