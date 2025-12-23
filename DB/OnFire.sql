@@ -6,6 +6,7 @@ CREATE TABLE `utilizador` (
   `utilizador_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `profile_picture` VARCHAR(255),
   `name` VARCHAR(150) NOT NULL,
+  `private_perfil` BOOLEAN NOT NULL DEFAULT '0',
   `fk_user` INT REFERENCES `user`(id) 
 ) ENGINE=InnoDB;
 
@@ -34,14 +35,6 @@ CREATE TABLE `habit_completion` (
   `date` DATE NOT NULL,
   `completed` BOOLEAN NOT NULL,
   `fk_habit` INT NOT NULL REFERENCES `habit`(habit_id)
-) ENGINE=InnoDB;
-
-CREATE TABLE `settings` (
-  `settings_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `time_format` ENUM('12h','24h') NOT NULL DEFAULT '24h',
-  `dark_theme` BOOLEAN NOT NULL,
-  `private_perfil` BOOLEAN NOT NULL DEFAULT '0',
-  `fk_utilizador_id` INT NOT NULL REFERENCES `utilizador`(utilizador_id)
 ) ENGINE=InnoDB;
 
 CREATE TABLE `friends` (
