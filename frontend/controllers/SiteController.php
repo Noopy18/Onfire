@@ -163,6 +163,7 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
+        $this->layout = "pre-entry";
         return $this->render('about');
     }
 

@@ -21,15 +21,15 @@ use yii\helpers\Url;
     </div>
 </section>
 
-<!-- Features Section -->
 <section class="container my-5">
     <div class="row g-4">
-        <!-- Card 1 -->
+        <!-- progresso -->
         <div class="col-md-4">
             <div class="card h-100">
-                <?= Html::img('@web/img/logo_Onfire_no_bg.png', [
+                <?= Html::img('@web/img/landing_page/progress.png', [
                         'alt' => 'OnFire Logo',
-                        'style' => 'object-fit: contain;'
+                        'class' => 'rounded mx-auto mb-3',
+                        'style' => 'width: 75%; height: auto; border-radius: 50%; display: block; margin: 0 auto;'
                 ]); ?>
                 <div class="card-body">
                     <h5 class="card-title">Track Progress</h5>
@@ -37,12 +37,13 @@ use yii\helpers\Url;
                 </div>
             </div>
         </div>
-        <!-- Card 2 -->
+        <!-- lembranças -->
         <div class="col-md-4">
             <div class="card h-100">
-                <?= Html::img('@web/img/logo_Onfire_no_bg.png', [
+                <?= Html::img('@web/img/landing_page/alarm.png', [
                         'alt' => 'OnFire Logo',
-                        'style' => 'object-fit: contain;'
+                        'class' => 'rounded mx-auto mb-3',
+                        'style' => 'width: 75%; height: auto; border-radius: 50%; display: block; margin: 0 auto;'
                 ]); ?>
                 <div class="card-body">
                     <h5 class="card-title">Smart Reminders</h5>
@@ -50,12 +51,13 @@ use yii\helpers\Url;
                 </div>
             </div>
         </div>
-        <!-- Card 3 -->
+        <!-- comunidade -->
         <div class="col-md-4">
             <div class="card h-100">
-                <?= Html::img('@web/img/logo_Onfire_no_bg.png', [
+                <?= Html::img('@web/img/landing_page/community.png', [
                         'alt' => 'OnFire Logo',
-                        'style' => 'object-fit: contain;'
+                        'class' => 'rounded mx-auto mb-3',
+                        'style' => 'width: 75%; height: auto; border-radius: 50%; display: block; margin: 0 auto;'
                 ]); ?>
                 <div class="card-body">
                     <h5 class="card-title">Community Support</h5>

@@ -68,9 +68,11 @@ $this->title = 'Sobre nós';
 
         <div class="col-md-3 col-sm-6">
             <div class="card border-0 shadow-sm text-center p-3">
-                <img src="" alt="Diogo Faria"
-                     class="rounded-circle mx-auto mb-3"
-                     style="width:120px; height:120px; object-fit:cover;">
+                <?= Html::img('@web/img/about/diogo.jpg', [
+                        'alt' => 'OnFire Logo',
+                        'class' => 'rounded-circle mx-auto mb-3',
+                        'style' => 'width: 50%; height: auto; border-radius: 50%; display: block; margin: 0 auto;'
+                ]); ?>
                 <h5 class="fw-bold mb-1">Diogo Faria</h5>
                 <p class="text-muted small mb-2">CEO</p>
             </div>
@@ -78,9 +80,11 @@ $this->title = 'Sobre nós';
 
         <div class="col-md-3 col-sm-6">
             <div class="card border-0 shadow-sm text-center p-3">
-                <img src="" alt="Miguel Costa"
-                     class="rounded-circle mx-auto mb-3"
-                     style="width:120px; height:120px; object-fit:cover;">
+                <?= Html::img('@web/img/about/miguel.jpg', [
+                        'alt' => 'OnFire Logo',
+                        'class' => 'rounded-circle mx-auto mb-3',
+                        'style' => 'width: 50%; height: auto; border-radius: 50%; display: block; margin: 0 auto;'
+                ]); ?>
                 <h5 class="fw-bold mb-1">Miguel Costa</h5>
                 <p class="text-muted small mb-2">CEO</p>
             </div>
@@ -88,9 +92,11 @@ $this->title = 'Sobre nós';
 
         <div class="col-md-3 col-sm-6">
             <div class="card border-0 shadow-sm text-center p-3">
-                <img src="" alt="Max Butescu"
-                     class="rounded-circle mx-auto mb-3"
-                     style="width:120px; height:120px; object-fit:cover;">
+                <?= Html::img('@web/img/about/max.jpg', [
+                        'alt' => 'OnFire Logo',
+                        'class' => 'rounded-circle mx-auto mb-3',
+                        'style' => 'width: 50%; height: auto; border-radius: 50%; display: block; margin: 0 auto;'
+                ]); ?>
                 <h5 class="fw-bold mb-1">Max Butescu</h5>
                 <p class="text-muted small mb-2">CEO</p>
             </div>
