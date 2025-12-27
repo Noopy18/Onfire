@@ -23,6 +23,19 @@ class BadgeController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                    'class' => AccessControl::class,
+                    'rules' => [
+                        [
+                            'actions' => ['login', 'error', 'logout'],
+                            'allow' => true,
+                        ],
+                        [
+                            'allow' => true,
+                            'roles' => ['administrator', 'technician'],
+                        ],
+                    ],
+                ],
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [

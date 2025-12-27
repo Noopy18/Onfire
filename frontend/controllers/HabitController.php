@@ -7,6 +7,7 @@ use frontend\models\HabitCompletion;
 use frontend\models\HabitSearch;
 use common\models\BadgeUtilizador;
 use common\models\Badge;
+use yii\filters\AccessControl;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
@@ -23,6 +24,15 @@ class HabitController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                    'class' => AccessControl::class,
+                    'rules' => [
+                        [
+                            'allow' => true,
+                            'roles' => ['@'],
+                        ],
+                    ],
+                ],
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [

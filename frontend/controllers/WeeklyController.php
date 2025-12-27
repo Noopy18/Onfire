@@ -11,6 +11,7 @@ use yii\web\NotFoundHttpException;
 use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
 use yii;
+use yii\filters\AccessControl;
 
 /**
  * WeeklyChallengeController implements the CRUD actions for WeeklyChallenge model.
@@ -25,6 +26,15 @@ class WeeklyController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                    'class' => AccessControl::class,
+                    'rules' => [
+                        [
+                            'allow' => true,
+                            'roles' => ['@'],
+                        ],
+                    ],
+                ],
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [

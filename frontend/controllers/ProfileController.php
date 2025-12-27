@@ -9,6 +9,7 @@ use common\models\Utilizador;
 use common\models\User;
 use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
+use yii\filters\AccessControl;
 
 class ProfileController extends Controller
 {
@@ -16,6 +17,15 @@ class ProfileController extends Controller
     {
         return array_merge(
             parent::behaviors(), [
+            'access' => [
+                'class' => AccessControl::class,
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::class,
                 'actions' => [
