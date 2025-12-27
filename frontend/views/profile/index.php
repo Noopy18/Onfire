@@ -6,94 +6,269 @@ $this->title = 'Perfil | OnFire';
 ?>
 
 <div class="container-fluid py-5">
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="card shadow-sm border-0 rounded-4 p-4">
+                
+                <form method="post" action="<?= Url::to(['profile/index']) ?>" enctype="multipart/form-data">
+                    <input type="hidden" name="<?= Yii::$app->request->csrfParam ?>" value="<?= Yii::$app->request->csrfToken ?>">
+                
+                    <!-- PROFILE HEADER -->
+                    <div class="text-center mb-5">
 
-    <form method="post"
-          action="<?= Url::to(['profile/index']) ?>"
-          enctype="multipart/form-data">
-
-        <input type="hidden"
-               name="<?= Yii::$app->request->csrfParam ?>"
-               value="<?= Yii::$app->request->csrfToken ?>">
-
-        <div class="row">
-
-            <!-- SIDEBAR -->
-            <div class="col-md-3 col-lg-2 mb-4">
-                <div class="card shadow-sm border-0 rounded-4 p-3">
-                    <a href="<?= Url::to(['site/request-password-reset']) ?>" 
-                       class="btn btn-light w-100 py-3 mb-3 fw-semibold rounded-3">
-                        Change Password
-                    </a>
-                </div>
-            </div>
-
-            <!-- CONTENT MAIN -->
-            <div class="col-md-9 col-lg-10">
-                <div class="card shadow-sm border-0 rounded-4 p-4">
-
-                    <!-- AVATAR + BADGES -->
-                    <div class="d-flex align-items-center gap-4 flex-wrap">
-
-                        <!-- Avatar -->
-                        <div class="position-relative">
+                        <div class="position-relative d-inline-block">
                             <img src="<?= $utilizador->profile_picture
                                 ? Url::to('@web/' . $utilizador->profile_picture)
-                                : 'https://via.placeholder.com/180' ?>"
-                                 class="rounded-circle border border-3 border-light shadow-sm"
-                                 style="width: 180px; height: 180px; object-fit: cover;">
+                                : 'https://via.placeholder.com/150' ?>"
+                                class="rounded-circle border border-3 border-light shadow-sm"
+                                style="width: 150px; height: 150px; object-fit: cover;">
 
                             <label for="profileImageUpload" 
-                                   class="btn btn-sm btn-success position-absolute bottom-0 end-0 rounded-circle">
+                                class="btn btn-sm btn-success position-absolute bottom-0 end-0 rounded-circle">
                                 <i class="bi bi-camera-fill"></i>
                             </label>
 
                             <input type="file" 
-                                   id="profileImageUpload"
-                                   name="profile_picture"
-                                   class="d-none"
-                                   accept="image/*">
+                                id="profileImageUpload"
+                                name="profile_picture"
+                                class="d-none"
+                                accept="image/*"
+                                onchange="previewImage(this)">
                         </div>
-
-                        <!-- Badges -->
-                        <div class="d-flex align-items-center gap-3 flex-wrap">
-                            <div class="rounded-circle d-flex justify-content-center align-items-center shadow-sm"
-                                 style="width: 80px; height: 80px; background: #e9ecef;">
-                                <span class="fw-bold small text-center">Current<br>Highest<br>Streak</span>
-                            </div>
-
-                            <div class="rounded-circle d-flex justify-content-center align-items-center shadow-sm"
-                                 style="width: 80px; height: 80px; background: #e9ecef;">
-                                <span class="fw-bold">Badge</span>
-                            </div>
-
-                            <div class="rounded-circle d-flex justify-content-center align-items-center shadow-sm"
-                                 style="width: 80px; height: 80px; background: #e9ecef;">
-                                <span class="fw-bold">Badge</span>
-                            </div>
+                        
+                        <div class="mt-3">
+                            <span class="h4 fw-bold"><?= Html::encode($user->username) ?></span>
                         </div>
-
                     </div>
 
-                    <!-- Change Username -->
-                    <div class="mt-4">
-                        <input type="text" 
-                               name="username"
-                               class="form-control rounded-3 p-3" 
-                               value="<?= Html::encode($user->username) ?>"
-                               placeholder="Change Username">
+                    <!-- SETTINGS SECTION -->
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <h5 class="mb-4 text-center">Account Settings</h5>
+
+                            <div class="row mb-3">
+                                <div class="col-3">
+                                    <label class="form-label fw-semibold">Username:</label>
+                                </div>
+                                <div class="col-6">
+                                    <label id="usernameDisplay" class="form-label fw-semibold"><?= $user->username?></label>
+                                </div>
+                                <div class="col-3 d-flex justify-content-end">
+                                    <button type="button" id="editUsernameBtn" class="btn btn-sm btn-outline-secondary ms-2">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-3">
+                                    <label class="form-label fw-semibold">Name:</label>
+                                </div>
+                                <div class="col-6">
+                                    <label id="nameDisplay" class="form-label fw-semibold"><?= $utilizador->name?></label>
+                                </div>
+                                <div class="col-3 d-flex justify-content-end">
+                                    <button type="button" id="editNameBtn" class="btn btn-sm btn-outline-secondary ms-2">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-3">
+                                    <label class="form-label fw-semibold">Password:</label>
+                                </div>
+                                <div class="col-9">
+                                    <a href="<?= Url::to(['site/request-password-reset']) ?>" 
+                                        class="btn btn-outline-primary w-100">
+                                        Change Password
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3" hidden>
+                                <div class="col-3">
+                                    <label class="form-label fw-semibold">Username:</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" 
+                                        name="username"
+                                        id="usernameInput"
+                                        class="form-control" 
+                                        value="<?= Html::encode($user->username) ?>"
+                                        placeholder="Enter new username">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3" hidden>
+                                <div class="col-3">
+                                    <label class="form-label fw-semibold">Name:</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" 
+                                        name="name"
+                                        id="nameInput"
+                                        class="form-control" 
+                                        value="<?= Html::encode($utilizador->name) ?>"
+                                        placeholder="Enter new name">
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-3">
+                                    <label class="form-label fw-semibold">Privacy:</label>
+                                </div>
+                                <div class="col-9">
+                                    <div class="form-check form-switch">
+                                        <input type="hidden" name="private_profile" value="0">
+                                        <input class="form-check-input" type="checkbox" id="privateProfile" name="private_profile" value="1" <?php if($utilizador->private_profile){ echo "checked";} ?>>
+                                        <label class="form-check-label" for="privateProfile">
+                                            Private Profile
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn w-100 py-2" 
+                                    style="background-color: #ff7b00; color: white;">
+                                Save Changes
+                            </button>
+                        </div>
                     </div>
-
-                    <br>
-
-                    <!-- SUBMIT -->
-                    <button type="submit" class="btn w-100" 
-                            style="background-color: #ff7b00; color: white;">
-                        Guardar Alterações
-                    </button>
-
-                </div>
+                </form>
             </div>
-
         </div>
-    </form>
+    </div>
 </div>
+
+<script>
+    function previewImage(input) {
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.querySelector('img[style*="width: 150px"]');
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(input.files[0]);
+            
+            // Auto-submit the image form
+            document.getElementById('imageForm').submit();
+        }
+    }
+
+    function privateProfile() {
+        const privateInput = document.getElementById('privateProfile');
+        if (!privateInput) return;
+
+        privateInput.value = privateInput.checked ? "1" : "0";
+        
+        privateInput.addEventListener('change', function() {
+            this.value = this.checked ? "1" : "0";
+        });
+    }
+
+    function setupUsernameEdit() {
+        const editBtn = document.getElementById('editUsernameBtn');
+        if (!editBtn) return;
+        
+        editBtn.addEventListener('click', function() {
+            const usernameDisplay = document.getElementById('usernameDisplay');
+            const currentUsername = usernameDisplay.textContent;
+            
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.value = currentUsername;
+            input.className = 'form-control d-inline-block';
+            input.style.width = 'auto';
+            input.style.minWidth = '200px';
+            
+            usernameDisplay.replaceWith(input);
+            input.focus();
+            
+            const saveBtn = document.createElement('button');
+            saveBtn.type = 'button';
+            saveBtn.className = 'btn btn-sm btn-success ms-2';
+            saveBtn.innerHTML = '<i class="bi bi-check"></i>';
+            
+            this.replaceWith(saveBtn);
+            
+            saveBtn.addEventListener('click', function() {
+                const newLabel = document.createElement('label');
+                newLabel.id = 'usernameDisplay';
+                newLabel.className = 'form-label fw-semibold';
+                newLabel.textContent = input.value;
+                
+                input.replaceWith(newLabel);
+                
+                const newEditBtn = document.createElement('button');
+                newEditBtn.type = 'button';
+                newEditBtn.id = 'editUsernameBtn';
+                newEditBtn.className = 'btn btn-sm btn-outline-secondary ms-2';
+                newEditBtn.innerHTML = '<i class="bi bi-pencil"></i>';
+                
+                saveBtn.replaceWith(newEditBtn);
+                
+                // Update the username input in the form
+                document.getElementById('usernameInput').value = input.value;
+                
+                // Re-setup event listener
+                setupUsernameEdit();
+            });
+        });
+    }
+
+    function setupNameEdit() {
+        const editBtn = document.getElementById('editNameBtn');
+        if (!editBtn) return;
+        
+        editBtn.addEventListener('click', function() {
+            const nameDisplay = document.getElementById('nameDisplay');
+            const currentName = nameDisplay.textContent;
+            
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.value = currentName;
+            input.className = 'form-control d-inline-block';
+            input.style.width = 'auto';
+            input.style.minWidth = '200px';
+            
+            nameDisplay.replaceWith(input);
+            input.focus();
+            
+            const saveBtn = document.createElement('button');
+            saveBtn.type = 'button';
+            saveBtn.className = 'btn btn-sm btn-success ms-2';
+            saveBtn.innerHTML = '<i class="bi bi-check"></i>';
+            
+            this.replaceWith(saveBtn);
+            
+            saveBtn.addEventListener('click', function() {
+                const newLabel = document.createElement('label');
+                newLabel.id = 'nameDisplay';
+                newLabel.className = 'form-label fw-semibold';
+                newLabel.textContent = input.value;
+                
+                input.replaceWith(newLabel);
+                
+                const newEditBtn = document.createElement('button');
+                newEditBtn.type = 'button';
+                newEditBtn.id = 'editNameBtn';
+                newEditBtn.className = 'btn btn-sm btn-outline-secondary ms-2';
+                newEditBtn.innerHTML = '<i class="bi bi-pencil"></i>';
+                
+                saveBtn.replaceWith(newEditBtn);
+                
+                // Update the name input in the form
+                document.getElementById('nameInput').value = input.value;
+                
+                // Re-setup event listener
+                setupNameEdit();
+            });
+        });
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', setupNameEdit);
+    document.addEventListener('DOMContentLoaded', setupUsernameEdit);
+    document.addEventListener('DOMContentLoaded', privateProfile);
+</script>

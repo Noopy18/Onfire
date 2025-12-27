@@ -7,6 +7,8 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
+use Yii;
 
 /**
  * BadgeController implements the CRUD actions for Badge model.
@@ -80,8 +82,39 @@ class BadgeController extends Controller
         $model = new Badge();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'badge_id' => $model->badge_id]);
+            if ($model->load($this->request->post())) {
+                $file = UploadedFile::getInstance($model, 'image');
+
+                if ($file) {
+                    $allowedTypes = ['jpg', 'jpeg', 'png', 'gif'];
+                    if (!in_array(strtolower($file->extension), $allowedTypes)) {
+                        Yii::$app->session->setFlash('error', 'Tipo de arquivo não permitido. Use JPG, PNG ou GIF.');
+                        return $this->render('create', ['model' => $model]);
+                    }
+
+                    if ($file->size > 10 * 1024 * 1024) {
+                        Yii::$app->session->setFlash('error', 'Arquivo muito grande. Máximo 5MB.');
+                        return $this->render('create', ['model' => $model]);
+                    }
+
+                    $fileName = 'badge_' . time() . '.' . $file->extension;
+                    $uploadDir = Yii::getAlias('@webroot/uploads/badge/');
+                    
+                    if (!is_dir($uploadDir)) {
+                        mkdir($uploadDir, 0755, true);
+                    }
+
+                    if ($file->saveAs($uploadDir . $fileName)) {
+                        $model->image = 'uploads/badge/' . $fileName;
+                    } else {
+                        Yii::$app->session->setFlash('error', 'Erro ao fazer upload da imagem.');
+                        return $this->render('create', ['model' => $model]);
+                    }
+                }
+
+                if ($model->save()) {
+                    return $this->redirect(['view', 'badge_id' => $model->badge_id]);
+                }
             }
         } else {
             $model->loadDefaultValues();
@@ -102,9 +135,43 @@ class BadgeController extends Controller
     public function actionUpdate($badge_id)
     {
         $model = $this->findModel($badge_id);
+        $oldImage = $model->image;
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'badge_id' => $model->badge_id]);
+        if ($this->request->isPost && $model->load($this->request->post())) {
+            $file = UploadedFile::getInstance($model, 'image');
+
+            if ($file) {
+                $allowedTypes = ['jpg', 'jpeg', 'png', 'gif'];
+                if (!in_array(strtolower($file->extension), $allowedTypes)) {
+                    Yii::$app->session->setFlash('error', 'Tipo de arquivo não permitido. Use JPG, PNG ou GIF.');
+                    return $this->render('update', ['model' => $model]);
+                }
+
+                if ($file->size > 10 * 1024 * 1024) {
+                    Yii::$app->session->setFlash('error', 'Arquivo muito grande. Máximo 10MB.');
+                    return $this->render('update', ['model' => $model]);
+                }
+
+                $fileName = 'badge' . '_' . time() . '.' . $file->extension;
+                $uploadDir = Yii::getAlias('@webroot/uploads/badge/');
+                
+                if (!is_dir($uploadDir)) {
+                    mkdir($uploadDir, 0755, true);
+                }
+
+                if ($file->saveAs($uploadDir . $fileName)) {
+                    $model->image = 'uploads/badge/' . $fileName;
+                } else {
+                    Yii::$app->session->setFlash('error', 'Erro ao fazer upload da imagem.');
+                    return $this->render('update', ['model' => $model]);
+                }
+            } else {
+                $model->image = $oldImage;
+            }
+
+            if ($model->save(false)) {
+                return $this->redirect(['view', 'badge_id' => $model->badge_id]);
+            }
         }
 
         return $this->render('update', [

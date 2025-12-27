@@ -38,11 +38,12 @@ class BadgeController extends Controller
         $earnedBadges = BadgeUtilizador::find()->where(['fk_utilizador' => Yii::$app->user->id])->select('fk_badge')->column();
         
         $dataProvider = new ActiveDataProvider([
-            'query' => Badge::find()->where(['in', 'badge_id', $earnedBadges]),
+            'query' => Badge::find(),
         ]);
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
+            'earnedBadges' => $earnedBadges
         ]);
     }
 

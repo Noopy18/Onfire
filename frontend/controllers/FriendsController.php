@@ -186,9 +186,12 @@ class FriendsController extends Controller
 
         //Encontra os utilizadores cujos não tem o mesmo ID do utilizador atual nem estão no array 'friendModels'.
         $users = \common\models\User::find()
+            ->joinWith('utilizador')
             ->where(['like', 'username', $q])
             //Filtro da pesquisa do próprio utilizador.
             ->andWhere(['!=', 'id', $currentUser])
+            //Filtro do perfil privado.
+            ->andWhere(['utilizador.private_profile' => 0])
             //Filtro de amizade com o utilizador atual.
             ->andWhere(['not in', 'id', array_merge(
                 array_map(fn($f) => $f->sender, $friendModels),

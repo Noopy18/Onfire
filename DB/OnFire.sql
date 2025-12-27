@@ -80,5 +80,5 @@ CREATE TABLE `badge_utilizador` (
   `fk_badge` INT NOT NULL  REFERENCES `badge`(badge_id)
 ) ENGINE=InnoDB;
 
-INSERT INTO `utilizador` VALUES (1, '', 'ADM', 1);
-INSERT INTO `utilizador` VALUES (2, '', 'TECH', 2);
+INSERT INTO `utilizador` VALUES (1, '', 'ADM', 0, 1);
+INSERT INTO `utilizador` VALUES (2, '', 'TECH', 0, 2);
