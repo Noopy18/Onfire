@@ -44,11 +44,11 @@ $this->title = 'Perfil | OnFire';
                     <!-- SETTINGS SECTION -->
                     <div class="row justify-content-center">
                         <div class="col-md-6">
-                            <h5 class="mb-4 text-center">Account Settings</h5>
+                            <h5 class="mb-4 text-center">Definições da Conta</h5>
 
                             <div class="row mb-3">
                                 <div class="col-3">
-                                    <label class="form-label fw-semibold">Username:</label>
+                                    <label class="form-label fw-semibold">Nome:</label>
                                 </div>
                                 <div class="col-6">
                                     <label id="usernameDisplay" class="form-label fw-semibold"><?= $user->username?></label>
@@ -62,7 +62,7 @@ $this->title = 'Perfil | OnFire';
 
                             <div class="row mb-3">
                                 <div class="col-3">
-                                    <label class="form-label fw-semibold">Name:</label>
+                                    <label class="form-label fw-semibold">Nome:</label>
                                 </div>
                                 <div class="col-6">
                                     <label id="nameDisplay" class="form-label fw-semibold"><?= $utilizador->name?></label>
@@ -81,14 +81,14 @@ $this->title = 'Perfil | OnFire';
                                 <div class="col-9">
                                     <a href="<?= Url::to(['site/request-password-reset']) ?>" 
                                         class="btn btn-outline-primary w-100">
-                                        Change Password
+                                        Alterar password
                                     </a>
                                 </div>
                             </div>
 
                             <div class="row mb-3" hidden>
                                 <div class="col-3">
-                                    <label class="form-label fw-semibold">Username:</label>
+                                    <label class="form-label fw-semibold">Nome:</label>
                                 </div>
                                 <div class="col-9">
                                     <input type="text" 
@@ -102,7 +102,7 @@ $this->title = 'Perfil | OnFire';
 
                             <div class="row mb-3" hidden>
                                 <div class="col-3">
-                                    <label class="form-label fw-semibold">Name:</label>
+                                    <label class="form-label fw-semibold">Nome:</label>
                                 </div>
                                 <div class="col-9">
                                     <input type="text" 
@@ -116,14 +116,14 @@ $this->title = 'Perfil | OnFire';
 
                             <div class="row mb-4">
                                 <div class="col-3">
-                                    <label class="form-label fw-semibold">Privacy:</label>
+                                    <label class="form-label fw-semibold">Privacidade:</label>
                                 </div>
                                 <div class="col-9">
                                     <div class="form-check form-switch">
                                         <input type="hidden" name="private_profile" value="0">
                                         <input class="form-check-input" type="checkbox" id="privateProfile" name="private_profile" value="1" <?php if($utilizador->private_profile){ echo "checked";} ?>>
                                         <label class="form-check-label" for="privateProfile">
-                                            Private Profile
+                                            Perfil Privado
                                         </label>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@ $this->title = 'Perfil | OnFire';
 
                             <button type="submit" class="btn w-100 py-2" 
                                     style="background-color: #ff7b00; color: white;">
-                                Save Changes
+                                Guardar Alterações  
                             </button>
                         </div>
                     </div>

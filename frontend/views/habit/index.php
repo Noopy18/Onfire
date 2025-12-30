@@ -61,9 +61,9 @@ $this->title = 'Inicio | OnFire';
                                 <th>Categoria</th>
                                 <th>Streak</th>
                                 <th>Próxima</th>
-                                <th>Total Completions</th>
-                                <th>Completion</th>
-                                <th>Settings</th>
+                                <th>Total Conclusões</th>
+                                <th>Concluída</th>
+                                <th>Definições</th>
                             </tr>
                             </thead>
 
@@ -103,7 +103,7 @@ $this->title = 'Inicio | OnFire';
                                     echo Html::submitButton('Completar', ['class' => 'btn btn-sm rounded-pill px-3 text-white', 'style' => 'background-color: orange']);
                                     echo Html::endForm();
                                 } else {
-                                    echo('<button class="btn btn-sm rounded-pill px-3 text-white" style="background-color: grey">Not the day!</button>');
+                                    echo('<button class="btn btn-sm rounded-pill px-3 text-white" style="background-color: grey">Não é o dia!</button>');
                                 }
 
                                 echo('</td>');

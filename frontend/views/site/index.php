@@ -8,14 +8,20 @@ use yii\helpers\Url;
 <section class="container my-5">
     <div class="row align-items-center">
         <div class="col-md-7">
-            <h1 class="display-4 fw-bold">Build Better Habits with TrackLife</h1>
-            <p class="lead">Transform your life one habit at a time. Our intuitive habit tracker helps you stay consistent and achieve your goals faster.</p>
-            <a href="<?= Url::toRoute('site/login'); ?>" class="btn btn-primary btn-lg">Get Started</a>
+            <h1 class="display-4 fw-bold">Constrói Melhores Hábitos com o Onfire</h1>
+            <p class="lead">
+                Transforma a tua vida um hábito de cada vez.
+                O nosso rastreador de hábitos intuitivo ajuda-te a manter a consistência
+                e a atingir os teus objetivos mais rapidamente.
+            </p>
+            <a href="<?= Url::toRoute('site/login'); ?>" class="btn btn-lg" style="background-color: #ff7b00;">
+                Começar
+            </a>
         </div>
         <div class="col-md-5">
             <?= Html::img('@web/img/logo_Onfire_no_bg.png', [
-                    'alt' => 'OnFire Logo',
-                    'style' => 'object-fit: contain;'
+                'alt' => 'Logótipo OnFire',
+                'style' => 'object-fit: contain;'
             ]); ?>
         </div>
     </div>
@@ -27,41 +33,52 @@ use yii\helpers\Url;
         <div class="col-md-4">
             <div class="card h-100">
                 <?= Html::img('@web/img/landing_page/progress.png', [
-                        'alt' => 'OnFire Logo',
-                        'class' => 'rounded mx-auto mb-3',
-                        'style' => 'width: 75%; height: auto; border-radius: 50%; display: block; margin: 0 auto;'
+                    'alt' => 'Acompanhar progresso',
+                    'class' => 'rounded mx-auto mb-3',
+                    'style' => 'width: 75%; height: auto; border-radius: 50%; display: block; margin: 0 auto;'
                 ]); ?>
                 <div class="card-body">
-                    <h5 class="card-title">Track Progress</h5>
-                    <p class="card-text">Monitor your daily habits and see your improvement over time with detailed statistics and visual charts.</p>
+                    <h5 class="card-title">Acompanha o Teu Progresso</h5>
+                    <p class="card-text">
+                        Monitoriza os teus hábitos diários e acompanha a tua evolução ao longo do tempo,
+                        com estatísticas detalhadas e gráficos claros.
+                    </p>
                 </div>
             </div>
         </div>
-        <!-- lembranças -->
+
+        <!-- lembretes -->
         <div class="col-md-4">
             <div class="card h-100">
                 <?= Html::img('@web/img/landing_page/alarm.png', [
-                        'alt' => 'OnFire Logo',
-                        'class' => 'rounded mx-auto mb-3',
-                        'style' => 'width: 75%; height: auto; border-radius: 50%; display: block; margin: 0 auto;'
+                    'alt' => 'Lembretes inteligentes',
+                    'class' => 'rounded mx-auto mb-3',
+                    'style' => 'width: 75%; height: auto; border-radius: 50%; display: block; margin: 0 auto;'
                 ]); ?>
                 <div class="card-body">
-                    <h5 class="card-title">Smart Reminders</h5>
-                    <p class="card-text">Never forget a habit with our intelligent notification system that adapts to your schedule.</p>
+                    <h5 class="card-title">Lembretes Inteligentes</h5>
+                    <p class="card-text">
+                        Nunca te esqueças de um hábito com o nosso sistema de notificações inteligentes,
+                        adaptado à tua rotina.
+                    </p>
                 </div>
             </div>
         </div>
+
         <!-- comunidade -->
         <div class="col-md-4">
             <div class="card h-100">
                 <?= Html::img('@web/img/landing_page/community.png', [
-                        'alt' => 'OnFire Logo',
-                        'class' => 'rounded mx-auto mb-3',
-                        'style' => 'width: 75%; height: auto; border-radius: 50%; display: block; margin: 0 auto;'
+                    'alt' => 'Comunidade',
+                    'class' => 'rounded mx-auto mb-3',
+                    'style' => 'width: 75%; height: auto; border-radius: 50%; display: block; margin: 0 auto;'
                 ]); ?>
                 <div class="card-body">
-                    <h5 class="card-title">Community Support</h5>
-                    <p class="card-text">Join a community of like-minded people and stay motivated together.</p>
+                    <h5 class="card-title">Apoio da Comunidade</h5>
+                    <p class="card-text">
+                        Junta-te a uma comunidade de pessoas com objetivos semelhantes
+                        e mantém-te motivado com o apoio de todos.
+                    </p>
                 </div>
             </div>
         </div>

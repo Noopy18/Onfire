@@ -8,19 +8,19 @@ $this->title = 'Badges';
 <div class="container-fluid py-4">
     <div class="text-center mb-5">
         <h1 class="display-4 fw-bold text-primary"><?= Html::encode($this->title) ?></h1>
-        <p class="lead text-muted">Unlock achievements and showcase your progress</p>
+        <p class="lead text-muted">Desbloqueia conquistas e mostra o teu progresso</p>
     </div>
 
     <!-- Tab Navigation -->
     <ul class="nav nav-tabs mb-4" id="badgeTabs" role="tablist">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab">All Badges</button>
+            <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab">Todas as Conquistas</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="unlocked-tab" data-bs-toggle="tab" data-bs-target="#unlocked" type="button" role="tab">Unlocked</button>
+            <button class="nav-link" id="unlocked-tab" data-bs-toggle="tab" data-bs-target="#unlocked" type="button" role="tab">Desbloqueadas</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="locked-tab" data-bs-toggle="tab" data-bs-target="#locked" type="button" role="tab">Locked</button>
+            <button class="nav-link" id="locked-tab" data-bs-toggle="tab" data-bs-target="#locked" type="button" role="tab">Bloqueadas</button>
         </li>
     </ul>
 

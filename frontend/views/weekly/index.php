@@ -25,7 +25,7 @@ $this->title = 'Desafios Semanais | OnFire';
                         <th class="text-start">Título</th>
                         <th>Descrição</th>
                         <th>Data-final</th>
-                        <th>Completion</th>
+                        <th>Conclusão</th>
                     </tr>
                     </thead>
 

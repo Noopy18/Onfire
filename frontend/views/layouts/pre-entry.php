@@ -15,23 +15,19 @@ use yii\helpers\Url;
 </head>
 <body>
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar bg-light">
     <div class="container">
         <a class="navbar-brand" href="<?= Url::to(['site/index']) ?>">Onfire</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <?= Html::a('Sobre nós', ['site/about'], ['class' => 'nav-link active']) ?>
                 </li>
             </ul>
-        </div>
     </div>
 </nav>
 
-<?= $content ?>
+ <?= $content ?> 
 
 <!-- Footer -->
 <footer class="footer mt-auto py-3 text-muted">

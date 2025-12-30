@@ -71,7 +71,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     echo Html::submitButton('Completar', ['class' => 'btn w-100 py-4 text-white', 'style' => 'background-color: orange;']);
                     echo Html::endForm();
                 } else {
-                    echo('<button class="btn w-100 py-4 text-white" style="background-color: grey">Not the day!</button>');
+                    echo('<button class="btn w-100 py-4 text-white" style="background-color: grey">Não é o dia!</button>');
                 }
                 ?>
 
@@ -79,18 +79,18 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-md-6">
                 <div class="row g-3">
                     <div class="col-md-6">
-                        <?= Html::a('<i class="fas fa-edit"></i> Update',
+                        <?= Html::a('<i class="fas fa-edit"></i> Atualizar',
                                 ['update', 'habit_id' => $model->habit_id],
                                 ['class' => 'btn-primary btn w-100 py-4 text-white'])
                         ?>
                     </div>
                     <div class="col-md-6">
-                        <?= Html::a('<i class="fas fa-trash"></i> Delete',
+                        <?= Html::a('<i class="fas fa-trash"></i> Apagar',
                                 ['delete', 'habit_id' => $model->habit_id],
                                 [
                                         'class' => 'btn-danger btn w-100 py-4 text-white',
                                         'data' => [
-                                                'confirm' => 'Are you sure you want to delete this habit?',
+                                                'confirm' => 'Tens certeza de que queres apagar este hábito?',
                                                 'method' => 'post',
                                         ],
                                 ])
@@ -113,9 +113,9 @@ $this->params['breadcrumbs'][] = $this->title;
                             <i class="fas fa-fire fa-2x text-success"></i>
                         </div>
                         <h2 class="text-white display-4 fw-bold"><?= $model->getStreak()?></h2>
-                        <p class="text-success mb-0">Current Streak</p>
+                        <p class="text-success mb-0">Streak atual</p>
                         <small class="text-success">
-                            <i class="fas fa-arrow-up"></i> <?= $model->getStreak() > 0 ? 'Keep going!' : 'Start today!' ?>
+                            <i class="fas fa-arrow-up"></i> <?= $model->getStreak() > 0 ? 'Continua assim!' : 'Começa hoje!' ?>
                         </small>
                     </div>
                 </div>
@@ -129,9 +129,9 @@ $this->params['breadcrumbs'][] = $this->title;
                             <i class="fas fa-trophy fa-2x text-success"></i>
                         </div>
                         <h2 class="display-4 fw-bold text-white"><?= $model->getBestStreak() ?></h2>
-                        <p class="text-success mb-0">Best Streak</p>
+                        <p class="text-success mb-0">Melhor Streak</p>
                         <small class="text-success">
-                            <i class="fas fa-star"></i> Personal record
+                            <i class="fas fa-star"></i> Recorde pessoal
                         </small>
                     </div>
                 </div>
@@ -145,9 +145,9 @@ $this->params['breadcrumbs'][] = $this->title;
                             <i class="fas fa-calendar-check fa-2x text-success"></i>
                         </div>
                         <h2 class="display-4 fw-bold text-white"><?= count($model->habitCompletions) ?></h2>
-                        <p class="text-success mb-0">Days Completed</p>
+                        <p class="text-success mb-0">Dias Concluídos</p>
                         <small class="text-success">
-                            <?= $model->getSuccessRate() ?>% success rate
+                            <?= $model->getSuccessRate() ?>% taxa de sucesso
                         </small>
                     </div>
                 </div>
@@ -163,7 +163,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <h2 class="display-4 text-white fw-bold">
                             <i class="far fa-calendar-alt"></i> <?= $model->dueDate() ?>
                         </h2>
-                        <p class="text-success mb-0">Due date</p>
+                        <p class="text-success mb-0">Data limite</p>
                     </div>
                 </div>
             </div>
