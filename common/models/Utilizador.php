@@ -48,6 +48,16 @@ class Utilizador extends \yii\db\ActiveRecord
         return $this->hasMany(Habit::class, ['fk_utilizador' => 'utilizador_id']);
     }
 
+    public function getBadges()
+    {
+        return $this->hasMany(BadgeUtilizador::class, ['fk_utilizador' => 'utilizador_id']);
+    }
+
+    public function getWeeklyChallenges()
+    {
+        return $this->hasMany(WeeklyChallengeUtilizador::class, ['fk_utilizador' => 'utilizador_id']);
+    }
+
     /**
      * {@inheritdoc}
      */

@@ -184,8 +184,8 @@ $this->title = 'Amigos | OnFire';
                             <div class="card bg-primary bg-opacity-10 border-0 text-center py-3">
                                 <div class="card-body p-2">
                                     <i class="fas fa-fire text-primary fs-3 mb-2"></i>
-                                    <h5 class="mb-0 fw-bold text-primary">15</h5>
-                                    <small class="text-muted">Streak Atual</small>
+                                    <h5 class="mb-0 fw-bold text-primary"><?= count($utilizadores::findOne($friend_id)->habits) ?></h5>
+                                    <small class="text-muted">Hábitos</small>
                                 </div>
                             </div>
                         </div>
@@ -193,7 +193,7 @@ $this->title = 'Amigos | OnFire';
                             <div class="card bg-success bg-opacity-10 border-0 text-center py-3">
                                 <div class="card-body p-2">
                                     <i class="fas fa-trophy text-success fs-3 mb-2"></i>
-                                    <h5 class="mb-0 fw-bold text-success">8</h5>
+                                    <h5 class="mb-0 fw-bold text-success"><?= count($utilizadores::findOne($friend_id)->badges) ?></h5>
                                     <small class="text-muted">Conquistas</small>
                                 </div>
                             </div>
@@ -202,43 +202,13 @@ $this->title = 'Amigos | OnFire';
                             <div class="card bg-warning bg-opacity-10 border-0 text-center py-3">
                                 <div class="card-body p-2">
                                     <i class="fas fa-calendar-check text-warning fs-3 mb-2"></i>
-                                    <h5 class="mb-0 fw-bold text-warning">45</h5>
-                                    <small class="text-muted">Dias Ativos</small>
+                                    <h5 class="mb-0 fw-bold text-warning"><?= count($utilizadores::findOne($friend_id)->weeklyChallenges) ?></h5>
+                                    <small class="text-muted">Desafios Semanais</small>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- About Section -->
-                    <div class="card bg-light border-0 mb-4">
-                        <div class="card-body">
-                            <h6 class="card-title mb-3">
-                                <i class="fas fa-user me-2 text-muted"></i>Sobre
-                            </h6>
-                            <p class="card-text text-muted mb-0">Apaixonado por criar hábitos saudáveis e manter streaks consistentes. Sempre em busca de novos desafios!</p>
-                        </div>
-                    </div>
-
-                    <!-- Recent Activity -->
-                    <div class="card bg-light border-0 mb-4">
-                        <div class="card-body">
-                            <h6 class="card-title mb-3">
-                                <i class="fas fa-clock me-2 text-muted"></i>Atividade Recente
-                            </h6>
-                            <div class="d-flex align-items-center mb-2">
-                                <div class="bg-success rounded-circle me-3" style="width: 8px; height: 8px;"></div>
-                                <small class="text-muted">Completou "Exercício Matinal" há 2 horas</small>
-                            </div>
-                            <div class="d-flex align-items-center mb-2">
-                                <div class="bg-primary rounded-circle me-3" style="width: 8px; height: 8px;"></div>
-                                <small class="text-muted">Alcançou streak de 15 dias em "Leitura"</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <div class="bg-warning rounded-circle me-3" style="width: 8px; height: 8px;"></div>
-                                <small class="text-muted">Desbloqueou conquista "Consistente" ontem</small>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Action Buttons -->
                     <?php if($utilizadores->friendshipWith($friend_id) != null &&

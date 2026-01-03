@@ -21,29 +21,37 @@ $this->title = 'Inicio | OnFire';
 
         <!-- Sidebar de Categorias -->
         <div class="col-md-3">
-            <div class="d-flex flex-column gap-2">
-                <button class="btn w-100 rounded-pill" style="background-color: #ff7b00;" data-bs-toggle="modal" data-bs-target="#createHabitModal">
-                    <i class="bi bi-plus-circle"></i> Criar Novo Hábito
-                </button>
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body">
+                    <div class="d-flex flex-column gap-3">
+                        <button class="btn w-100 rounded-pill fw-semibold shadow-sm" style="background-color: #ff7b00;" data-bs-toggle="modal" data-bs-target="#createHabitModal">
+                            <i class="bi bi-plus-circle me-2"></i> Criar Novo Hábito
+                        </button>
 
-                <?php
+                        <hr class="my-2">
 
-                echo Html::a("Todas as Categorias", ['habit/index', 'selectedCategory' => null], [
-                        'class' => 'btn w-100 rounded-pill btn-success',
-                ]);
+                        <?php
 
-                echo Html::a("Hábitos Archivados", ['habit/index', 'selectedCategory' => null], [
-                        'class' => 'btn w-100 rounded-pill btn-secondary',
-                ]);
+                        echo Html::a("<i class='bi bi-grid-3x3-gap me-2'></i>Todas as Categorias", ['habit/index', 'selectedCategory' => null], [
+                                'class' => 'btn w-100 rounded-pill btn-outline-success fw-medium shadow-sm',
+                        ]);
 
-                foreach ($categories as $category) {
-                    echo Html::a($category->name, ['habit/index', 'selectedCategory' => $category->category_id], [
-                            'class' => 'btn w-100 rounded-pill',
-                            'style' => 'background-color: '.$category->color.'; color: '.$category->getOppositeColor().'; border-color: black;',
-                    ]);
-                }
+                        echo Html::a("<i class='bi bi-archive me-2'></i>Hábitos Archivados", ['habit/index', 'selectedCategory' => null], [
+                                'class' => 'btn w-100 rounded-pill btn-outline-secondary fw-medium shadow-sm',
+                        ]);
 
-                ?>
+                        echo "<div class='mt-3'><small class='text-muted fw-semibold'>CATEGORIAS</small></div>";
+
+                        foreach ($categories as $category) {
+                            echo Html::a($category->name, ['habit/index', 'selectedCategory' => $category->category_id], [
+                                    'class' => 'btn w-100 rounded-pill fw-medium shadow-sm mt-2',
+                                    'style' => 'background-color: '.$category->color.'; color: '.$category->getOppositeColor().'; border: 2px solid rgba(0,0,0,0.1);',
+                            ]);
+                        }
+
+                        ?>
+                    </div>
+                </div>
             </div>
         </div>
 
