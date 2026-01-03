@@ -3,7 +3,8 @@ actor: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: http://localhost:8080
-            browser: firefox
+            url: http://localhost/Onfire/frontend/web/
+            browser: chrome
+            window_size: 1920x1080
         - Yii2:
             part: init
