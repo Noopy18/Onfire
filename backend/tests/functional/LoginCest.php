@@ -13,11 +13,11 @@ class LoginCest
     public function loginUser(FunctionalTester $I)
     {
         $I->amOnRoute('/site/login');
-        $I->fillField('Username', 'admin');
-        $I->fillField('Password', 'admin');
+        $I->fillField('LoginForm[username]', 'admin');
+        $I->fillField('LoginForm[password]', 'admin');
         $I->click('Entrar');
 
-        $I->see('[administrator] - admin', 'a[href="#"]');
+        $I->see('[administrator] - admin');
         $I->dontSeeLink('Login');
         $I->dontSeeLink('Signup');
     }

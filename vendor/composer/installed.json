@@ -656,6 +656,68 @@
             "install-path": "../codeception/module-asserts"
         },
         {
+            "name": "codeception/module-db",
+            "version": "3.2.2",
+            "version_normalized": "3.2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Codeception/module-db.git",
+                "reference": "0ac08372c13f72c33745050e396317c8456a5f7b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Codeception/module-db/zipball/0ac08372c13f72c33745050e396317c8456a5f7b",
+                "reference": "0ac08372c13f72c33745050e396317c8456a5f7b",
+                "shasum": ""
+            },
+            "require": {
+                "codeception/codeception": "*@dev",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-pdo": "*",
+                "php": "^8.0"
+            },
+            "conflict": {
+                "codeception/codeception": "<5.0"
+            },
+            "require-dev": {
+                "behat/gherkin": "~4.10.0",
+                "squizlabs/php_codesniffer": "*"
+            },
+            "time": "2025-03-03T08:10:27+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Bodnarchuk"
+                },
+                {
+                    "name": "Gintautas Miselis"
+                }
+            ],
+            "description": "DB module for Codeception",
+            "homepage": "https://codeception.com/",
+            "keywords": [
+                "codeception",
+                "database-testing",
+                "db-testing"
+            ],
+            "support": {
+                "issues": "https://github.com/Codeception/module-db/issues",
+                "source": "https://github.com/Codeception/module-db/tree/3.2.2"
+            },
+            "install-path": "../codeception/module-db"
+        },
+        {
             "name": "codeception/module-filesystem",
             "version": "3.0.1",
             "version_normalized": "3.0.1.0",
@@ -6319,6 +6381,7 @@
         "codeception/lib-innerbrowser",
         "codeception/lib-web",
         "codeception/module-asserts",
+        "codeception/module-db",
         "codeception/module-filesystem",
         "codeception/module-webdriver",
         "codeception/module-yii2",
