@@ -38,9 +38,12 @@ $this->title = 'Inicio | OnFire';
 
                         echo Html::a("<i class='bi bi-archive me-2'></i>Hábitos Archivados", ['habit/index', 'selectedCategory' => null], [
                                 'class' => 'btn w-100 rounded-pill btn-outline-secondary fw-medium shadow-sm',
-                        ]);
+                        ]); ?>
 
-                        echo "<div class='mt-3'><small class='text-muted fw-semibold'>CATEGORIAS</small></div>";
+                        <hr class="my-2">
+                        <?php
+
+                        echo "<div class='mt-1'><small class='text-muted fw-semibold'>CATEGORIAS</small></div>";
 
                         foreach ($categories as $category) {
                             echo Html::a($category->name, ['habit/index', 'selectedCategory' => $category->category_id], [
