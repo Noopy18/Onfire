@@ -5804,3 +5804,868 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1767133770.3478
     'REQUEST_TIME' => 1767133770
 ]
+2026-01-04 16:44:24 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/frontend/images/onfire_logo.png". in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/frontend/i...', Array)
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-04 16:44:24 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'b3837c861770711a6669613bcb647982'
+    '_identity-frontend' => '88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO\",2592000]\";}'
+    '_csrf-frontend' => 'ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6\";}'
+    '_csrf-backend' => 'e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5\";}'
+    'advanced-backend' => '16c3efe5cd03f2961f6ad0e89562f023'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/onfire/backend/web/'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/onfire/backend/web/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=b3837c861770711a6669613bcb647982; _identity-frontend=88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6%22%3B%7D; _csrf-backend=e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5%22%3B%7D; advanced-backend=16c3efe5cd03f2961f6ad0e89562f023'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/backend/web/index.php'
+    'REMOTE_PORT' => '60914'
+    'REDIRECT_URL' => '/onfire/backend/web/site/frontend/images/onfire_logo.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/backend/web/site/frontend/images/onfire_logo.png'
+    'SCRIPT_NAME' => '/onfire/backend/web/index.php'
+    'PHP_SELF' => '/onfire/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767545064.2641
+    'REQUEST_TIME' => 1767545064
+]
+2026-01-04 16:44:24 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/frontend/images/onfire_logo.png". in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/frontend/i...', Array)
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-04 16:44:24 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'b3837c861770711a6669613bcb647982'
+    '_identity-frontend' => '88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO\",2592000]\";}'
+    '_csrf-frontend' => 'ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6\";}'
+    '_csrf-backend' => 'e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5\";}'
+    'advanced-backend' => '16c3efe5cd03f2961f6ad0e89562f023'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/onfire/backend/web/'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/onfire/backend/web/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=b3837c861770711a6669613bcb647982; _identity-frontend=88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6%22%3B%7D; _csrf-backend=e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5%22%3B%7D; advanced-backend=16c3efe5cd03f2961f6ad0e89562f023'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/backend/web/index.php'
+    'REMOTE_PORT' => '60916'
+    'REDIRECT_URL' => '/onfire/backend/web/site/frontend/images/onfire_logo.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/backend/web/site/frontend/images/onfire_logo.png'
+    'SCRIPT_NAME' => '/onfire/backend/web/index.php'
+    'PHP_SELF' => '/onfire/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767545064.7535
+    'REQUEST_TIME' => 1767545064
+]
+2026-01-04 16:44:24 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/frontend/images/onfire_logo.png". in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/frontend/i...', Array)
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-04 16:44:24 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'b3837c861770711a6669613bcb647982'
+    '_identity-frontend' => '88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO\",2592000]\";}'
+    '_csrf-frontend' => 'ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6\";}'
+    '_csrf-backend' => 'e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5\";}'
+    'advanced-backend' => '16c3efe5cd03f2961f6ad0e89562f023'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/onfire/backend/web/'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/onfire/backend/web/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=b3837c861770711a6669613bcb647982; _identity-frontend=88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6%22%3B%7D; _csrf-backend=e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5%22%3B%7D; advanced-backend=16c3efe5cd03f2961f6ad0e89562f023'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/backend/web/index.php'
+    'REMOTE_PORT' => '60915'
+    'REDIRECT_URL' => '/onfire/backend/web/site/frontend/images/onfire_logo.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/backend/web/site/frontend/images/onfire_logo.png'
+    'SCRIPT_NAME' => '/onfire/backend/web/index.php'
+    'PHP_SELF' => '/onfire/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767545064.892
+    'REQUEST_TIME' => 1767545064
+]
+2026-01-04 16:47:16 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/backend/web/img/logo_Onfire_no_bg_center.png". in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/backend/we...', Array)
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-04 16:47:16 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'b3837c861770711a6669613bcb647982'
+    '_identity-frontend' => '88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO\",2592000]\";}'
+    '_csrf-frontend' => 'ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6\";}'
+    '_csrf-backend' => 'e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5\";}'
+    'advanced-backend' => '16c3efe5cd03f2961f6ad0e89562f023'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/onfire/backend/web/'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/onfire/backend/web/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=b3837c861770711a6669613bcb647982; _identity-frontend=88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6%22%3B%7D; _csrf-backend=e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5%22%3B%7D; advanced-backend=16c3efe5cd03f2961f6ad0e89562f023'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/backend/web/index.php'
+    'REMOTE_PORT' => '61016'
+    'REDIRECT_URL' => '/onfire/backend/web/site/backend/web/img/logo_Onfire_no_bg_center.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/backend/web/site/backend/web/img/logo_Onfire_no_bg_center.png'
+    'SCRIPT_NAME' => '/onfire/backend/web/index.php'
+    'PHP_SELF' => '/onfire/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767545236.0153
+    'REQUEST_TIME' => 1767545236
+]
+2026-01-04 16:47:16 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/backend/web/img/logo_Onfire_no_bg_center.png". in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/backend/we...', Array)
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-04 16:47:16 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'b3837c861770711a6669613bcb647982'
+    '_identity-frontend' => '88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO\",2592000]\";}'
+    '_csrf-frontend' => 'ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6\";}'
+    '_csrf-backend' => 'e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5\";}'
+    'advanced-backend' => '16c3efe5cd03f2961f6ad0e89562f023'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/onfire/backend/web/'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/onfire/backend/web/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=b3837c861770711a6669613bcb647982; _identity-frontend=88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6%22%3B%7D; _csrf-backend=e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5%22%3B%7D; advanced-backend=16c3efe5cd03f2961f6ad0e89562f023'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/backend/web/index.php'
+    'REMOTE_PORT' => '61016'
+    'REDIRECT_URL' => '/onfire/backend/web/site/backend/web/img/logo_Onfire_no_bg_center.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/backend/web/site/backend/web/img/logo_Onfire_no_bg_center.png'
+    'SCRIPT_NAME' => '/onfire/backend/web/index.php'
+    'PHP_SELF' => '/onfire/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767545236.649
+    'REQUEST_TIME' => 1767545236
+]
+2026-01-04 16:47:16 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/backend/web/img/logo_Onfire_no_bg_center.png". in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/backend/we...', Array)
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-04 16:47:16 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'b3837c861770711a6669613bcb647982'
+    '_identity-frontend' => '88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO\",2592000]\";}'
+    '_csrf-frontend' => 'ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6\";}'
+    '_csrf-backend' => 'e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5\";}'
+    'advanced-backend' => '16c3efe5cd03f2961f6ad0e89562f023'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/onfire/backend/web/'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/onfire/backend/web/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=b3837c861770711a6669613bcb647982; _identity-frontend=88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6%22%3B%7D; _csrf-backend=e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5%22%3B%7D; advanced-backend=16c3efe5cd03f2961f6ad0e89562f023'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/backend/web/index.php'
+    'REMOTE_PORT' => '61018'
+    'REDIRECT_URL' => '/onfire/backend/web/site/backend/web/img/logo_Onfire_no_bg_center.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/backend/web/site/backend/web/img/logo_Onfire_no_bg_center.png'
+    'SCRIPT_NAME' => '/onfire/backend/web/index.php'
+    'PHP_SELF' => '/onfire/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767545236.7802
+    'REQUEST_TIME' => 1767545236
+]
+2026-01-04 16:49:35 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "img/logo_Onfire_no_bg_center.png". in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('img/logo_Onfire...', Array)
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-04 16:49:35 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'b3837c861770711a6669613bcb647982'
+    '_identity-frontend' => '88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO\",2592000]\";}'
+    '_csrf-frontend' => 'ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6\";}'
+    '_csrf-backend' => 'e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5\";}'
+    'advanced-backend' => '16c3efe5cd03f2961f6ad0e89562f023'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/onfire/backend/web/'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/onfire/backend/web/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=b3837c861770711a6669613bcb647982; _identity-frontend=88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6%22%3B%7D; _csrf-backend=e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5%22%3B%7D; advanced-backend=16c3efe5cd03f2961f6ad0e89562f023'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/backend/web/index.php'
+    'REMOTE_PORT' => '61092'
+    'REDIRECT_URL' => '/onfire/backend/web/img/logo_Onfire_no_bg_center.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/backend/web/img/logo_Onfire_no_bg_center.png'
+    'SCRIPT_NAME' => '/onfire/backend/web/index.php'
+    'PHP_SELF' => '/onfire/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767545375.0088
+    'REQUEST_TIME' => 1767545375
+]
+2026-01-04 16:49:35 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "img/logo_Onfire_no_bg_center.png". in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('img/logo_Onfire...', Array)
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-04 16:49:35 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'b3837c861770711a6669613bcb647982'
+    '_identity-frontend' => '88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO\",2592000]\";}'
+    '_csrf-frontend' => 'ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6\";}'
+    '_csrf-backend' => 'e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5\";}'
+    'advanced-backend' => '16c3efe5cd03f2961f6ad0e89562f023'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/onfire/backend/web/'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/onfire/backend/web/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=b3837c861770711a6669613bcb647982; _identity-frontend=88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6%22%3B%7D; _csrf-backend=e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5%22%3B%7D; advanced-backend=16c3efe5cd03f2961f6ad0e89562f023'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/backend/web/index.php'
+    'REMOTE_PORT' => '61093'
+    'REDIRECT_URL' => '/onfire/backend/web/img/logo_Onfire_no_bg_center.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/backend/web/img/logo_Onfire_no_bg_center.png'
+    'SCRIPT_NAME' => '/onfire/backend/web/index.php'
+    'PHP_SELF' => '/onfire/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767545375.6157
+    'REQUEST_TIME' => 1767545375
+]
+2026-01-04 16:49:35 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "img/logo_Onfire_no_bg_center.png". in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('img/logo_Onfire...', Array)
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-04 16:49:35 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'b3837c861770711a6669613bcb647982'
+    '_identity-frontend' => '88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO\",2592000]\";}'
+    '_csrf-frontend' => 'ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6\";}'
+    '_csrf-backend' => 'e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5\";}'
+    'advanced-backend' => '16c3efe5cd03f2961f6ad0e89562f023'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/onfire/backend/web/'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/onfire/backend/web/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=b3837c861770711a6669613bcb647982; _identity-frontend=88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6%22%3B%7D; _csrf-backend=e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5%22%3B%7D; advanced-backend=16c3efe5cd03f2961f6ad0e89562f023'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/backend/web/index.php'
+    'REMOTE_PORT' => '61091'
+    'REDIRECT_URL' => '/onfire/backend/web/img/logo_Onfire_no_bg_center.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/backend/web/img/logo_Onfire_no_bg_center.png'
+    'SCRIPT_NAME' => '/onfire/backend/web/index.php'
+    'PHP_SELF' => '/onfire/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767545375.7327
+    'REQUEST_TIME' => 1767545375
+]
+2026-01-04 16:49:35 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "img/logo_Onfire_no_bg_center.png". in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('img/logo_Onfire...', Array)
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2026-01-04 16:49:35 [::1][-][16c3efe5cd03f2961f6ad0e89562f023][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'b3837c861770711a6669613bcb647982'
+    '_identity-frontend' => '88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO\",2592000]\";}'
+    '_csrf-frontend' => 'ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6\";}'
+    '_csrf-backend' => 'e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5\";}'
+    'advanced-backend' => '16c3efe5cd03f2961f6ad0e89562f023'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/onfire/backend/web/'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'no-cors'
+    'HTTP_SEC_FETCH_DEST' => 'image'
+    'HTTP_REFERER' => 'http://localhost/onfire/backend/web/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=b3837c861770711a6669613bcb647982; _identity-frontend=88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6%22%3B%7D; _csrf-backend=e1bbda73ac62b39b85b3a617ab556bb18a13bb7c2b39a139f547df28c40a98f9a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Xuluh-5ujX-sb7flriIfdLQcJKL5KVY5%22%3B%7D; advanced-backend=16c3efe5cd03f2961f6ad0e89562f023'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/backend/web/index.php'
+    'REMOTE_PORT' => '61094'
+    'REDIRECT_URL' => '/onfire/backend/web/img/logo_Onfire_no_bg_center.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/backend/web/img/logo_Onfire_no_bg_center.png'
+    'SCRIPT_NAME' => '/onfire/backend/web/index.php'
+    'PHP_SELF' => '/onfire/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767545375.8785
+    'REQUEST_TIME' => 1767545375
+]
+2026-01-04 17:00:27 [::1][1][e35f631a39fad7ef9870ddf1a11e3f61][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Category::nome in C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\wamp64\www\onfire\vendor\yiisoft\yii2\db\BaseActiveRecord.php(296): yii\base\Component->__get('nome')
+#1 C:\wamp64\www\onfire\vendor\yiisoft\yii2\helpers\BaseHtml.php(2296): yii\db\BaseActiveRecord->__get('nome')
+#2 C:\wamp64\www\onfire\vendor\yiisoft\yii2\helpers\BaseHtml.php(1388): yii\helpers\BaseHtml::getAttributeValue(Object(common\models\Category), 'nome')
+#3 C:\wamp64\www\onfire\vendor\yiisoft\yii2\helpers\BaseHtml.php(1444): yii\helpers\BaseHtml::activeInput('text', Object(common\models\Category), 'nome', Array)
+#4 C:\wamp64\www\onfire\vendor\yiisoft\yii2\widgets\ActiveField.php(409): yii\helpers\BaseHtml::activeTextInput(Object(common\models\Category), 'nome', Array)
+#5 C:\wamp64\www\onfire\backend\views\category\_form.php(15): yii\widgets\ActiveField->textInput(Array)
+#6 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\o...')
+#7 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\wamp64\\www\\o...', Array)
+#8 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\o...', Array, NULL)
+#9 C:\wamp64\www\onfire\backend\views\category\create.php(16): yii\base\View->render('_form', Array)
+#10 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp64\\www\\o...')
+#11 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(258): yii\base\View->renderPhpFile('C:\\wamp64\\www\\o...', Array)
+#12 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\View.php(157): yii\base\View->renderFile('C:\\wamp64\\www\\o...', Array, Object(backend\controllers\CategoryController))
+#13 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(413): yii\base\View->render('create', Array, Object(backend\controllers\CategoryController))
+#14 C:\wamp64\www\onfire\backend\controllers\CategoryController.php(101): yii\base\Controller->render('create', Array)
+#15 [internal function]: backend\controllers\CategoryController->actionCreate()
+#16 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\InlineAction.php(60): call_user_func_array(Array, Array)
+#17 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Controller.php(184): yii\base\InlineAction->runWithParams(Array)
+#18 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Module.php(555): yii\base\Controller->runAction('create', Array)
+#19 C:\wamp64\www\onfire\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('category/create', Array)
+#20 C:\wamp64\www\onfire\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#21 C:\wamp64\www\onfire\backend\web\index.php(18): yii\base\Application->run()
+#22 {main}
+2026-01-04 17:00:27 [::1][1][e35f631a39fad7ef9870ddf1a11e3f61][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-frontend' => 'b3837c861770711a6669613bcb647982'
+    '_identity-frontend' => '88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba:2:{i:0;s:18:\"_identity-frontend\";i:1;s:46:\"[1,\"ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO\",2592000]\";}'
+    '_csrf-frontend' => 'ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6\";}'
+    'advanced-backend' => 'e35f631a39fad7ef9870ddf1a11e3f61'
+    '_identity-backend' => '14af97fd21367fada5349e7f379e4f5cd3bda15e5e9409161958514bccd3543ca:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO\",2592000]\";}'
+    '_csrf-backend' => '2f805a0dc8325b92fff4191201efc09f239f8ae5d58c10c53886a710e4fc9ba7a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"dVd3UKWBuhXeRFXb8bv5q5Dv_CbZVWkM\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://localhost/onfire/backend/web/'
+    '__id' => 1
+    '__authKey' => 'ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_SEC_CH_UA' => '\"Not)A;Brand\";v=\"8\", \"Chromium\";v=\"138\", \"Google Chrome\";v=\"138\"'
+    'HTTP_SEC_CH_UA_MOBILE' => '?0'
+    'HTTP_SEC_CH_UA_PLATFORM' => '\"Windows\"'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_REFERER' => 'http://localhost/onfire/backend/web/category/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'advanced-frontend=b3837c861770711a6669613bcb647982; _identity-frontend=88accebffe1b4902c42ed9dd6750ca7ccced5144b84d675a86b60313db7ee29ba%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO%22%2C2592000%5D%22%3B%7D; _csrf-frontend=ec523160ada38b0902f4e1f746c067e4aadd16b7e29351cad54ff9a36b9ab40ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22qL5lpNgnhq2Jpgmhw3Aiv9JIxQq84wr6%22%3B%7D; advanced-backend=e35f631a39fad7ef9870ddf1a11e3f61; _identity-backend=14af97fd21367fada5349e7f379e4f5cd3bda15e5e9409161958514bccd3543ca%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22ZBb1OHjl8lDkZ5rOpzjHDF2Ktg31g7BO%22%2C2592000%5D%22%3B%7D; _csrf-backend=2f805a0dc8325b92fff4191201efc09f239f8ae5d58c10c53886a710e4fc9ba7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22dVd3UKWBuhXeRFXb8bv5q5Dv_CbZVWkM%22%3B%7D'
+    'PATH' => 'C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA app\\NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\wamp64\\bin\\php\\php8.4.13;C:\\wamp64\\www\\ficha3;C:\\Program Files\\dotnet\\;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.62 (Win64) PHP/8.4.13 mod_fcgid/2.3.10-dev'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/onfire/backend/web/index.php'
+    'REMOTE_PORT' => '64567'
+    'REDIRECT_URL' => '/onfire/backend/web/category/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/onfire/backend/web/category/create'
+    'SCRIPT_NAME' => '/onfire/backend/web/index.php'
+    'PHP_SELF' => '/onfire/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1767546027.9334
+    'REQUEST_TIME' => 1767546027
+]

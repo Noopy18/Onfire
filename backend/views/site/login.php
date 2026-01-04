@@ -5,6 +5,13 @@ use yii\bootstrap5\ActiveForm;
 ?>
 <div class="login-box container-fluid">
     <div class="login-logo">
+        <?= Html::img('@web/img/logo_Onfire_no_bg_centered.png', [
+                            'alt' => 'OnFire Logo',
+                            'style' => 'width: 35%; height: 35%; object-fit: contain;',
+                            'class' => 'img-fluid',
+            ]); 
+        ?>
+        <br>
         <a href=""><b>On</b>Fire</a>
     </div>
     <div class="card">

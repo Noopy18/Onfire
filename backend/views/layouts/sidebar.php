@@ -1,12 +1,15 @@
 <?php
-
 use yii\helpers\Html;
 use yii\helpers\Url;
 ?>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?= Url::to(['site/index']); ?>" class="brand-link">
-        <img src="<?=$assetDir?>/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <?= Html::img('@web/img/logo_Onfire_no_bg_centered.png', [
+                            'alt' => 'OnFire Logo',
+                            'style' => 'width: 20%; height: 20%; object-fit: contain;',
+                            'class' => 'img-fluid',
+                    ]); ?>
         <span class="brand-text font-weight-light">OnFire</span>
     </a>
 
@@ -32,11 +35,11 @@ use yii\helpers\Url;
                     ['label' => 'Gii',  'icon' => 'file-code', 'url' => ['/gii'], 'target' => '_blank'],
                     ['label' => 'Debug', 'icon' => 'bug', 'url' => ['/debug'], 'target' => '_blank'],
 
-                    ['label' => 'Models', 'header' => true],
-                    ['label' => 'Users', 'icon' => 'users', 'url' => ['user/index']],
-                    ['label' => 'Categories', 'icon' => 'fa fa-list-alt', 'url' => ['category/index']],
-                    ['label' => 'Weekly Challenges', 'icon' => 'fa fa-calendar', 'url' => ['weekly-challenge/index']],
-                    ['label' => 'Badges', 'icon' => 'fa fa-trophy', 'url' => ['badge/index']],
+                    ['label' => 'Modelos', 'header' => true],
+                    ['label' => 'Utilizadores', 'icon' => 'users', 'url' => ['user/index']],
+                    ['label' => 'Categorias', 'icon' => 'fa fa-list-alt', 'url' => ['category/index']],
+                    ['label' => 'Desafios Semanais', 'icon' => 'fa fa-calendar', 'url' => ['weekly-challenge/index']],
+                    ['label' => 'Conquistas', 'icon' => 'fa fa-trophy', 'url' => ['badge/index']],
 
                     ['label' => 'Other', 'header' => true],
                 ],
@@ -47,7 +50,7 @@ use yii\helpers\Url;
             <div class="nav-item">
                 <?= Html::beginForm(['site/logout'], 'post', ['style' => 'margin: 0;']) ?>
                     <button type="submit" class="nav-link btn btn-link text-left" style="width: 100%; border: none; background: none; color: #c2c7d0; padding: 0.5rem 1rem;">
-                        <p><i class="nav-icon fas fa-sign-out-alt"></i> Logout</p>
+                        <p><i class="nav-icon fas fa-sign-out-alt"></i> Sair</p>
                     </button>
                 <?= Html::endForm() ?>
             </div>

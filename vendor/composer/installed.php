@@ -3,7 +3,7 @@
         'name' => 'yiisoft/yii2-app-advanced',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '4c6550180db343705bca08ce822c7fb2f1609d4e',
+        'reference' => '4a97c208e2427582b97bfd93fedb786892bd66b7',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -295,7 +295,7 @@
         'npm-asset/bootstrap' => array(
             'pretty_version' => '4.6.2',
             'version' => '4.6.2.0',
-            'reference' => NULL,
+            'reference' => null,
             'type' => 'npm-asset',
             'install_path' => __DIR__ . '/../npm-asset/bootstrap',
             'aliases' => array(),
@@ -829,7 +829,7 @@
         'yiisoft/yii2-app-advanced' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '4c6550180db343705bca08ce822c7fb2f1609d4e',
+            'reference' => '4a97c208e2427582b97bfd93fedb786892bd66b7',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

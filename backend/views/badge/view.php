@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /** @var common\models\Badge $model */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Badges', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Conquistas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -16,11 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'badge_id' => $model->badge_id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'badge_id' => $model->badge_id], [
+        <?= Html::a('Atualizar', ['update', 'badge_id' => $model->badge_id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Eliminar', ['delete', 'badge_id' => $model->badge_id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Tens certeza que desejas eliminar este item?',
                 'method' => 'post',
             ],
         ]) ?>

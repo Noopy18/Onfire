@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
+                <?= Html::a('Criar Utilizador', ['create'], ['class' => 'btn btn-success']) ?>
             </div>
         </div>
         <div class="row">
@@ -27,8 +27,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 <thead>
                     <tr>
                         <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="descending">#</th>
-                        <th class="sorting" tabindex="0">First</th>
-                        <th class="sorting" tabindex="0">Last</th>
+                        <th class="sorting" tabindex="0">Primeiro</th>
+                        <th class="sorting" tabindex="0">Último</th>
                         <th class="sorting" tabindex="0">Handle</th>
                     </tr>
                 </thead>
@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <p>
-        <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Criar Utilizador', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
 

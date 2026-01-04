@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var common\models\Badge $model */
 
-$this->title = 'Create Badge';
-$this->params['breadcrumbs'][] = ['label' => 'Badges', 'url' => ['index']];
+$this->title = 'Criar Conquista';
+$this->params['breadcrumbs'][] = ['label' => 'Conquistas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="badge-create">

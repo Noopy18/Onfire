@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var common\models\Badge $model */
 
-$this->title = 'Update Badge: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Badges', 'url' => ['index']];
+$this->title = 'Atualizar conquista: ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Conquistas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'badge_id' => $model->badge_id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Atualizar';
 ?>
 <div class="badge-update">
 
