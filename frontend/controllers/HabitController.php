@@ -135,6 +135,11 @@ class HabitController extends Controller
             $model->fk_utilizador = Yii::$app->user->id;
             $model->created_at = date('Y-m-d');
 
+            if (!$model->frequency || !str_contains($model->frequency, '1')) {
+                Yii::$app->session->setFlash('error', 'Deve selecionar pelo menos um dia da semana para a frequência.');
+                return $this->redirect(['index']);
+            }
+
             if ($model->save()) {
                 return $this->redirect(['index']);
             }

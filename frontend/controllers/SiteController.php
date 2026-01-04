@@ -84,7 +84,7 @@ class SiteController extends Controller
             return $this->render('index');
         }
         $this->layout = "main";
-        return $this->redirect('habit\index');
+        return $this->redirect(['habit/index']);
 
         //$this->layout = 'main';
         //$user = Yii::$app->user->identity;

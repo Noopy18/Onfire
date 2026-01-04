@@ -41,11 +41,6 @@ class SignupForm extends Model
         ];
     }
 
-    /**
-     * Signs user up.
-     *
-     * @return bool whether the creating new account was successful and email was sent
-     */
     public function signup()
     {
         if (!$this->validate()) {
@@ -61,18 +56,25 @@ class SignupForm extends Model
         $user->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
         $user->verification_token = Yii::$app->security->generateRandomString() . '_' . time();
         $user->status = User::STATUS_ACTIVE;
-        $user->save();
+        
+        if ($user->save()) {
+            $utilizador = new Utilizador();
+            $utilizador->name = $this->username;
+            $utilizador->fk_user = $user->id;
+            $utilizador->save();
 
-        $utilizador = new Utilizador();
-        $utilizador->name = $this->username;
-        $utilizador->fk_user = $user->id;
-        $utilizador->save();
+            $auth = Yii::$app->authManager;
+            $userRole = $auth->getRole('user');
+            $auth->assign($userRole, $user->id);
 
-        $auth = Yii::$app->authManager;
-        $userRole = $auth->getRole('user');
-        $auth->assign($userRole, $user->id);
-
-        return $this->sendEmail($user);
+            // Login automatico após registo.
+            Yii::$app->user->login($user);
+            
+            $this->sendEmail($user);
+            return $user;
+        }
+        
+        return null;
     }
 
     /**
