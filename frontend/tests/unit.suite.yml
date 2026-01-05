@@ -5,3 +5,7 @@ modules:
         - Yii2:
             part: [orm, email, fixtures]
         - Asserts
+        - Db:
+            dsn: 'mysql:host=localhost;dbname=onfire_db'
+            user: 'root'
+            password: ''
