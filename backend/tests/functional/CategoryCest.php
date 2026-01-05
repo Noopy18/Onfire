@@ -32,11 +32,11 @@ final class CategoryCest
         $I->fillField('Category[name]', 'New Category');
         $I->fillField('Category[description]', 'New category description to test.');
         $I->fillField('Category[color]', '#000000');
-        $I->click('Save');
+        $I->click('Salvar');
 
 
         // Verificação de que a categoria foi criada com sucesso.
         $I->see('New Category', 'h1');
-        $I->see('New categhory description to test.', 'td');
+        $I->see('New category description to test.', 'td');
     }
 }
