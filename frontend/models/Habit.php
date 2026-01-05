@@ -209,6 +209,11 @@ class Habit extends \yii\db\ActiveRecord
     }
 
     public function dueDate(){
+
+        if ($this->isFinished()){
+            return "Concluído.";
+        }
+
         // +6 para a semana começar na segunda, e %7 para dividir e dar o resto que é igual ao dia da semana
         $todayWeekday = (date("w") + 6) % 7;
 
@@ -299,11 +304,7 @@ class Habit extends \yii\db\ActiveRecord
     }
 
     public function isFinished(){
-        if ($this->final_date == null){
-            return false;
-        }
-        $today_date = date("Y-m-d");
-        if ($today_date > $this->final_date){
+        if ($this->final_date != null && date("Y-m-d") > $this->final_date){
             return true;
         }
         return false;

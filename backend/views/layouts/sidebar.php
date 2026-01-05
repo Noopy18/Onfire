@@ -18,7 +18,10 @@ use yii\helpers\Url;
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="<?=$assetDir?>/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                <img src="<?= Yii::$app->user->identity->utilizador->profile_picture
+                                ? 'http://localhost/Onfire/frontend/web/' . Yii::$app->user->identity->utilizador->profile_picture
+                                : 'https://via.placeholder.com/150' ?>"
+                                class="img-circle elevation-2" alt="Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block"><?= "[" . key(Yii::$app->authManager->getRolesByUser(Yii::$app->user->identity->id)) . "] - " . Yii::$app->user->identity->username ?> </a>

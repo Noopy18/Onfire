@@ -36,7 +36,7 @@ $this->title = 'Inicio | OnFire';
                                 'class' => 'btn w-100 rounded-pill btn-outline-success fw-medium shadow-sm',
                         ]);
 
-                        echo Html::a("<i class='bi bi-archive me-2'></i>Hábitos Archivados", ['habit/index', 'selectedCategory' => null], [
+                        echo Html::a("<i class='bi bi-archive me-2'></i>Hábitos Archivados", ['habit/index', 'selectedCategory' => -1], [
                                 'class' => 'btn w-100 rounded-pill btn-outline-secondary fw-medium shadow-sm',
                         ]); ?>
 
@@ -83,11 +83,19 @@ $this->title = 'Inicio | OnFire';
 
                             //Find by category.
                             $models = $dataProvider->getModels();
+                            $expiredModels = $expiredHabitsProvider->getModels();
                             $searchedArray = [];
                             if ($selectedCategory != null) {
-                                foreach ($models as $model) {
-                                    if ($selectedCategory == $model->fk_category) {
-                                        $searchedArray[] = $model;
+                                if ($selectedCategory == -1) {
+                                    foreach ($expiredModels as $exmodel) {
+                                        $searchedArray[] = $exmodel;
+                                    }
+                                }
+                                else {
+                                    foreach ($models as $model) {
+                                        if ($selectedCategory == $model->fk_category) {
+                                            $searchedArray[] = $model;
+                                        }
                                     }
                                 }
                             } else {
@@ -113,7 +121,10 @@ $this->title = 'Inicio | OnFire';
                                     echo Html::hiddenInput('HabitCompletion[date]', date('Y-m-d'));
                                     echo Html::submitButton('Completar', ['class' => 'btn btn-sm rounded-pill px-3 text-white', 'style' => 'background-color: orange']);
                                     echo Html::endForm();
-                                } else {
+                                } elseif ($habit->isFinished()){
+                                    echo('<button class="btn btn-sm rounded-pill px-3 bg-secondary text-white">Concluído</button>');
+                                }
+                                else {
                                     echo('<button class="btn btn-sm rounded-pill px-3 text-white" style="background-color: grey">Não é o dia!</button>');
                                 }
 

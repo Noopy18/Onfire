@@ -53,6 +53,12 @@ class HabitController extends Controller
             ->andWhere(['or', ['>=', 'final_date', date('Y-m-d')], ['final_date' => null]]),
         ]);
 
+        $expiredHabitsProvider = new ActiveDataProvider([
+            'query' => Habit::find()
+            ->where(['fk_utilizador' => Yii::$app->user->id])
+            ->andWhere(['<', 'final_date', date('Y-m-d')]),
+        ]);
+
         $selectedCategory = Yii::$app->request->get('selectedCategory');
 
         if ( !Yii::$app->user->isGuest ) {
@@ -82,6 +88,7 @@ class HabitController extends Controller
             'dataProvider' => $dataProvider,
             'categories' => $categories,
             'selectedCategory' => $selectedCategory,
+            'expiredHabitsProvider' => $expiredHabitsProvider,
             'model' => $model
         ]);
     }
