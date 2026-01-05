@@ -20,7 +20,7 @@ use yii\helpers\Url;
             <div class="image">
                 <img src="<?= Yii::$app->user->identity->utilizador->profile_picture
                                 ? 'http://localhost/Onfire/frontend/web/' . Yii::$app->user->identity->utilizador->profile_picture
-                                : 'https://via.placeholder.com/150' ?>"
+                                : Url::to(Yii::$app->user->identity->utilizador->getProfilePictureUrl()) ?>"
                                 class="img-circle elevation-2" alt="Image">
             </div>
             <div class="info">

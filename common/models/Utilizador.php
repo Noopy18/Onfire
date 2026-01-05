@@ -82,7 +82,7 @@ class Utilizador extends \yii\db\ActiveRecord
             return Yii::getAlias('@web') . '/' . $this->profile_picture;
         } 
 
-        return Yii::getAlias('@web') . '/uploads/profile/default_profile_picture.png';
+        return Yii::getAlias('@web') . '/uploads/profile/avatar.png';
     }
 
     public function isPrivateProfile(){

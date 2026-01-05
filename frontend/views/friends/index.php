@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 $this->title = 'Amigos | OnFire';
 ?>
@@ -37,7 +38,7 @@ $this->title = 'Amigos | OnFire';
 
                                     <?= Html::beginForm(['friends/index', 'friend_id' => $friend->id], 'post', ['class' => 'mb-2']) ?>
                                         <button type="submit" class="list-group-item list-group-item-action d-flex align-items-center border-0 rounded-3 shadow-sm w-100 p-3" style="background: none; border: none;">
-                                            <img src="<?= $friend->utilizador->getProfilePictureUrl() ?>"
+                                            <img src="<?= Url::to($friend->utilizador->getProfilePictureUrl()) ?>"
                                                 class="rounded-circle me-3"
                                                 style="width:45px; height:45px; object-fit:cover;">
                                             <div class="flex-grow-1">

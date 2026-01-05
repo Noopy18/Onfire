@@ -17,9 +17,7 @@ $this->title = 'Perfil | OnFire';
                     <div class="text-center mb-5">
 
                         <div class="position-relative d-inline-block">
-                            <img src="<?= $utilizador->profile_picture
-                                ? Url::to('@web/' . $utilizador->profile_picture)
-                                : 'https://via.placeholder.com/150' ?>"
+                            <img src="<?= Url::to($utilizador->getProfilePictureUrl()) ?>"
                                 class="rounded-circle border border-3 border-light shadow-sm"
                                 style="width: 150px; height: 150px; object-fit: cover;">
 
