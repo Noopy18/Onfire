@@ -121,7 +121,7 @@ $this->title = 'Inicio | OnFire';
 
                                 echo('<td>');
                                 echo Html::beginForm(['habit/view', 'habit_id' => $habit->habit_id], 'post');
-                                echo Html::submitButton('<i class="bi bi-gear-fill"></i>', ['class' => 'btn btn-sm rounded-pill px-3', 'style' => 'background-color: orange']);
+                                echo Html::submitButton('<i class="bi bi-gear-fill"></i>', ['name' => 'view', 'class' => 'btn btn-sm rounded-pill px-3', 'style' => 'background-color: orange']);
                                 echo Html::endForm();
                                 echo('</td>');
 

@@ -8,18 +8,7 @@ use backend\tests\FunctionalTester;
 
 final class CategoryCest
 {
-    public function _before(FunctionalTester $I): void
-    {
-        // Code here will be executed before each test function.
-    }
-
-    // All `public` methods will be executed as tests.
-    public function tryToTest(FunctionalTester $I): void
-    {
-        // Write your test content here.
-    }
-
-    public function createCategory(FunctionalTester $I): void
+    public function testCategory(FunctionalTester $I): void
     {
         // Login do utilizador.
         $I->amOnRoute('/site/login');
@@ -27,16 +16,29 @@ final class CategoryCest
         $I->fillField('LoginForm[password]', 'admin');
         $I->click('Entrar');
 
-        // Criação de uma nova categoria.
+        // Criação.
         $I->amOnRoute('/category/create');
         $I->fillField('Category[name]', 'New Category');
         $I->fillField('Category[description]', 'New category description to test.');
         $I->fillField('Category[color]', '#000000');
         $I->click('Salvar');
 
-
-        // Verificação de que a categoria foi criada com sucesso.
-        $I->see('New Category', 'h1');
+        // Visualização.
+        $I->see('New Category', 'td');
         $I->see('New category description to test.', 'td');
+
+        // Obter o ID da categoria criada.
+        $category_id = $I->grabFromCurrentUrl('~category_id=(\d+)~');
+
+        // Atualização.
+        $I->amOnRoute('/category/update', ['category_id' => $category_id]);
+        $I->fillField('Category[name]', 'Updated Category');
+        $I->click('Salvar');
+        $I->see('Updated Category', 'td');
+
+        // Eliminação.
+        $I->amOnRoute('/category/view', ['category_id' => $category_id]);
+        $I->click('Eliminar');
+        $I->dontSee('Updated Category', 'td');
     }
 }

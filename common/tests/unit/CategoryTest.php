@@ -15,7 +15,7 @@ class CategoryTest extends \Codeception\Test\Unit
     }
 
     // tests
-    public function testSomeFeature()
+    public function testCategory()
     {
         $category = new Category();
 

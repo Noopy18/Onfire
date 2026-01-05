@@ -166,6 +166,7 @@ class Badge extends \yii\db\ActiveRecord
 
             switch ($badge->condition_type) {
                 case self::CONDITION_TYPE_STREAK:
+                    if ($utilizador == null) { break; }
                     foreach ($utilizador->habits as $habit) {
                         if ($habit->getBestStreak() >= $badge->condition_value) {
                             $badge_array[] = $badge;

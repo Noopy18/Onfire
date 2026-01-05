@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use common\models\user;
 use yii\helpers\Html;
@@ -13,44 +13,6 @@ $this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <?= Html::a('Criar Utilizador', ['create'], ['class' => 'btn btn-success']) ?>
-            </div>
-        </div>
-        <div class="row">
-
-            <table class="table table-bordered table-hover table-striped dataTable dtr-inline">
-                <thead>
-                    <tr>
-                        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="descending">#</th>
-                        <th class="sorting" tabindex="0">Primeiro</th>
-                        <th class="sorting" tabindex="0">Último</th>
-                        <th class="sorting" tabindex="0">Handle</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                </tbody>
-            </table>
-
-        </div>
-
-    </div>
 
     <p>
         <?= Html::a('Criar Utilizador', ['create'], ['class' => 'btn btn-success']) ?>

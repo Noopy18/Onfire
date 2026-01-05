@@ -8,17 +8,6 @@ use frontend\tests\FunctionalTester;
 
 final class LoginCest
 {
-    public function _before(FunctionalTester $I): void
-    {
-        // Code here will be executed before each test function.
-    }
-
-    // All `public` methods will be executed as tests.
-    public function tryToTest(FunctionalTester $I): void
-    {
-        // Write your test content here.
-    }
-
     public function loginUser(FunctionalTester $I): void
     {
         $I->amOnRoute('/site/login');

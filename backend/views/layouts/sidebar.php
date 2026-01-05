@@ -30,11 +30,6 @@ use yii\helpers\Url;
             <?php
             echo \hail812\adminlte\widgets\Menu::widget([
                 'items' => [
-                    ['label' => 'Yii2 Related', 'header' => true],
-                    ['label' => 'Login', 'url' => ['site/login'], 'icon' => 'sign-in-alt', 'visible' => Yii::$app->user->isGuest],
-                    ['label' => 'Gii',  'icon' => 'file-code', 'url' => ['/gii'], 'target' => '_blank'],
-                    ['label' => 'Debug', 'icon' => 'bug', 'url' => ['/debug'], 'target' => '_blank'],
-
                     ['label' => 'Modelos', 'header' => true],
                     ['label' => 'Utilizadores', 'icon' => 'users', 'url' => ['user/index']],
                     ['label' => 'Categorias', 'icon' => 'fa fa-list-alt', 'url' => ['category/index']],

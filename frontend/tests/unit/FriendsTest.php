@@ -18,7 +18,7 @@ class FriendsTest extends \Codeception\Test\Unit
     }
 
     // tests
-    public function testSomeFeature()
+    public function testFriends()
     {
         $friend = new Friends();
 

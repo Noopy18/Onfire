@@ -16,7 +16,7 @@ class HabitTest extends \Codeception\Test\Unit
     }
 
     // tests
-    public function testSomeFeature()
+    public function testHabit()
     {
         $habit = new Habit();
 

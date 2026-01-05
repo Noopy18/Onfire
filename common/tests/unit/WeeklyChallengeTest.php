@@ -16,7 +16,7 @@ class WeeklyChallengeTest extends \Codeception\Test\Unit
     }
 
     // tests
-    public function testSomeFeature()
+    public function testWeeklyChallenge()
     {
         $challenge = new WeeklyChallenge();
 
