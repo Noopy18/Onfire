@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use frontend\models\Habit;
 use Yii;
 
 /**

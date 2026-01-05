@@ -11,18 +11,36 @@ use yii\widgets\ActiveForm;
 
 <div class="user-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+        'options' => ['class' => 'row g-3'],
+        'fieldConfig' => [
+            'template' => "{label}\n{input}\n{error}",
+            'labelOptions' => ['class' => 'form-label'],
+            'inputOptions' => ['class' => 'form-control'],
+            'errorOptions' => ['class' => 'invalid-feedback'],
+        ],
+    ]); ?>
 
-    <?= $form->field($model, 'username')->textInput() ?>
+    <div class="col-md-6">
+        <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
+    </div>
 
-    <?= $form->field($model, 'email')->textInput() ?>
+    <div class="col-md-6">
+        <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+    </div>
 
-    <?= $form->field($model, 'password_hash')->passwordInput() ?>
+    <div class="col-12">
+        <?= $form->field($model, 'password_hash')->passwordInput(['maxlength' => true]) ?>
+    </div>
 
-    <?= $form->field($model_extra, 'name')->textInput() ?>
+    <div class="col-12">
+        <?= $form->field($model_extra, 'name')->textInput(['maxlength' => true]) ?>
+    </div>
 
-    <div class="form-group">
-        <?= Html::submitButton('Salvar', ['class' => 'btn btn-success']) ?>
+    <div class="col-12">
+        <div class="form-group">
+            <?= Html::submitButton('Salvar', ['class' => 'btn btn-success btn-lg']) ?>
+        </div>
     </div>
 
     <?php ActiveForm::end(); ?>

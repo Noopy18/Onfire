@@ -21,12 +21,12 @@ final class WeeklyChallengeCest
         $I->fillField('WeeklyChallenge[name]', 'Novo desafio semanal');
         $I->fillField('WeeklyChallenge[description]', 'Novo desafio semanal descrição.');
         $I->fillField('WeeklyChallenge[start_date]', date('Y-m-d'));
-        $I->fillField('WeeklyChallenge[status]', '1');
+        $I->selectOption('WeeklyChallenge[status]', 'Inactive');
         $I->click('Salvar');
 
         // Visualização.
-        $I->see('Novo desafio semanal', 'td');
-        $I->see('Novo desafio semanal descrição.', 'td');
+        $I->see('Novo desafio semanal', 'dd');
+        $I->see('Novo desafio semanal descrição.', 'dd');
 
         // Obter o ID da categoria criada.
         $weekly_challenge_id = $I->grabFromCurrentUrl('~weekly_challenge_id=(\d+)~');
@@ -35,11 +35,11 @@ final class WeeklyChallengeCest
         $I->amOnRoute('/weekly-challenge/update', ['weekly_challenge_id' => $weekly_challenge_id]);
         $I->fillField('WeeklyChallenge[name]', 'Desafio semanal atualizado');
         $I->click('Salvar');
-        $I->see('Desafio semanal atualizado', 'td');
+        $I->see('Desafio semanal atualizado', 'dd');
 
         // Eliminação.
         $I->amOnRoute('/weekly-challenge/view', ['weekly_challenge_id' => $weekly_challenge_id]);
         $I->click('Eliminar');
-        $I->dontSee('Desafio semanal atualizado', 'td');
+        $I->dontSee('Desafio semanal atualizado', 'dd');
     }
 }

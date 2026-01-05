@@ -6,9 +6,8 @@ $this->title = 'Badges';
 
 ?>
 <div class="container-fluid py-4">
-    <div class="text-center mb-5">
-        <h1 class="display-4 fw-bold text-primary"><?= Html::encode($this->title) ?></h1>
-        <p class="lead text-muted">Desbloqueia conquistas e mostra o teu progresso</p>
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Conquistas</h1>
     </div>
 
     <!-- Tab Navigation -->

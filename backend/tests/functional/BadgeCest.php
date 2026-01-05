@@ -31,8 +31,8 @@ final class BadgeCest
         $I->click('Salvar');
 
         // Visualização.
-        $I->see('Nova conquista.', 'td');
-        $I->see('Descrição da nova conquista.', 'td');
+        $I->see('Nova conquista.', 'dd');
+        $I->see('Descrição da nova conquista.', 'dd');
 
         // Obter o ID da badge criada
         $badge_id = $I->grabFromCurrentUrl('~badge_id=(\d+)~');
@@ -41,11 +41,11 @@ final class BadgeCest
         $I->amOnRoute('/badge/update', ['badge_id' => $badge_id]);
         $I->fillField('Badge[name]', 'Nova conquista atualizada.');
         $I->click('Salvar');
-        $I->see('Nova conquista atualizada.', 'td');
+        $I->see('Nova conquista atualizada.', 'dd');
 
         // Eliminação.
         $I->amOnRoute('/badge/view', ['badge_id' => $badge_id]);
         $I->click('Eliminar');
-        $I->dontSee('Nova conquista atualizada.', 'td');
+        $I->dontSee('Nova conquista atualizada.', 'dd');
     }
 }

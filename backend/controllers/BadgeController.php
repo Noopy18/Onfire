@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use common\models\Badge;
+use common\models\BadgeUtilizador;
 use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -210,7 +211,13 @@ class BadgeController extends Controller
      */
     public function actionDelete($badge_id)
     {
-        $this->findModel($badge_id)->delete();
+        $model = $this->findModel($badge_id);
+
+        foreach ($model->badgeUtilizadors as $badgeUtilizador) {
+            $badgeUtilizador->delete();
+        }
+
+        $model->delete();
 
         return $this->redirect(['index']);
     }

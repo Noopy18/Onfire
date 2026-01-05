@@ -82,3 +82,4 @@ CREATE TABLE `badge_utilizador` (
 
 INSERT INTO `utilizador` VALUES (1, '', 'ADM', 0, 1);
 INSERT INTO `utilizador` VALUES (2, '', 'TECH', 0, 2);
+INSERT INTO `utilizador` VALUES (3, '', 'PROF', 0, 3);

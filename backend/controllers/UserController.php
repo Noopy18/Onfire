@@ -44,6 +44,7 @@ class UserController extends Controller
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],
+                    'restore' => ['POST'],
                 ],
             ],
         ];
@@ -190,6 +191,15 @@ class UserController extends Controller
 
         return $this->redirect(['index']);
 
+    }
+
+    public function actionRestore($id)
+    {
+        $user = $this->findModel($id);
+        $user->status = User::STATUS_ACTIVE;
+        $user->save();
+
+        return $this->redirect(['index']);
     }
 
     /**

@@ -5,17 +5,25 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\Category $model */
 
-$this->title = 'Atualizar Categoria: ' . $model->name;
+$this->title = 'Atualização:';
 $this->params['breadcrumbs'][] = ['label' => 'Categorias', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'category_id' => $model->category_id]];
-$this->params['breadcrumbs'][] = 'Atualizar';
+$this->params['breadcrumbs'][] = 'Atualização';
 ?>
-<div class="category-update">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-header bg-primary text-white">
+                    <h1 class="h4 mb-0">Categoria: <?= Html::encode($model->category_id) ?></h1>
+                </div>
+                <div class="card-body">
+                    <?= $this->render('_form', [
+                        'model' => $model
+                    ]) ?>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

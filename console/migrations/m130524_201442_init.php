@@ -34,7 +34,6 @@ class m130524_201442_init extends Migration
             'status' => 10,
             'created_at' => time(),
             'updated_at' => time(),
-
         ]);
 
         $this->insert('{{%user}}', [
@@ -47,7 +46,6 @@ class m130524_201442_init extends Migration
             'status' => 10,
             'created_at' => time(),
             'updated_at' => time(),
-
         ]);
 
         $this->insert('{{%user}}', [
@@ -60,7 +58,6 @@ class m130524_201442_init extends Migration
             'status' => 10,
             'created_at' => time(),
             'updated_at' => time(),
-
         ]);
 
     }

@@ -24,8 +24,8 @@ final class CategoryCest
         $I->click('Salvar');
 
         // Visualização.
-        $I->see('New Category', 'td');
-        $I->see('New category description to test.', 'td');
+        $I->see('New Category', 'dd');
+        $I->see('New category description to test.', 'dd');
 
         // Obter o ID da categoria criada.
         $category_id = $I->grabFromCurrentUrl('~category_id=(\d+)~');
@@ -34,11 +34,11 @@ final class CategoryCest
         $I->amOnRoute('/category/update', ['category_id' => $category_id]);
         $I->fillField('Category[name]', 'Updated Category');
         $I->click('Salvar');
-        $I->see('Updated Category', 'td');
+        $I->see('Updated Category', 'dd');
 
         // Eliminação.
         $I->amOnRoute('/category/view', ['category_id' => $category_id]);
         $I->click('Eliminar');
-        $I->dontSee('Updated Category', 'td');
+        $I->dontSee('Updated Category', 'dd');
     }
 }

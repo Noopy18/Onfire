@@ -153,6 +153,16 @@ class Badge extends \yii\db\ActiveRecord
         $this->condition_type = self::CONDITION_TYPE_WC_COMPLETED;
     }
 
+    /**
+     * Gets query for [[BadgeUtilizadors]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBadgeUtilizadors()
+    {
+        return $this->hasMany(BadgeUtilizador::class, ['fk_badge' => 'badge_id']);
+    }
+
     public static function checkBadges($user_id){
 
         $badges = self::find()->all();

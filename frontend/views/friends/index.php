@@ -6,6 +6,10 @@ $this->title = 'Amigos | OnFire';
 
 <div class="container-fluid py-4">
 
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Amigos</h1>
+    </div>
+
     <div class="row g-4">
 
         <!-- Lista de amigos -->

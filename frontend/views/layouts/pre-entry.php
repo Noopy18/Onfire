@@ -18,12 +18,19 @@ use yii\helpers\Url;
 <nav class="navbar bg-light">
     <div class="container">
         <a class="navbar-brand" href="<?= Url::to(['site/index']) ?>">Onfire</a>
-        
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <?= Html::a('Sobre nós', ['site/about'], ['class' => 'nav-link active']) ?>
-                </li>
-            </ul>
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <?= Html::a('Sobre nós', ['site/about'], ['class' => 'nav-link active']) ?>
+            </li>
+        </ul>
+        <ul class="navbar-nav ms-auto d-flex flex-row">
+            <li class="nav-item me-3">
+                <?= Html::a('Entrada', ['site/login'], ['class' => 'nav-link active']) ?>
+            </li>
+            <li class="nav-item me-3">
+                <?= Html::a('Registro', ['site/signup'], ['class' => 'nav-link active']) ?>
+            </li>
+        </ul>
     </div>
 </nav>
 

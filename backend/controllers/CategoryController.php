@@ -3,11 +3,13 @@
 namespace backend\controllers;
 
 use common\models\Category;
+use frontend\models\Habit;
 use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use Yii;
 
 /**
  * CategoryController implements the CRUD actions for Category model.
@@ -132,6 +134,11 @@ class CategoryController extends Controller
      */
     public function actionDelete($category_id)
     {
+        if (Category::findOne($category_id)->getHabits()->exists()) {
+            Yii::$app->session->setFlash('error', 'Cannot delete category because it has associated habits.');
+            return $this->redirect(['index']);
+        }
+
         $this->findModel($category_id)->delete();
 
         return $this->redirect(['index']);

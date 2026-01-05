@@ -6,18 +6,25 @@ use yii\helpers\Html;
 /** @var common\models\user $model */
 /** @var common\models\utilizador $model_extra */
 
-$this->title = 'Atualizar Utilizador: ' . $model->id;
+$this->title = 'Atualização:';
 $this->params['breadcrumbs'][] = ['label' => 'Utilizadores', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Atualizar';
+$this->params['breadcrumbs'][] = 'Atualização';
 ?>
-<div class="user-update">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= $this->render('_form', [
-        'model' => $model,
-        'model_extra' => $model_extra,
-    ]) ?>
-
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-header bg-primary text-white">
+                    <h1 class="h4 mb-0">Utilizador: <?= Html::encode($model->id) ?></h1>
+                </div>
+                <div class="card-body">
+                    <?= $this->render('_form', [
+                        'model' => $model,
+                        'model_extra' => $model_extra,
+                    ]) ?>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
