@@ -217,6 +217,13 @@ class BadgeController extends Controller
             $badgeUtilizador->delete();
         }
 
+        if ($model->image && $model->image !== 'test_image.png') {
+            $imagePath = Yii::getAlias('@webroot/') . $model->image;
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
+            }
+        }
+
         $model->delete();
 
         return $this->redirect(['index']);
