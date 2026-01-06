@@ -33,9 +33,9 @@ class BadgeController extends ActiveController
         throw new \yii\web\ForbiddenHttpException('No authentication');
     }
 
+    // Apenas adms e techs podem criar atualizar e eliminar conquistas
     public function checkAccess($action, $model = null, $params = [])
     {
-        return;
         if($this->user) {
             $authManager = \Yii::$app->authManager;
             
@@ -43,6 +43,7 @@ class BadgeController extends ActiveController
                 return;
             }
             
+            // users não podem
             if($authManager->checkAccess($this->user->id, 'user')) {
                 if ($action === "create" || $action === "update" || $action === "delete") {
                     throw new \yii\web\ForbiddenHttpException('Proibido');

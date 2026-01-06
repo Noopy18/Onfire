@@ -34,9 +34,9 @@ class CategoryController extends ActiveController
         throw new \yii\web\ForbiddenHttpException('No authentication');
     }
 
+    // adms e tech podem manipular as categorias, os users apenas ver
     public function checkAccess($action, $model = null, $params = [])
     {
-        return;
         if($this->user) {
             $authManager = \Yii::$app->authManager;
             

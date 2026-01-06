@@ -21,7 +21,26 @@ class UserController extends ActiveController
     public function actions()
     {
         $actions = parent::actions();
+        // Substitui o default data provider para o da função prepareDataProvider
+        $actions['index']['prepareDataProvider'] = [$this, 'prepareDataProvider'];
         return $actions;
+    }
+    
+    // adms e techs tem acesso aos users mas os users apenas a si proprios
+    public function prepareDataProvider()
+    {
+        $authManager = \Yii::$app->authManager;
+        
+        if($authManager->checkAccess($this->user->id, 'administrator') || $authManager->checkAccess($this->user->id, 'technician')) {
+            $searchModel = new \yii\data\ActiveDataProvider([
+                'query' => $this->modelClass::find()
+            ]);
+        } else {
+            $searchModel = new \yii\data\ActiveDataProvider([
+                'query' => $this->modelClass::find()->where(['id' => $this->user->id])
+            ]);
+        }
+        return $searchModel;
     }
 
     public function authCustom($token)
@@ -34,9 +53,9 @@ class UserController extends ActiveController
         throw new \yii\web\ForbiddenHttpException('No authentication');
     }
 
+    // utilizadores n podem modificar eliminar nem ver outros users
     public function checkAccess($action, $model = null, $params = [])
     {
-        return;
         if($this->user) {
             $authManager = \Yii::$app->authManager;
             
@@ -45,8 +64,10 @@ class UserController extends ActiveController
             }
             
             if($authManager->checkAccess($this->user->id, 'user')) {
-                if ($action === "create" || $action === "update" || $action === "delete" || $action === "view" || $action === "index") {
-                    throw new \yii\web\ForbiddenHttpException('Proibido');
+                if ($model && ($action === 'update' || $action === 'delete' || $action === 'view')) {
+                    if ($model->id !== $this->user->id) {
+                        throw new \yii\web\ForbiddenHttpException('Não pode aceder a este utilizador.');
+                    }
                 }
             }
         }

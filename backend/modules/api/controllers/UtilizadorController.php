@@ -17,10 +17,30 @@ class UtilizadorController extends ActiveController
         return $behaviors;
     }
 
+
     public function actions()
     {
         $actions = parent::actions();
+        // Substitui o default data provider para o da função prepareDataProvider
+        $actions['index']['prepareDataProvider'] = [$this, 'prepareDataProvider'];
         return $actions;
+    }
+    
+    // adms e techs veem todos os utilizadores
+    public function prepareDataProvider()
+    {
+        $authManager = \Yii::$app->authManager;
+        
+        if($authManager->checkAccess($this->user->id, 'administrator') || $authManager->checkAccess($this->user->id, 'technician')) {
+            $searchModel = new \yii\data\ActiveDataProvider([
+                'query' => $this->modelClass::find()
+            ]);
+        } else {
+            $searchModel = new \yii\data\ActiveDataProvider([
+                'query' => $this->modelClass::find()->where(['utilizador_id' => $this->user->utilizador->utilizador_id])
+            ]);
+        }
+        return $searchModel;
     }
 
     public function authCustom($token)
@@ -30,12 +50,12 @@ class UtilizadorController extends ActiveController
             $this->user=$user_;
             return $user_;
         }
-        throw new \yii\web\ForbiddenHttpException('No authentication');
+        throw new \yii\web\ForbiddenHttpException('No authentication!');
     }
 
+    // os users n podem ver, eliminar ou editar os dados de utilizadores
     public function checkAccess($action, $model = null, $params = [])
     {
-        return;
         if($this->user) {
             $authManager = \Yii::$app->authManager;
             
@@ -44,8 +64,12 @@ class UtilizadorController extends ActiveController
             }
             
             if($authManager->checkAccess($this->user->id, 'user')) {
-                if ($action === "create" || $action === "update" || $action === "delete" || $action === "view" || $action === "index") {
-                    throw new \yii\web\ForbiddenHttpException('Proibido');
+                $userUtilizadorId = $this->user->utilizador->utilizador_id;
+                
+                if ($model && ($action === 'update' || $action === 'delete' || $action === 'view')) {
+                    if ($model->utilizador_id !== $userUtilizadorId) {
+                        throw new \yii\web\ForbiddenHttpException('Não pode aceder a este utilizador!');
+                    }
                 }
             }
         }
@@ -53,23 +77,44 @@ class UtilizadorController extends ActiveController
     
     public $modelClass = 'common\models\Utilizador';
 
+    // check geral para caso o user é "user" não poder ver badges e habitos dos outros (ou dar link)
+
     function actionBadges($id) {
-        $utilizador = new $this->modelClass;
-        $utilizador = $utilizador::find()->where(['utilizador_id' => $id])->one();
+        $authManager = \Yii::$app->authManager;
+        if(!$authManager->checkAccess($this->user->id, 'administrator') && !$authManager->checkAccess($this->user->id, 'technician')) {
+            if($id != $this->user->utilizador->utilizador_id) {
+                throw new \yii\web\ForbiddenHttpException('Não pode aceder a este utilizador!');
+            }
+        }
+        $utilizador = $this->modelClass::find()->where(['utilizador_id' => $id])->one();
+        if (!$utilizador) throw new \yii\web\NotFoundHttpException('Utilizador não encontrado!');
         return $utilizador->getBadges()->all();
     }
 
     function actionHabits($id) {
-        $utilizador = new $this->modelClass;
-        $utilizador = $utilizador::find()->where(['utilizador_id' => $id])->one();
+        $authManager = \Yii::$app->authManager;
+        if(!$authManager->checkAccess($this->user->id, 'administrator') && !$authManager->checkAccess($this->user->id, 'technician')) {
+            if($id != $this->user->utilizador->utilizador_id) {
+                throw new \yii\web\ForbiddenHttpException('Não pode aceder a este utilizador!');
+            }
+        }
+        $utilizador = $this->modelClass::find()->where(['utilizador_id' => $id])->one();
+        if (!$utilizador) throw new \yii\web\NotFoundHttpException('Utilizador não encontrado!');
         return $utilizador->getHabits()->all();
     }
 
     public function actionLinkbadge($id, $badge_id) {
-        $utilizador = new $this->modelClass;
-        $utilizador = $utilizador::find()->where(['utilizador_id' => $id])->one();
+        $authManager = \Yii::$app->authManager;
+        if(!$authManager->checkAccess($this->user->id, 'administrator') && !$authManager->checkAccess($this->user->id, 'technician')) {
+            if($id != $this->user->utilizador->utilizador_id) {
+                throw new \yii\web\ForbiddenHttpException('Não pode aceder a este utilizador!');
+            }
+        }
+        $utilizador = $this->modelClass::find()->where(['utilizador_id' => $id])->one();
+        if (!$utilizador) throw new \yii\web\NotFoundHttpException('Utilizador não encontrado!');
 
         $badge = \common\models\Badge::find()->where(['badge_id' => $badge_id])->one();
+        if (!$badge) throw new \yii\web\NotFoundHttpException('Badge não encontrado!');
 
         $badgeUtilizador = new \common\models\BadgeUtilizador();
         $badgeUtilizador->fk_utilizador = $utilizador->utilizador_id;
