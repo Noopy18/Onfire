@@ -4,6 +4,7 @@ namespace backend\modules\api\controllers;
 
 use yii\rest\ActiveController;
 use yii\filters\auth\QueryParamAuth;
+use backend\modules\api\components\CustomAuth;
 
 class BadgeController extends ActiveController
 {
@@ -42,7 +43,7 @@ class BadgeController extends ActiveController
             }
             
             if($authManager->checkAccess($this->user->id, 'user')) {
-                if ($action === "create" || $action === "update" || $action === "delete" || $action === "view" || $action === "index") {
+                if ($action === "create" || $action === "update" || $action === "delete") {
                     throw new \yii\web\ForbiddenHttpException('Proibido');
                 }
             }
