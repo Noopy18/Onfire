@@ -6,6 +6,6 @@ use yii\rest\ActiveController;
 
 class WeeklyChallengeController extends ActiveController
 {
-    public $modelClass = 'frontend\models\WeeklyChallenge';
+    public $modelClass = 'common\models\WeeklyChallenge';
 }
 

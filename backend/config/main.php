@@ -46,10 +46,17 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                ['class' => 'yii\rest\UrlRule','controller' => 'api/badge', 'pluralize' => false],
+                ['class' => 'yii\rest\UrlRule','controller' => 'api/badge-utilizador', 'pluralize' => false],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/category', 'pluralize' => false],
-                ['class' => 'yii\rest\UrlRule','controller' => 'api/habit', 'pluralize' => false],
+                ['class' => 'yii\rest\UrlRule','controller' => 'api/friends', 'pluralize' => false],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/habit-completion', 'pluralize' => false],
+                ['class' => 'yii\rest\UrlRule','controller' => 'api/habit', 'pluralize' => false],
+                ['class' => 'yii\rest\UrlRule','controller' => 'api/user', 'pluralize' => false],
+                ['class' => 'yii\rest\UrlRule','controller' => 'api/utilizador', 'pluralize' => false],
+                ['class' => 'yii\rest\UrlRule','controller' => 'api/weekly-challenge-completion', 'pluralize' => false],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/weekly-challenge', 'pluralize' => false],
+                ['class' => 'yii\rest\UrlRule','controller' => 'api/weekly-challenge-utilizador', 'pluralize' => false],
             ],
         ],
         
