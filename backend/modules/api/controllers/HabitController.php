@@ -61,5 +61,17 @@ class HabitController extends ActiveController
         $habit = $habit::find()->where(['habit_id' => $id])->one();
         return $habit->getStreaks();
     }
+
+    function actionPutnome($nome) {
+        $novonome = \Yii::$app->request->post('nome');
+
+        $habit = new $this->modelClass;
+        $habit = $habit::find()->where(['name' => $nome])->one();
+
+        $habit->name = $novonome;
+        $habit->save();
+
+        return $habit;
+    }
 }
 

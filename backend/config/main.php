@@ -50,10 +50,16 @@ return [
             'showScriptName' => false,
             'rules' => [
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/badge', 'pluralize' => false],
-                ['class' => 'yii\rest\UrlRule','controller' => 'api/badge-utilizador', 'pluralize' => false],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/category', 'pluralize' => false],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/friends', 'pluralize' => false],
-                ['class' => 'yii\rest\UrlRule','controller' => 'api/habit-completion', 'pluralize' => false],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/habit-completion', 
+                    'pluralize' => false,
+                    'extraPatterns' => [
+                        'DELETE {id}' => 'putnome',
+                    ],
+                ],
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'api/habit', 
@@ -68,6 +74,11 @@ return [
                         'GET {id}/getbeststreak' => 'getbeststreak',
                         'GET {id}/getstreak' => 'getstreak',
                         'GET {id}/getstreaks' => 'getstreaks',
+                        'PUT {nome}' => 'putnome',
+                    ],
+                    'tokens' => [
+                        '{id}' => '<id:\\d+>',
+                        '{nome}' => '<nome:\\w+>',
                     ],
                 ],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/user', 'pluralize' => false],
@@ -78,7 +89,12 @@ return [
                     'extraPatterns' => [
                         'GET {id}/badges' => 'badges',
                         'GET {id}/habits' => 'habits',
+                        'GET {id}/linkbadge/{badge_id}' => 'linkbadge',
                     ],
+                    'tokens' => [
+                        '{id}' => '<id:\\d+>',
+                        '{badge_id}' => '<badge_id:\\d+>',
+                    ]
                 ],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/weekly-challenge-completion', 'pluralize' => false],
                 [
