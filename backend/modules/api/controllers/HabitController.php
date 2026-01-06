@@ -36,6 +36,7 @@ class HabitController extends ActiveController
 
     public function checkAccess($action, $model = null, $params = [])
     {
+        return;
         if($this->user) {
             $authManager = \Yii::$app->authManager;
             

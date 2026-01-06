@@ -5,6 +5,7 @@ namespace frontend\models;
 use common\models\Category;
 use common\models\Utilizador;
 use Yii;
+use common\mosquitto\phpMQTT;
 
 /**
  * This is the model class for table "habit".
@@ -308,5 +309,62 @@ class Habit extends \yii\db\ActiveRecord
             return true;
         }
         return false;
+    }
+
+    public function afterSave($insert, $changedAttributes){
+        parent::afterSave($insert, $changedAttributes);
+        $id = $this->habit_id;
+        $name = $this->name;
+        $description = $this->description;
+        $frequency = $this->frequency;
+        $final_date = $this->final_date;
+        $type = $this->type;
+        $fk_utilizador = $this->fk_utilizador;
+        $fk_category = $this->fk_category;
+        $myObj = new \stdClass();
+        $myObj->id = $id;
+        $myObj->name = $name;
+        $myObj->description = $description;
+        $myObj->frequency = $frequency;
+        $myObj->final_date = $final_date;
+        $myObj->type = $type;
+        $myObj->fk_utilizador = $fk_utilizador;
+        $myObj->fk_category = $fk_category;
+        $myJSON = json_encode($myObj);
+        if($insert){
+            $this->FazPublishNoMosquitto("Habit-INSERT", $myJSON);
+        } else {
+            $this->FazPublishNoMosquitto("Habit-UPDATE", $myJSON);
+        }
+    }
+
+    public function afterDelete(){
+        parent::afterDelete();
+        $habit_id = $this->habit_id;
+        $myObj = new \stdClass();
+        $myObj->id = $habit_id;
+        $myJSON = json_encode($myObj);
+        $this->FazPublishNoMosquitto("Habit-DELETE", $myJSON);
+    }
+
+    public function FazPublishNoMosquitto($canal, $msg){
+        try {
+            $server = "127.0.0.1";
+            $port = 1883;
+
+            $username = Yii::$app->user->identity->username;
+            $password = Yii::$app->user->identity->password_hash;
+            $client_id = Yii::$app->user->identity->id;
+            
+            $mqtt = new phpMQTT($server, $port, $client_id);
+            if ($mqtt->connect(true, NULL, $username, $password)) {
+                $mqtt->publish($canal, $msg, 0);
+                $mqtt->close();
+            } else {
+                Yii::error("MQTT conexão falhada para tópico: $canal");
+            }
+        } catch (\Exception $e) {
+            Yii::error("MQTT erro ao publicar: " . $e->getMessage());
+        }
     }
 }

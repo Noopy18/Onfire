@@ -7,6 +7,7 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+use common\mosquitto\phpMQTT;
 
 /**
  * User model
@@ -226,5 +227,52 @@ class User extends ActiveRecord implements IdentityInterface
     public function getUtilizador()
     {
         return $this->hasOne(Utilizador::class, ['fk_user' => 'id']);
+    }
+
+    public function afterSave($insert, $changedAttributes){
+        parent::afterSave($insert, $changedAttributes);
+        //Obter dados do registo em causa
+        $id=$this->id;
+        $username=$this->username;
+        $email=$this->email;
+        $status=$this->status;
+        $myObj=new \stdClass();
+        $myObj->id=$id;
+        $myObj->username=$username;
+        $myObj->email=$email;
+        $myObj->status=$status;
+        $myJSON = json_encode($myObj);
+        if($insert){$this->FazPublishNoMosquitto("User-INSERT",$myJSON);}
+        else{$this->FazPublishNoMosquitto("User-UPDATE",$myJSON);}
+    }
+
+    public function afterDelete(){
+        parent::afterDelete();
+        $user_id= $this->id;
+        $myObj=new \stdClass();
+        $myObj->id=$user_id;
+        $myJSON = json_encode($myObj);
+        $this->FazPublishNoMosquitto("User-DELETE",$myJSON);
+    }
+
+    public function FazPublishNoMosquitto($canal, $msg){
+        try {
+            $server = "127.0.0.1";
+            $port = 1883;
+
+            $username = Yii::$app->user->identity->username;
+            $password = Yii::$app->user->identity->password_hash;
+            $client_id = Yii::$app->user->identity->id;
+            
+            $mqtt = new phpMQTT($server, $port, $client_id);
+            if ($mqtt->connect(true, NULL, $username, $password)) {
+                $mqtt->publish($canal, $msg, 0);
+                $mqtt->close();
+            } else {
+                Yii::error("MQTT conexão falhada para tópico: $canal");
+            }
+        } catch (\Exception $e) {
+            Yii::error("MQTT erro ao publicar: " . $e->getMessage());
+        }
     }
 }

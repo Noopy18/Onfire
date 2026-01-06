@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use common\models\FkWeeklyChallengeUtilizador;
+use common\mosquitto\phpMQTT;
 
 /**
  * This is the model class for table "weekly_challenge_completion".
@@ -80,6 +81,52 @@ class WeeklyChallengeCompletion extends \yii\db\ActiveRecord
                     $bu->save();
                 }
             }
+        }
+        
+        $id = $this->weekly_challenge_completion_id;
+        $date = $this->date;
+        $completed = $this->completed;
+        $fk_weekly_challenge_utilizador = $this->fk_weekly_challenge_utilizador;
+        $myObj = new \stdClass();
+        $myObj->id = $id;
+        $myObj->date = $date;
+        $myObj->completed = $completed;
+        $myObj->fk_weekly_challenge_utilizador = $fk_weekly_challenge_utilizador;
+        $myJSON = json_encode($myObj);
+        if($insert){
+            $this->FazPublishNoMosquitto("WeeklyChallengeCompletion-INSERT", $myJSON);
+        } else {
+            $this->FazPublishNoMosquitto("WeeklyChallengeCompletion-UPDATE", $myJSON);
+        }
+    }
+
+    public function afterDelete(){
+        parent::afterDelete();
+        $weekly_challenge_completion_id = $this->weekly_challenge_completion_id;
+        $myObj = new \stdClass();
+        $myObj->id = $weekly_challenge_completion_id;
+        $myJSON = json_encode($myObj);
+        $this->FazPublishNoMosquitto("WeeklyChallengeCompletion-DELETE", $myJSON);
+    }
+
+    public function FazPublishNoMosquitto($canal, $msg){
+        try {
+            $server = "127.0.0.1";
+            $port = 1883;
+
+            $username = Yii::$app->user->identity->username;
+            $password = Yii::$app->user->identity->password_hash;
+            $client_id = Yii::$app->user->identity->id;
+            
+            $mqtt = new phpMQTT($server, $port, $client_id);
+            if ($mqtt->connect(true, NULL, $username, $password)) {
+                $mqtt->publish($canal, $msg, 0);
+                $mqtt->close();
+            } else {
+                Yii::error("MQTT conexão falhada para tópico: $canal");
+            }
+        } catch (\Exception $e) {
+            Yii::error("MQTT erro ao publicar: " . $e->getMessage());
         }
     }
     

@@ -5,6 +5,7 @@ namespace frontend\models;
 use common\models\BadgeUtilizador;
 use common\models\Badge;
 use Yii;
+use common\mosquitto\phpMQTT;
 
 /**
  * This is the model class for table "habit_completion".
@@ -79,6 +80,51 @@ class HabitCompletion extends \yii\db\ActiveRecord
                 }
             }
         }
+
+        $id = $this->habit_completion_id;
+        $date = $this->date;
+        $completed = $this->completed;
+        $fk_habit = $this->fk_habit;
+        $myObj = new \stdClass();
+        $myObj->id = $id;
+        $myObj->date = $date;
+        $myObj->completed = $completed;
+        $myObj->fk_habit = $fk_habit;
+        $myJSON = json_encode($myObj);
+        if($insert){
+            $this->FazPublishNoMosquitto("HabitCompletion-INSERT", $myJSON);
+        } else {
+            $this->FazPublishNoMosquitto("HabitCompletion-UPDATE", $myJSON);
+        }
     }
 
+    public function afterDelete(){
+        parent::afterDelete();
+        $habit_completion_id = $this->habit_completion_id;
+        $myObj = new \stdClass();
+        $myObj->id = $habit_completion_id;
+        $myJSON = json_encode($myObj);
+        $this->FazPublishNoMosquitto("HabitCompletion-DELETE", $myJSON);
+    }
+
+    public function FazPublishNoMosquitto($canal, $msg){
+        try {
+            $server = "127.0.0.1";
+            $port = 1883;
+
+            $username = Yii::$app->user->identity->username;
+            $password = Yii::$app->user->identity->password_hash;
+            $client_id = Yii::$app->user->identity->id;
+            
+            $mqtt = new phpMQTT($server, $port, $client_id);
+            if ($mqtt->connect(true, NULL, $username, $password)) {
+                $mqtt->publish($canal, $msg, 0);
+                $mqtt->close();
+            } else {
+                Yii::error("MQTT conexão falhada para tópico: $canal");
+            }
+        } catch (\Exception $e) {
+            Yii::error("MQTT erro ao publicar: " . $e->getMessage());
+        }
+    }
 }

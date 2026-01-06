@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use common\mosquitto\phpMQTT;
 
 /**
  * This is the model class for table "Badge".
@@ -232,5 +233,55 @@ class Badge extends \yii\db\ActiveRecord
         }
     
         return count($badge_array) > 0 ? $badge_array : null;
+    }
+    
+    public function afterSave($insert, $changedAttributes){
+        parent::afterSave($insert, $changedAttributes);
+        //Obter dados do registo em causa
+        $id=$this->badge_id;
+        $name=$this->name;
+        $description=$this->description;
+        $image=$this->image;
+        $myObj=new \stdClass();
+        $myObj->id=$id;
+        $myObj->name=$name;
+        $myObj->description=$description;
+        $myObj->image=$image;
+        $myJSON = json_encode($myObj);
+        if($insert){
+            $this->FazPublishNoMosquitto("Badge-INSERT",$myJSON);
+        } else {
+            $this->FazPublishNoMosquitto("Badge-UPDATE",$myJSON);
+        }
+    }
+
+    public function afterDelete(){
+        parent::afterDelete();
+        $badge_id= $this->badge_id;
+        $myObj=new \stdClass();
+        $myObj->id=$badge_id;
+        $myJSON = json_encode($myObj);
+        $this->FazPublishNoMosquitto("Badge-DELETE",$myJSON);
+    }
+
+    public function FazPublishNoMosquitto($canal, $msg){
+        try {
+            $server = "127.0.0.1";
+            $port = 1883;
+
+            $username = Yii::$app->user->identity->username;
+            $password = Yii::$app->user->identity->password_hash;
+            $client_id = Yii::$app->user->identity->id;
+            
+            $mqtt = new phpMQTT($server, $port, $client_id);
+            if ($mqtt->connect(true, NULL, $username, $password)) {
+                $mqtt->publish($canal, $msg, 0);
+                $mqtt->close();
+            } else {
+                Yii::error("MQTT conexão falhada para tópico: $canal");
+            }
+        } catch (\Exception $e) {
+            Yii::error("MQTT erro ao publicar: " . $e->getMessage());
+        }
     }
 }
