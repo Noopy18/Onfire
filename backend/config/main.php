@@ -19,6 +19,9 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -53,7 +56,15 @@ return [
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/habit-completion', 'pluralize' => false],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/habit', 'pluralize' => false],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/user', 'pluralize' => false],
-                ['class' => 'yii\rest\UrlRule','controller' => 'api/utilizador', 'pluralize' => false],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/utilizador', 
+                    'pluralize' => false,
+                    'extraPatterns' => [
+                        'GET {id}/badges' => 'badges',
+                        'GET {id}/habits' => 'habits',
+                    ],
+                ],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/weekly-challenge-completion', 'pluralize' => false],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/weekly-challenge', 'pluralize' => false],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/weekly-challenge-utilizador', 'pluralize' => false],
