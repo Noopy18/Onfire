@@ -54,14 +54,6 @@ return [
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/friends', 'pluralize' => false],
                 [
                     'class' => 'yii\rest\UrlRule',
-                    'controller' => 'api/habit-completion', 
-                    'pluralize' => false,
-                    'extraPatterns' => [
-                        'DELETE {id}' => 'putnome',
-                    ],
-                ],
-                [
-                    'class' => 'yii\rest\UrlRule',
                     'controller' => 'api/habit', 
                     'pluralize' => false,
                     'extraPatterns' => [
@@ -74,6 +66,7 @@ return [
                         'GET {id}/getbeststreak' => 'getbeststreak',
                         'GET {id}/getstreak' => 'getstreak',
                         'GET {id}/getstreaks' => 'getstreaks',
+                        'GET {id}/makecompletion' => 'makecompletion',
                         'PUT {nome}' => 'putnome',
                     ],
                     'tokens' => [

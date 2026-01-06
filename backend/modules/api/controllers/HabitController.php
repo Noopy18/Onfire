@@ -73,5 +73,25 @@ class HabitController extends ActiveController
 
         return $habit;
     }
+
+    function actionMakecompletion($id) {
+        $habit = new $this->modelClass;
+        $habit = $habit::find()->where(['habit_id' => $id])->one();
+
+        if (!$habit->canBeCompleted()) {
+            return ['error' => 'Habit cannot be completed today.'];
+        }
+        if ($habit->isCompleted()) {
+            return ['error' => 'Habit already completed today.'];
+        }
+
+        $habitCompletion = new \frontend\models\HabitCompletion();
+        $habitCompletion->fk_habit = $habit->habit_id;
+        $habitCompletion->date = date('Y-m-d');
+        $habitCompletion->completed = 1;
+        $habitCompletion->save();
+
+        return $habitCompletion;
+    }
 }
 
