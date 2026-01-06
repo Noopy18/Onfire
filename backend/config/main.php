@@ -54,7 +54,22 @@ return [
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/category', 'pluralize' => false],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/friends', 'pluralize' => false],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/habit-completion', 'pluralize' => false],
-                ['class' => 'yii\rest\UrlRule','controller' => 'api/habit', 'pluralize' => false],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/habit', 
+                    'pluralize' => false,
+                    'extraPatterns' => [
+                        'GET {id}/completions' => 'completions',
+                        'GET {id}/successrate' => 'successrate',
+                        'GET {id}/canbecompleted' => 'canbecompleted',
+                        'GET {id}/iscompleted' => 'iscompleted',
+                        'GET {id}/duedate' => 'duedate',
+                        'GET {id}/isfinished' => 'isfinished',
+                        'GET {id}/getbeststreak' => 'getbeststreak',
+                        'GET {id}/getstreak' => 'getstreak',
+                        'GET {id}/getstreaks' => 'getstreaks',
+                    ],
+                ],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/user', 'pluralize' => false],
                 [
                     'class' => 'yii\rest\UrlRule',
@@ -66,11 +81,24 @@ return [
                     ],
                 ],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/weekly-challenge-completion', 'pluralize' => false],
-                ['class' => 'yii\rest\UrlRule','controller' => 'api/weekly-challenge', 'pluralize' => false],
-                ['class' => 'yii\rest\UrlRule','controller' => 'api/weekly-challenge-utilizador', 'pluralize' => false],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/weekly-challenge',
+                    'pluralize' => false,
+                    'extraPatterns' => [
+                        'GET {id}/utilizadores' => 'utilizadores',
+                    ],
+                ],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/weekly-challenge-utilizador', 
+                    'pluralize' => false,
+                    'extraPatterns' => [
+                        'GET {id}/completions' => 'completions',
+                    ],
+                ],
             ],
         ],
-        
     ],
     'params' => $params,
 ];
