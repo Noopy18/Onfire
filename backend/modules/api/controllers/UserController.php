@@ -13,7 +13,8 @@ class UserController extends ActiveController
         $behaviors = parent::behaviors();
         $behaviors['authenticator'] = [
         'class' => CustomAuth::className(),
-        'auth' => [$this, 'authCustom']
+        'auth' => [$this, 'authCustom'],
+        'except' => ['login']
         ];
         return $behaviors;
     }
@@ -71,6 +72,21 @@ class UserController extends ActiveController
                 }
             }
         }
+    }
+
+    function actionLogin() {
+        $request = \Yii::$app->request;
+        $username = $request->post('username');
+        $password = $request->post('password');
+        
+        $user = \common\models\User::findByUsername($username);
+        
+        if ($user && $user->validatePassword($password)) {
+            return ['auth_key' => $user->auth_key];
+        }
+        
+        \Yii::$app->response->statusCode = 401;
+        return ['error' => 'Invalid credentials'];
     }
 
     public $modelClass = 'common\models\User';

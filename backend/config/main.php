@@ -74,7 +74,14 @@ return [
                         '{nome}' => '<nome:\\w+>',
                     ],
                 ],
-                ['class' => 'yii\rest\UrlRule','controller' => 'api/user', 'pluralize' => false],
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/user', 
+                    'pluralize' => false,
+                    'extraPatterns' => [
+                        'POST login' => 'login'
+                    ],
+                ],
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'api/utilizador', 
