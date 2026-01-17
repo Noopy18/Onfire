@@ -31,11 +31,9 @@ class HabitController extends ActiveController
     {
         $authManager = \Yii::$app->authManager;
         
-        if($authManager->checkAccess($this->user->id, 'administrator') || $authManager->checkAccess($this->user->id, 'technician')) {
-            $query = $this->modelClass::find();
-        } else {
-            $query = $this->modelClass::find()->where(['fk_utilizador' => $this->user->utilizador->utilizador_id]);
-        }
+  
+        $query = $this->modelClass::find()->where(['fk_utilizador' => $this->user->utilizador->utilizador_id]);
+        
         
         $searchModel = new \yii\data\ActiveDataProvider([
             'query' => $query

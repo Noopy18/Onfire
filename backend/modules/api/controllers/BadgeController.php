@@ -42,15 +42,13 @@ class BadgeController extends ActiveController
             if($authManager->checkAccess($this->user->id, 'administrator') || $authManager->checkAccess($this->user->id, 'technician')) {
                 return;
             }
-            
-            // users não podem
-            if($authManager->checkAccess($this->user->id, 'user')) {
-                if ($action === "create" || $action === "update" || $action === "delete") {
-                    throw new \yii\web\ForbiddenHttpException('Proibido');
-                }
+
+            if ($action === "create" || $action === "update" || $action === "delete") {
+                throw new \yii\web\ForbiddenHttpException('Proibido');
             }
         }
     }
+
 
     public $modelClass = 'common\models\Badge';
 

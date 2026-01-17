@@ -89,6 +89,13 @@ class UserController extends ActiveController
         return ['error' => 'Invalid credentials'];
     }
 
+    function actionRole($id) {
+        $authManager = \Yii::$app->authManager;
+        $roles = $authManager->getRolesByUser($id);
+        $roleNames = array_keys($roles);
+        return ['role' => $roleNames];
+    }
+
     public $modelClass = 'common\models\User';
 }
 

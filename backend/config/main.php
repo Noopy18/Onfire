@@ -89,7 +89,8 @@ return [
                     'controller' => 'api/user', 
                     'pluralize' => false,
                     'extraPatterns' => [
-                        'POST login' => 'login'
+                        'POST login' => 'login',
+                        'GET {id}/role' => 'role'
                     ],
                 ],
                 [
