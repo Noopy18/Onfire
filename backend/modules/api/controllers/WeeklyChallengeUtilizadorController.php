@@ -65,6 +65,16 @@ class WeeklyChallengeUtilizadorController extends ActiveController
             if($authManager->checkAccess($this->user->id, 'user')) {
                 $userUtilizadorId = $this->user->utilizador->utilizador_id;
                 
+                if ($action === 'create') {
+                    $data = \Yii::$app->request->post();
+                    if (empty($data)) {
+                        $data = json_decode(\Yii::$app->request->getRawBody(), true) ?: [];
+                    }
+                    if (!isset($data['fk_utilizador']) || $data['fk_utilizador'] != $userUtilizadorId) {
+                        throw new \yii\web\ForbiddenHttpException('Só pode participar em desafios para si próprio');
+                    }
+                }
+                
                 if ($model && ($action === 'update' || $action === 'delete' || $action === 'view')) {
                     if ($model->fk_utilizador !== $userUtilizadorId) {
                         throw new \yii\web\ForbiddenHttpException('Não pode aceder a esta participação');
@@ -75,21 +85,7 @@ class WeeklyChallengeUtilizadorController extends ActiveController
     }
 
     public $modelClass = 'common\models\WeeklyChallengeUtilizador';
-    
-    // na criação o user (geral) so pode criar participações para si proprio 
-    // (n é necessario check de adm porque n há moderação quanto a esse respeito, muito menos no movel)
-    public function beforeAction($action)
-    {
-        if ($action->id === 'create' && \Yii::$app->request->isPost) {
-            $data = \Yii::$app->request->post();
-            $userUtilizadorId = $this->user->utilizador->utilizador_id;
-            
-            if (!isset($data['fk_utilizador']) || $data['fk_utilizador'] != $userUtilizadorId) {
-                throw new \yii\web\ForbiddenHttpException('Só pode participar em desafios para si próprio');
-            }
-        }
-        return parent::beforeAction($action);
-    }
+
 
     // o user ve apenas as suas compleções.
     function actionCompletions($id){

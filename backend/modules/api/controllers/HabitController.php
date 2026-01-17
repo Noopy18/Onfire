@@ -65,6 +65,16 @@ class HabitController extends ActiveController
             if($authManager->checkAccess($this->user->id, 'user')) {
                 $userUtilizadorId = $this->user->utilizador->utilizador_id;
                 
+                if ($action === 'create') {
+                    $data = \Yii::$app->request->post();
+                    if (empty($data)) {
+                        $data = json_decode(\Yii::$app->request->getRawBody(), true) ?: [];
+                    }
+                    if (!isset($data['fk_utilizador']) || $data['fk_utilizador'] != $userUtilizadorId) {
+                        throw new \yii\web\ForbiddenHttpException('Só pode criar hábitos para si próprio');
+                    }
+                }
+                
                 if ($model && ($action === 'update' || $action === 'delete' || $action === 'view')) {
                     if ($model->fk_utilizador !== $userUtilizadorId) {
                         throw new \yii\web\ForbiddenHttpException('Não pode aceder a este hábito');
@@ -75,23 +85,8 @@ class HabitController extends ActiveController
     }
 
     public $modelClass = 'frontend\models\Habit';
-    
-    // Habito so pode ser criado para si proprio
-    public function beforeAction($action)
-    {
-        if ($action->id === 'create' && \Yii::$app->request->isPost) {
-            $data = \Yii::$app->request->post();
-            $userUtilizadorId = $this->user->utilizador->utilizador_id;
-            
-            if (!isset($data['fk_utilizador']) || $data['fk_utilizador'] != $userUtilizadorId) {
-                throw new \yii\web\ForbiddenHttpException('Só pode criar hábitos para si próprio');
-            }
-        }
-        return parent::beforeAction($action);
-    }
 
     //check geral para as funções so funcionarem se os habitos pertencem ao utilizador
-
     function actionCompletions($id) {
         $habit = $this->modelClass::find()->where(['habit_id' => $id, 'fk_utilizador' => $this->user->utilizador->utilizador_id])->one();
         if (!$habit) throw new \yii\web\NotFoundHttpException('Hábito não encontrado');

@@ -82,7 +82,7 @@ class UserController extends ActiveController
         $user = \common\models\User::findByUsername($username);
         
         if ($user && $user->validatePassword($password)) {
-            return ['auth_key' => $user->auth_key];
+            return ['auth_key' => $user->auth_key, 'id' => $user->id];
         }
         
         \Yii::$app->response->statusCode = 401;

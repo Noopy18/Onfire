@@ -49,6 +49,16 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+
+
+                # T.P
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'api/matematica', 
+                    'extraPatterns' => [ 'GET raizdois' => 'raizdois' ]
+                ],
+
+
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/badge', 'pluralize' => false],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/category', 'pluralize' => false],
                 ['class' => 'yii\rest\UrlRule','controller' => 'api/friends', 'pluralize' => false],
@@ -67,11 +77,11 @@ return [
                         'GET {id}/getstreak' => 'getstreak',
                         'GET {id}/getstreaks' => 'getstreaks',
                         'GET {id}/makecompletion' => 'makecompletion',
-                        'PUT {nome}' => 'putnome',
+                        'PUT name/{nome}' => 'putnome',
                     ],
                     'tokens' => [
                         '{id}' => '<id:\\d+>',
-                        '{nome}' => '<nome:\\w+>',
+                        '{nome}' => '<nome:[^/]+>',
                     ],
                 ],
                 [

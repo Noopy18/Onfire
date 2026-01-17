@@ -69,6 +69,16 @@ class FriendsController extends ActiveController
             if($authManager->checkAccess($this->user->id, 'user')) {
                 $utilizador_id = $this->user->utilizador->utilizador_id;
                 
+                if ($action === 'create') {
+                    $data = \Yii::$app->request->post();
+                    if (empty($data)) {
+                        $data = json_decode(\Yii::$app->request->getRawBody(), true) ?: [];
+                    }
+                    if (!isset($data['sender']) || $data['sender'] != $utilizador_id) {
+                        throw new \yii\web\ForbiddenHttpException('Só pode criar amizades como sender.');
+                    }
+                }
+                
                 if ($model && ($action === 'update' || $action === 'delete' || $action === 'view')) {
                     if ($model->sender !== $utilizador_id && $model->receiver !== $utilizador_id) {
                         throw new \yii\web\ForbiddenHttpException('Não pode aceder a esta amizade.');
@@ -79,19 +89,6 @@ class FriendsController extends ActiveController
     }
 
     public $modelClass = 'frontend\models\Friends';
-    
-    // antes da criação é verificado se o user é o sender da amizade
-    public function beforeAction($action)
-    {
-        if ($action->id === 'create' && \Yii::$app->request->isPost) {
-            $data = \Yii::$app->request->post();
-            $utilizador_id = $this->user->utilizador->utilizador_id;
-            
-            if (!isset($data['sender']) || $data['sender'] != $utilizador_id) {
-                throw new \yii\web\ForbiddenHttpException('Só pode criar amizades como sender.');
-            }
-        }
-        return parent::beforeAction($action);
-    }
+
 }
 

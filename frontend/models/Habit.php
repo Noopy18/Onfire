@@ -296,7 +296,7 @@ class Habit extends \yii\db\ActiveRecord
             }
 
             //subtract a day
-            $today_date = date("Y-m-d", strtotime("-1 day", strtotime(date("Y-m-d"))));
+            $today_date = date("Y-m-d", strtotime("-1 day", strtotime($today_date)));
         }
 
         if (count($hc_array) > 0) { return round((count($hc_array) / $all_days) * 100); }
