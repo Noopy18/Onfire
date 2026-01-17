@@ -18,13 +18,7 @@ class HabitController extends ActiveController
         return $behaviors;
     }
 
-    public function actions()
-    {
-        $actions = parent::actions();
-        // substitui o dataprovider pelo da função prepareDataProvider
-        $actions['index']['prepareDataProvider'] = [$this, 'prepareDataProvider'];
-        return $actions;
-    }
+
     
     // adms e tech podem ver todos os habitos, os users so os seus
     public function prepareDataProvider()
@@ -166,6 +160,25 @@ class HabitController extends ActiveController
         $habitCompletion->save();
 
         return $habitCompletion;
+    }
+
+    public function actions()
+    {
+        $actions = parent::actions();
+        $actions['index']['prepareDataProvider'] = [$this, 'prepareDataProvider'];
+        unset($actions['delete']);
+        return $actions;
+    }
+
+    public function actionDelete($id)
+    {
+        $habit = $this->modelClass::find()->where(['habit_id' => $id, 'fk_utilizador' => $this->user->utilizador->utilizador_id])->one();
+        if (!$habit) throw new \yii\web\NotFoundHttpException('Hábito não encontrado');
+        
+        \frontend\models\HabitCompletion::deleteAll(['fk_habit' => $id]);
+        $habit->delete();
+        
+        \Yii::$app->response->statusCode = 204;
     }
 }
 
