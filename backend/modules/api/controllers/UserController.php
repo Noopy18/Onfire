@@ -14,7 +14,7 @@ class UserController extends ActiveController
         $behaviors['authenticator'] = [
         'class' => CustomAuth::className(),
         'auth' => [$this, 'authCustom'],
-        'except' => ['login']
+        'except' => ['login', 'register']
         ];
         return $behaviors;
     }
@@ -94,6 +94,43 @@ class UserController extends ActiveController
         $roles = $authManager->getRolesByUser($id);
         $roleNames = array_keys($roles);
         return ['role' => $roleNames];
+    }
+
+    function actionRegister() {
+        $request = \Yii::$app->request;
+        $username = $request->post('username');
+        $password = $request->post('password');
+        $email = $request->post('email');
+        $name = $request->post('name');
+        
+        $transaction = \Yii::$app->db->beginTransaction();
+        try {
+            $user = new \common\models\User();
+            $user->username = $username;
+            $user->email = $email;
+            $user->setPassword($password);
+            $user->generateAuthKey();
+            $user->status = \common\models\User::STATUS_ACTIVE;
+            
+            if (!$user->save()) {
+                throw new \Exception('Failed to create user');
+            }
+            
+            $utilizador = new \common\models\Utilizador();
+            $utilizador->name = $name;
+            $utilizador->fk_user = $user->id;
+            
+            if (!$utilizador->save()) {
+                throw new \Exception('Failed to create utilizador');
+            }
+            
+            $transaction->commit();
+            return ['success' => true, 'auth_key' => $user->auth_key, 'id' => $user->id];
+        } catch (\Exception $e) {
+            $transaction->rollBack();
+            \Yii::$app->response->statusCode = 400;
+            return ['error' => $e->getMessage()];
+        }
     }
 
     public $modelClass = 'common\models\User';

@@ -90,7 +90,8 @@ return [
                     'pluralize' => false,
                     'extraPatterns' => [
                         'POST login' => 'login',
-                        'GET {id}/role' => 'role'
+                        'GET {id}/role' => 'role',
+                        'POST register' => 'register',
                     ],
                 ],
                 [
